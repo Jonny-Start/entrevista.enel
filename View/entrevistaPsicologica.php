@@ -6,9 +6,9 @@ sessionValidate();
 <link href="../vendor/fontawesome-free/css/bootstrap.css" rel="stylesheet" type="text/css">
 <link href="../vendor/fontawesome-free/css/regular.css" rel="stylesheet" type="text/css">
 <style type="text/css">
-  /* #regiration_form fieldset:not(:first-of-type) {
+  #regiration_form fieldset:not(:first-of-type) {
     display: none;
-  } */
+  }
 </style>
 <div class="container">
   <div class="text-center">
