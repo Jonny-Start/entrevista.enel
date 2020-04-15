@@ -2,7 +2,6 @@
 //sessionValidate();
 ?>
 
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php include FOLDER_TEMPLATE. "head.php"; ?>
@@ -29,12 +28,12 @@
                     <h1 class="h4 text-gray-900 mb-2">¿OLVIDASTE TU CONTRASEÑA?</h1>
                     <p class="mb-4">Lo entendemos, pasan cosas. Simplemente ingrese su dirección de correo electrónico a continuación y le enviaremos un enlace para restablecer su contraseña.</p>
                   </div>
-                  <form class="user">
+                  <form class="user" form id="loginform" class="form-horizontal" role="form" action="<?php $_SERVER['PHP_SELF'];?>" method="POST" autocomplete="off">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ingresa tu correo electronico..."  required>
+                      <input type="email" class="form-control form-control-user" id="email" name="email" aria-describedby="emailHelp" placeholder="Ingresa tu correo electronico..."  required>
                     </div>
-                    <a href="login.html" class="btn btn-primary btn-user btn-block">
-                      Restablecer Contraseña
+                    <a href="login.html" type="submit" id="btn-login" class="btn btn-primary btn-user btn-block">
+                     Restablecer Contraseña
                     <i class="fas fa-exclamation-triangle"></i> 
                     </a>
                   </form>
