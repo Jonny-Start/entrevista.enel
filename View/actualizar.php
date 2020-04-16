@@ -31,7 +31,7 @@ sessionValidate();
                                         </tr>
                                         <tr>
                                             <td width="18%" align="right">
-                                                <input type="submit" class="btn btn-success mt-4 class=" form-control"
+                                                <input type="submit" class="btn btn-success mt-4"
                                                     name="Consultar" value="Consultar">
                                             </td>
                                             <td><label for="co"></label>
@@ -42,7 +42,7 @@ sessionValidate();
                               $correo_electronico="";
                               $contraseña="";
                               ?>
-                                                <input type="text" name="Buscar" id="Buscar"
+                                                <input type="number" name="Buscar" id="Buscar"
                                                     class="form-control form-control-user mb-2" size="40"
                                                     value="<?php echo $co;?>" required />
 
@@ -125,7 +125,7 @@ sessionValidate();
                                         </table>
 
                                         <div class="row justify-content-center">
-                                            <input class="btn btn-primary mt-2 type=" submit" name="button" id="button"
+                                            <input class="btn btn-primary mt-2" type="submit" name="button" id="button"
                                                 value="ACTUALIZAR">
                                         </div>
                                     </form>
