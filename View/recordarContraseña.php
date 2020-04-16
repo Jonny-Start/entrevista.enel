@@ -26,18 +26,18 @@
                 <div class="p-5">
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-2">¿OLVIDASTE TU CONTRASEÑA?</h1>
-                    <p class="mb-4">Lo entendemos, pasan cosas. Simplemente ingrese su dirección de correo electrónico a continuación y le enviaremos un enlace para restablecer su contraseña.</p>
+                    <p class="mb-4">Te entendemos, suele pasar. Simplemente ingresa tu dirección de correo electrónico a continuación y te enviaremos un enlace para restablecer tu contraseña.</p>
                   </div>
-                  <form class="user" form id="loginform" class="form-horizontal" role="form" action="<?php $_SERVER['PHP_SELF'];?>" method="POST" autocomplete="off">
+
+                  <form class="user" form id="loginform" class="form-horizontal" role="form" action="index.php" method="POST" autocomplete="off">
                     <div class="form-group">
                       <input type="email" class="form-control form-control-user" id="email" name="email" aria-describedby="emailHelp" placeholder="Ingresa tu correo electronico..."  required>
                     </div>
-                    <a href="login.html" type="submit" id="btn-login" class="btn btn-primary btn-user btn-block">
+                    <a href="#" type="submit" id="btn-login" class="btn btn-primary btn-user btn-block">
                      Restablecer Contraseña
                     <i class="fas fa-exclamation-triangle"></i> 
                     </a>
-                  </form>
-                  <hr>
+                  </form>                                                                                                                                                             <hr>
                   <div class="text-center">
                     <a class="small" href="register.html">Solicitar Cuenta</a>
                   </div>

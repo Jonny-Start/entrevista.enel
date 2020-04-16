@@ -10,56 +10,72 @@ sessionValidate();
 
 
 <body>
-  <div class="container">
-    <div class="card o-hidden border-0 shadow-lg my-5">
-      <div class="card-body p-0 bg-gray-300"> 
-        <!-- Nested Row within Card Body -->
-        <div class="row">
-          <!-- <div class="col-lg-5 d-none d-lg-block bg-register-image"></div> -->
-          <div class="col-lg-12">
-            <div class="p-5">
-              <div class="text-center">
-                <h1 class="h1 text-gray-1000 mb-5">Crea una cuenta!</h1>
-              </div>
-              <form class="user" id="form1" name= "form1" method="post" action="../Controller/ValidarInsertarUsuario.php">
-                <div class="form-group row">
-                  <div class="col-sm-12 mb-3 mb-sm-0">
-                    <input name="nombre" type="text" class="form-control form-control-user" id="nombre" placeholder="Nombre(s)" required>
-                 </div>
-                 </div>
-                 <div class="form-group row">
-                  <div class="col-sm-12">
-                    <input type="text" name="apellidos" class="form-control form-control-user" id="apellidos" placeholder="Apellido(s)" required>
-                </div>
-                </div>
-                <div class="form-group row">
-                <div class="col-lg-12">
-                  <input type="text" name="co" class="form-control form-control-user" id="co" placeholder="CO" required>
-                </div>
-                <!-- <div class="form-group row">
+    <div class="container">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0 bg-gray-300">
+                <!-- Nested Row within Card Body -->
+                <div class="form-row">
+                    <!-- <div class="col-lg-5 d-none d-lg-block bg-register-image"></div> -->
+                    <div class="col-lg-12">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h1 text-gray-1000 mb-5">Crea una cuenta!</h1>
+                            </div>
+                            <form class="user" id="form1" name="form1" method="post"
+                                action="../Controller/ValidarInsertarUsuario.php">
+                                <div class="form-group row">
+                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                        <input name="nombre" type="text" class="form-control form-control-user"
+                                            id="nombre" placeholder="Nombre(s)" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <input type="text" name="apellidos" class="form-control form-control-user"
+                                            id="apellidos" placeholder="Apellido(s)" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-12">
+                                        <input type="text" name="co" class="form-control form-control-user" id="co"
+                                            placeholder="CO" required>
+                                    </div>
+                                    <!-- <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                   </div> -->
-              </div>
-              <div class="form-group row">
-               <div class="col-lg-12">
-               <input type="text" name="Perfil" class="form-control form-control-user" id="Perfil" placeholder="Perfil" required>
-                </div>
-                </div>
-                <div class="form-group row">
-                <div class="col-lg-12">
-                  <input type="email" name="correo_electronico" class="form-control form-control-user" id="correo_electronico" placeholder="Correo electronico de Enel" required>
-                </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-sm-12">
-                    <input type="password" class="form-control form-control-user" id="contraseña" name="contraseña" placeholder="contraseña" required>
-                  </div>
-                </div>
-                <input type="submit" class="btn btn-primary btn-user btn-block border-bottom-success " id="button" name="button" value="Registrar Cuenta">
-                  
-                
-                <!-- <hr>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-12">
+                                        <input type="text" name="Perfil" class="form-control form-control-user"
+                                            id="Perfil" placeholder="Perfil" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-12">
+                                        <input type="email" name="correo_electronico"
+                                            class="form-control form-control-user" id="correo_electronico"
+                                            placeholder="Correo electronico de Enel" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                <div class="col-lg-12">
+                                    <div class="input-group">
+                                        <input type="password" class="form-control form-control-user" id="contraseña"
+                                            name="contraseña" placeholder="contraseña" required>
+                                        <div class="input-group-append">
+                                            <button id="show_password" class="btn btn-primary" type="button"
+                                                onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <input type="submit" class="btn btn-primary btn-user btn-block border-bottom-success "
+                                    id="button" name="button" value="Registrar Cuenta">
+
+
+                                <!-- <hr>
                 <a href="index.html" class="btn btn-google btn-user btn-block">
                   <i class="fab fa-google fa-fw"></i> Register with Google
                 </a>
@@ -67,8 +83,8 @@ sessionValidate();
                   <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
                 </a>
               </form> -->
-              <hr />
-                     <center> <?php 
+                                <hr />
+                                <center> <?php 
                     if (isset($_GET["msj"])) {
 
                         if ($_GET["msj"]=="1") {
@@ -80,26 +96,43 @@ sessionValidate();
                         }
                     }
                     ?></center>
-              <!-- <div class="text-center">
+                                <!-- <div class="text-center">
                 <a class="small" href="forgot-password.html">Forgot Password?</a>
               </div> -->
-              <!-- <div class="text-center">
+                                <!-- <div class="text-center">
                 <a class="small" href="login.html">Already have an account? Login!</a>
               </div> -->
+                        </div>
+                    </div>
+
+                </div>
+                <center><img src="../img/enel.png" alt="Logo De Enel" width="40%"></center>
             </div>
-          </div>
-          
+
         </div>
-        <center><img src="../img/enel.png" alt="Logo De Enel" width="40%"></center>
-      </div>
-      
+
     </div>
 
-  </div>
- 
-
+    <script type="text/javascript">
+function mostrarPassword() {
+    var cambio = document.getElementById("contraseña");
+    if (cambio.type == "password") {
+        cambio.type = "text";
+        $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+    } else {
+        cambio.type = "password";
+        $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+    }
+}
+$(document).ready(function() {
+    //CheckBox mostrar contraseña
+    $('#ShowPassword').click(function() {
+        $('#Password').attr('type', $(this).is(':checked') ? 'text' : 'password');
+    });
+});
+</script>
 </body>
-           
+
 
 
 
@@ -130,7 +163,7 @@ sessionValidate();
 
 
 
-        <?php include FOLDER_TEMPLATE. "scripts.php"; ?>
+<?php include FOLDER_TEMPLATE. "scripts.php"; ?>
 </body>
-</html>
 
+</html>
