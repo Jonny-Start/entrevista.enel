@@ -7,16 +7,13 @@ sessionValidate();
 <?php include FOLDER_TEMPLATE."sidebar.php"; ?>
   
 <body id="page-top">
-<!-- Page Wrapper -->
-<div id="wrapper">
-  <!-- Content Wrapper -->
-  <div id="content-wrapper" class="d-flex flex-column">
-    <!-- Main Content -->
-    <div id="content">
-
-      <!-- Begin Page Content -->
-      <div class="container-fluid">
-
+<div class="container">
+          <div class="card o-hidden border-0 shadow-lg my-5">
+              <div class="card-body p-0 bg-gray-300">
+                  <div class="row">
+                      <div class="col-md-12">
+                          <div class="col-md-12 mx-auto">
+                              <div class="form-group">  
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
           <div class="card-header py-3">
@@ -31,6 +28,7 @@ sessionValidate();
                     <th>Nombre </th>
                     <th>Cedula de Ciudadania</th>
                     <th>Telefono Celular</th>
+                    <th>Reporte</th>
                   </tr>
                 </thead>
                 <tfoot>
@@ -38,6 +36,7 @@ sessionValidate();
                     <th>Nombre </th>
                     <th>Cedula de Ciudadania</th>
                     <th>Telefono Celular</th>
+                    <th>Reporte</th>
                   </tr>
                 </tfoot>
                 <?php 
@@ -51,7 +50,7 @@ sessionValidate();
                   <td><?php echo $datos['nombre']?></td>
                   <td><?php echo $datos['cc']?></td>
                   <td><?php echo $datos['telefono']?></td>
-                  <td><a href="../Reportes/pdf-Entrevista_Psicologa.php?cc=<?php echo $datos['cc']?>">Exportar PDf</a></td>
+                  <td><a href="../Reportes/pdf-Entrevista_Psicologa.php?cc=<?php echo $datos['cc']?>"><img src="../img/pdf.png" alt="Sacar Reporte" width="30" height="40"></a></td>
                   </tr>
                   <?php  
                     }

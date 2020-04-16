@@ -15,6 +15,7 @@ sessionValidate();
   <div class="text-center">
     <h1 class="jumbotron">Entrevista Psicológica</h1>
   </div>
+  <a href="consultarEntrevistaPsicologa.php" style="text-rigth">Administrar</a>
   <div class="progress">
     <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
   </div>
@@ -211,11 +212,13 @@ sessionValidate();
 
       <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
       <input type="submit" name="button" class="submit btn btn-success" value="registrar" id="button" /><br>
+      
     </fieldset>
-     <?php 
+     <?php //<a href="../Reportes/pdf-Entrevista_Psicologa.php?cc=<?php echo $datos['cc']">
                     if (isset($_GET["msj"])) {
 
                         if ($_GET["msj"]=="1") {
+                          
                           // require_once "../Model/conexioon.php";
                           // // $co = $_GET['correo_electronico'];
                           // $sql= "SELECT EGeneradas,co FROM usuario Where co = '1006844604' ";
