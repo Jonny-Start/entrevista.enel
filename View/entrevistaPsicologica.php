@@ -17,7 +17,7 @@ sessionValidate();
   <div class="progress">
     <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
   </div>
-
+  <h3><a href="principal.php">Salir</a></h3>
   <form id="regiration_form" novalidate action="../Controller/ValidarinsertarEntrevistaPs.php" method="post">
     <fieldset>
       <h2>Paso 1: Datos</h2>
@@ -65,19 +65,15 @@ sessionValidate();
       <div class="form-group row">
         <div class="col-sm-6">
           <label for="fechaEntrevista">Fecha de la Entrevista</label>
-          <input type="text" class="form-control form-control-user" id="fechaEntrevista" name="fechaEntrevista" placeholder="<?php echo $fecha_actual ?>" readonly="readonly" required>
+          <input type="text" class="form-control form-control-user" id="fechaEntrevista" name="fechaEntrevista" value="<?php echo $fecha_actual ?>" readonly="readonly" required>
         </div>
         <div class="col-sm-6">
           <label for="psicologa">Entrevistador(a)</label>
-          <input type="text" class="form-control form-control-user" id="psicologa" name="psicologa" placeholder="<?php echo $_SESSION['user'] ?>" readonly="readonly" required>
+          <input type="email" class="form-control form-control-user" id="psicologa" name="psicologa" value="<?php echo $_SESSION['user'] ?>" readonly="readonly" required>
         </div>
       </div>
       <input type="button" name="data[password]" class="next btn btn-info" value="Siguiente" />
     </fieldset>
-
-
-
-
 
     <fieldset>
       <h2> Paso 2: Comportamientos</h2>
@@ -206,7 +202,6 @@ sessionValidate();
             </div>
           </div>
         </div>
-
         <div class="form-group row">
           <!-- <div class="col-sm-6"> -->
           <label class="titulocp" for="concepto">Concepto Psicóloga</label><br><br>
@@ -217,18 +212,25 @@ sessionValidate();
       <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
       <input type="submit" name="button" class="submit btn btn-success" value="registrar" id="button" /><br>
     </fieldset>
-    <center> <?php 
+     <?php 
                     if (isset($_GET["msj"])) {
 
                         if ($_GET["msj"]=="1") {
-                            echo "<p stile='color:green'>SE INSERTO CORRECTAMENTE</p>";
-
+                          ?>
+                            <script>
+                            alert("SE REGISTRO CORRECTAMENTE");
+                            </script>
+                          <?php
                         }else if ($_GET["msj"]=="2")
                         {
-                            echo "<p style='color:red'> NO SE PUDO HACER EL REGISTRO</p>";
+                          ?>
+                          <script>
+                            alert("NO SE PUDO HACER EL REGISTRO");
+                          </script>
+                          <?php
                         }
                     }
-                    ?></center>
+              ?>
   </form>
 </div>
 </div>
