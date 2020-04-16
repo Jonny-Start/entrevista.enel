@@ -8,6 +8,7 @@ sessionValidate();
 <style type="text/css">
   #regiration_form fieldset:not(:first-of-type) {
     display: none;
+    
   }
 </style>
 <div class="container">
@@ -24,11 +25,11 @@ sessionValidate();
       <div class="form-group row">
         <div class="col-sm-6">
           <label for="apellido">Nombre Completo</label>
-          <input type="Text" class="form-control" id="nombre" name="nombre" placeholder="NOMBRE COMPLETO" required>
+          <input type="Text" class="form-control form-control-user" id="nombre" name="nombre" placeholder="NOMBRE COMPLETO" required>
         </div>
         <div class="col-sm-6">
           <label for="cedula">Cédula</label>
-          <input type="number" class="form-control" id="cc" name="cc" placeholder="NUMERO DE DOCUMENTO" required>
+          <input type="number" class="form-control form-control-user" id="cc" name="cc" placeholder="NUMERO DE DOCUMENTO" required>
         </div>
       </div>
 
@@ -72,7 +73,7 @@ sessionValidate();
           <input type="email" class="form-control form-control-user" id="psicologa" name="psicologa" value="<?php echo $_SESSION['user'] ?>" readonly="readonly" required>
         </div>
       </div>
-      <input type="button" name="data[password]" class="next btn btn-info" value="Siguiente" />
+      <input type="button" name="botton" id="botton" class="btn next btn-info btn-primary btn-user  border-bottom-success" value="Siguiente" />
     </fieldset>
 
     <fieldset>
@@ -158,7 +159,6 @@ sessionValidate();
           <textarea class="form-control" name="observaciones" id="observaciones" placeholder="¿Registra informacion relevante al proceso de seleccion y/o contratacio?"></textarea>
         </div>
       </div>
-      <br>
 
       <div class="container">
         <h1 class="tituloc">Concepto (Resumen de la Valoración)</h1>
@@ -166,18 +166,18 @@ sessionValidate();
           <div class="form-group row">
                  <div class="form-check form-check-inline">
               <input type="checkbox" class="form-check-input" id="adecuado" value="si" name="adecuado" required>
-              <label class="form-check-label" for="defaultCheck1">Adecuado(a)</label>
+              <label class="form-check-label minimal" for="defaultCheck1">Adecuado(a)</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" value="si" id="adecuadoP" name="adecuadoP" required>
-              <label class="form-check-label" for="defaultCheck1">
+              <input class="form-check-input " type="checkbox" value="si" id="adecuadoP" name="adecuadoP" required>
+              <label class="form-check-label minimal" for="defaultCheck1">
                 Adecuado(a) para otro cargo
               </label>
             </div>
 
             <div class="form-check form-check-inline">
-              <input type="checkbox" class="form-check-input" id="parcialmente" value="si" name="parcialmente" required>
-              <label class="form-check-label" for="defaultCheck1"> Parcialmente adecuado(a)</label>
+              <input type="checkbox" class="form-check-input derecha" id="parcialmente" value="si" name="parcialmente" required>
+              <label class="form-check-label minimal" for="defaultCheck1"> Parcialmente adecuado(a)</label>
             </div>
 
           </div>
@@ -195,7 +195,7 @@ sessionValidate();
               </label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" value="si" id="noA" name="noA" required>
+              <input class="form-check-input derecha" type="checkbox" value="si" id="noA" name="noA" required>
               <label class="form-check-label" for="defaultCheck1">
                 No Adecuado(a)
               </label>
@@ -216,6 +216,16 @@ sessionValidate();
                     if (isset($_GET["msj"])) {
 
                         if ($_GET["msj"]=="1") {
+                          // require_once "../Model/conexioon.php";
+                          // // $co = $_GET['correo_electronico'];
+                          // $sql= "SELECT EGeneradas,co FROM usuario Where co = '1006844604' ";
+                          // $rta=$objCnx->query($sql);
+                          // while ($datos=$rta->fetch_array()){
+                          //     $EGeneradas= $datos['EGeneradas'];
+                          //     $co=$datos['co'];                           
+                          //   }
+                          
+                          // $sql = "UPDATE `usuario` SET `EGeneradas` + 1 WHERE `usuario`.`co` = $co";
                           ?>
                             <script>
                             alert("SE REGISTRO CORRECTAMENTE");

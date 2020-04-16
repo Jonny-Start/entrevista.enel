@@ -6,13 +6,15 @@ require "conexionBaseDeDatos.php";
 
 $user=$_REQUEST['usuario'];
 $pass = $_REQUEST['password'];
+// $co=0;
+// $rol="";
 
+// $mysqli ="SELECT * FROM usuario where co = '$co' and Perfil = '$rol' and correo_electronico = '$user'";
+// $rta=$objConexion->query($mysqli);
 
 $objConexion=conectarse();
 
 $sql="SELECT * FROM usuario where correo_electronico = '$user' and contraseña = '$pass'";
-
-
 
 $resultado=$objConexion->query($sql);
 
