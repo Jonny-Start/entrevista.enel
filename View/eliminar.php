@@ -73,7 +73,7 @@ sessionValidate();
           </td>
       </tr>
   </table>
-                                      </table>
+                                   
                                   </form>
                               </div>
                           </div>
@@ -121,19 +121,19 @@ sessionValidate();
                               }
                             }
                             ?>
-                              <?php 
+                    
 
-                      extract($_REQUEST);
+                    
 
-                      if(isset($_REQUEST["msj"])){
-                        if ($_REQUEST["msj"]=="1"){
-                          echo "<p> se elimino correctamente el empleado<p>";
-                        }else
-                        {
-                          echo "<p> no se elimino el empleado<p>";
-                        }
-                      }
-                       ?>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                           </form>
                       </div>
                   </div>

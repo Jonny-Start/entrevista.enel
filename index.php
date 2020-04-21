@@ -85,9 +85,9 @@
                                                 <!-- btn-google -->
                                                 <i class="fas fa-exclamation-triangle"></i> Olvidé mi contraseña
                                             </a>
-                                            <a href="#" class="btn btn-primary btn-user btn-block btn-primary ">
+                                            <a href="View/contactame.php" class="btn btn-primary btn-user btn-block btn-primary ">
                                                 <!-- btn-facebook -->
-                                                <i class="fas fa-info-circle"></i> Inscripción
+                                                <i class="fas fa-info-circle"></i> Solicitar Inscripción
                                             </a>
                                     </form>
                                     <hr>
