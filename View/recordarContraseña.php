@@ -29,7 +29,7 @@
                     <p class="mb-4">Te entendemos, suele pasar. Simplemente ingresa tu dirección de correo electrónico a continuación y te enviaremos un enlace para restablecer tu contraseña.</p>
                   </div>
 
-                  <form class="user" form id="loginform" class="form-horizontal" role="form" action="index.php" method="POST" autocomplete="off">
+                  <form class="user" form id="loginform" class="form-horizontal" role="form" action="../controller/modifica_usuario.php" method="POST" autocomplete="off">
                     <div class="form-group">
                       <input type="email" class="form-control form-control-user" id="email" name="email" aria-describedby="emailHelp" placeholder="Ingresa tu correo electronico..."  required>
                     </div>
@@ -39,7 +39,7 @@
                     </a>
                   </form>                                                                                                                                                             <hr>
                   <div class="text-center">
-                    <a class="small" href="register.html">Solicitar Cuenta</a>
+                    <a class="small"id="restablecer-correo" name="restablecer-correo" href="register.html">Solicitar Cuenta</a>
                   </div>
                   <div class="text-center">
                     <a class="small" href="../index.php">Ya tienes una cuenta? Login!</a>
