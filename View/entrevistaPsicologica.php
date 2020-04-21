@@ -9,7 +9,7 @@ sessionValidate();
   #regiration_form fieldset:not(:first-of-type) {
     display: none; 
   }
-</style>
+</style>  
 <div class="container">
   <div class="text-center">
     <h1 class="jumbotron">Entrevista Psicológica</h1>
@@ -18,7 +18,14 @@ sessionValidate();
   <div class="progress">
     <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
   </div>
-  <h3><a href="principal.php">Salir</a></h3>
+  <script>
+  function seguro() {
+    window.onbeforeunload = function() {
+      return "¿Estás seguro que deseas salir de la actual página?"
+  }  
+}
+  </script>
+  <h3><a href="principal.php" onclick="seguro()">Salir</a></h3>
   <form id="regiration_form" novalidate action="../Controller/ValidarinsertarEntrevistaPs.php" method="post">
     <fieldset>
       <h2>Paso 1: Datos</h2>
@@ -205,7 +212,6 @@ sessionValidate();
           <textarea class="form-control" name="observaciones" id="observaciones" placeholder="¿Registra informacion relevante al proceso de seleccion y/o contratacio?"></textarea>
         </div>
       </div>
-
       <div class="container">
         <h1 class="tituloc">Concepto (Resumen de la Valoración)</h1>
         <div class="casilla">
@@ -251,32 +257,34 @@ sessionValidate();
         <div class="form-group row">
           <!-- <div class="col-sm-6"> -->
           <label class="titulocp" for="concepto">Concepto Psicóloga</label><br><br>
-          <textarea class="campo form-control" name="concepto" id="concepto" placeholder="¿Cual es tu Concepto?" required></textarea>
+          <textarea class="campo form-control" onKeyUp="Habilitar()" name="concepto" id="concepto" placeholder="¿Cual es tu Concepto?" required></textarea>
         </div>
       </div>
 
-      <script type="text/javaScript">
-      function validar2() {
-      var a = document.getElementById("concepto").value;
-      if(a.length == 0){
-        error("TE FALTAN POR LLENAR EL CONCEPTO");
-      }
-      return true; 
-      }
-      </script>
+      <SCRIPT type="text/javascript">
+       function control(caracter) {
+    caracter = (document.layers) ? caracter.which : event.keyCode;
+        if (caracter==13){
+          alert('Se ha pulsado la tecla Enter, esta tecla esta deshabilitada para este formulario');
+          return false;
+        }
+    }
+      document.onkeypress = control ;
+      </SCRIPT>
+
       <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
-      <input type="submit" name="button" onclick="validar2()" class="submit btn btn-success" value="registrar" id="button" /><br>
+      <input type="submit" name="boton" class="submit btn btn-success" value="registrar" id="boton" /><br>
       
     </fieldset>
      <?php //<a href="../Reportes/pdf-Entrevista_Psicologa.php?cc=<?php echo $datos['cc']">
                     if (isset($_GET["msj"])) {
 
                         if ($_GET["msj"]=="1") {
-                          ?>
-                            <script>
-                            alert("SE REGISTRO CORRECTAMENTE");
-                            </script>
-                          <?php
+                           ?>
+                             <script>
+                             alert("SE REGISTRO CORRECTAMENTE");
+                             </script>
+                           <?php
                         }else if ($_GET["msj"]=="2")
                         {
                           ?>
@@ -290,10 +298,10 @@ sessionValidate();
   </form>
 </div>
 </div>
-
 <?php include FOLDER_TEMPLATE . "scripts.php"; ?>
 
 <script type="text/javascript">
+
   $(document).ready(function() {
     var current = 1,
       current_step, next_step, steps;
@@ -323,3 +331,5 @@ sessionValidate();
     }
   });
 </script>
+
+<script type="text/javaScript" src="../vendor/.js"></script>

@@ -29,6 +29,6 @@ if ($objCnx->query($sql)) {
 }else{
 // alert
 echo("no se pudo hacer el registro "+$sql);
-header("location:../View/entrevistaPsicologica.php?pag=insertar&msj=2");
+header("location:../View/entrevistaPsicolgica.php?pag=insertar&msj=2");
 	mysqli_close($objCnx);
 }
