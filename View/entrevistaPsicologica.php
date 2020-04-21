@@ -7,8 +7,7 @@ sessionValidate();
 <link href="../vendor/fontawesome-free/css/regular.css" rel="stylesheet" type="text/css">
 <style type="text/css">
   #regiration_form fieldset:not(:first-of-type) {
-    display: none;
-    
+    display: none; 
   }
 </style>
 <div class="container">
@@ -24,28 +23,27 @@ sessionValidate();
     <fieldset>
       <h2>Paso 1: Datos</h2>
       <div class="form-group row">
-        <div class="col-sm-6">
-          <label for="apellido">Nombre Completo</label>
+        <div class="col-sm-12">
+          <label for="nombre">Nombre Completo</label>
           <input type="Text" class="form-control form-control-user" id="nombre" name="nombre" placeholder="NOMBRE COMPLETO" required>
         </div>
-        <div class="col-sm-6">
+        </div>
+        <div class="form-group row">
+        <div class="col-sm-4">
           <label for="cedula">Cédula</label>
           <input type="number" class="form-control form-control-user" id="cc" name="cc" placeholder="NUMERO DE DOCUMENTO" required>
         </div>
-      </div>
-
-      <div class="form-group row">
-        <div class="col-sm-4">
+        <!-- <div class="col-sm-4">
           <label for="fecha_nac">Fecha de nacimiento</label>
           <input type="date" class="form-control form-control-user" id="fecha_nac" name="fecha_nac" placeholder="Fecha Nacimiento" max="2005-01-01" required>
-        </div>
+        </div> -->
         <div class="col-sm-4">
           <label for="dependencia">Dependencia</label>
           <input type="text" class="form-control form-control-user" id="dependencia" name="dependencia" placeholder="DEPENDENCIA" required>
         </div>
         <div class="col-sm-4">
           <label for="cargo">Cargo</label>
-          <input type="text" class="form-control form-control-user" id="cargo" name="cargo" placeholder="CARGO" required>
+          <input type="text" class="form-control form-control-user" id="cargo" name="cargo" placeholder="CARGO" value="Profesional Selección" readonly="readonly" required>
         </div>
       </div>
       <div class="form-group row">
@@ -59,8 +57,8 @@ sessionValidate();
           <label for="telefono">Teléfono</label>
           <input type="number" class="form-control form-control-user" id="telefono" name="telefono" placeholder="TELEFO O CELULAR" required>
         </div>
-        <div class="col-sm-6">
-          <label for="aspiracionSal">Aspiración Salarial</label>
+        <div class="col-sm-6" >
+          <label for="aspiracionSal"  class="input-group">Aspiración Salarial</label>
           <input type="number" class="form-control form-control-user" id="aspiracionSal" name="aspiracionSal" placeholder="ASPIRACION SALARIAL" required>
         </div>
       </div>
@@ -74,7 +72,23 @@ sessionValidate();
           <input type="email" class="form-control form-control-user" id="psicologa" name="psicologa" value="<?php echo $_SESSION['user'] ?>" readonly="readonly" required>
         </div>
       </div>
-      <input type="button" name="botton" id="botton" class="btn next btn-info btn-primary btn-user  border-bottom-success" value="Siguiente" />
+      <script type="text/javaScript">
+      function validar1() {
+      var a = document.getElementById("nombre").value;
+      var b = document.getElementById("cc").value;
+      var c = document.getElementById("dependencia").value;
+      var d = document.getElementById("cargo").value;
+      var e = document.getElementById("cargoAspira").value;
+      var f = document.getElementById("nombre").value;
+      var g = document.getElementById("telefono").value;
+      var h = document.getElementById("aspiracionSal").value;
+      if(a.length == 0 || b.length == 0 || c.length == 0 || d.length == 0 || e.length == 0 || f.length == 0 || g.length == 0 || h.length == 0){
+        alert("TE FALTAN DATOS POR LLENAR");
+      }
+      return true;
+      }
+      </script>
+      <input type="button"  name="botton" onclick="validar1()" id="botton" class="btn next btn-info btn-primary btn-user  border-bottom-success" value="Siguiente" /> 
     </fieldset>
 
     <fieldset>
@@ -82,37 +96,68 @@ sessionValidate();
       <div class="form-group row">
         <div class="col-sm-3">
           <label for="responsabilidad">Responsabilidad</label>
-          <input type="number" class="form-control" name="responsabilidad" id="responsabilidad" placeholder="1-5" min="1" max="5" required>
+          <select class="form-control" id="responsabilidad" name="responsabilidad" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
         </div>
         <div class="col-sm-3">
           <label for="productividad">Productividad</label>
-          <input type="number" class="form-control" name="productividad" id="productividad" placeholder="1-5" min="1" max="5" required>
+          <select class="form-control" id="productividad" name="productividad" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
         </div>
         <div class="col-sm-3">
           <label for="gestionCambio">Gestión de Cambio</label>
-          <input type="number" class="form-control" name="gestionCambio" id="gestionCambio" placeholder="1-5" min="1" max="5" required>
+          <select class="form-control" id="gestionCambio" name="gestionCambio" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
         </div>
-        <div class="col-sm-3">
+      <div class="col-sm-3">
           <label for="innovacion">Innovación</label>
-          <input type="number" class="form-control" name="innovacion" id="innovacion" placeholder="1-5" min="1" max="5" required>
+          <select class="form-control" id="innovacion" name="innovacion" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
         </div>
-      </div>
-      <div class="form-group row">
         <div class="col-sm-6">
           <label for="resiliencia">Resiliencia</label>
-          <input type="number" class="form-control" name="resiliencia" id="resiliencia" placeholder="1-5" min="1" max="5" required>
+          <select class="form-control" id="resiliencia" name="resiliencia" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
         </div>
         <div class="col-sm-6">
           <label for="confianza">Confianza</label>
-          <input type="number" class="form-control" name="confianza" id="confianza" placeholder="1-5" min="1" max="5" required>
+          <select class="form-control" id="confianza" name="confianza" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
         </div>
       </div>
       <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
       <input type="button" name="next" class="next btn btn-info" value="Siguiente" />
     </fieldset>
-
-
-
     <fieldset>
       <h2>Paso 3: Información de contacto</h2>
       <div class="form-group row">
@@ -144,7 +189,7 @@ sessionValidate();
       </div>
       <div class="form-group row">
         <div class="col-sm-12">
-          <label for="explicacion">Explicación (si es candidato único)</label>
+          <label for="explicacion">Explica tu Seleccion</label>
           <textarea class="form-control" name="explicacion" id="explicacion" placeholder="explicacion"></textarea>
         </div>
       </div>
@@ -210,25 +255,23 @@ sessionValidate();
         </div>
       </div>
 
+      <script type="text/javaScript">
+      function validar2() {
+      var a = document.getElementById("concepto").value;
+      if(a.length == 0){
+        error("TE FALTAN POR LLENAR EL CONCEPTO");
+      }
+      return true; 
+      }
+      </script>
       <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
-      <input type="submit" name="button" class="submit btn btn-success" value="registrar" id="button" /><br>
+      <input type="submit" name="button" onclick="validar2()" class="submit btn btn-success" value="registrar" id="button" /><br>
       
     </fieldset>
      <?php //<a href="../Reportes/pdf-Entrevista_Psicologa.php?cc=<?php echo $datos['cc']">
                     if (isset($_GET["msj"])) {
 
                         if ($_GET["msj"]=="1") {
-                          
-                          // require_once "../Model/conexioon.php";
-                          // // $co = $_GET['correo_electronico'];
-                          // $sql= "SELECT EGeneradas,co FROM usuario Where co = '1006844604' ";
-                          // $rta=$objCnx->query($sql);
-                          // while ($datos=$rta->fetch_array()){
-                          //     $EGeneradas= $datos['EGeneradas'];
-                          //     $co=$datos['co'];                           
-                          //   }
-                          
-                          // $sql = "UPDATE `usuario` SET `EGeneradas` + 1 WHERE `usuario`.`co` = $co";
                           ?>
                             <script>
                             alert("SE REGISTRO CORRECTAMENTE");

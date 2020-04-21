@@ -15,8 +15,26 @@ $rta = $objCnx->query($query);
   {
     background-color: #E0E0F8;
   }
-  </style>
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+  table {
+  border-collapse: collapse;
+  width: 100%;
+  }
+
+  th, td {
+  text-atdgn: left;
+  padding: 8px;
+  }
+
+  tr:nth-child(even) 
+{
+  background-color: #f2f2f2;
+}
+h2
+{
+  text-align: center;
+}
+</style>
 </head>
 <body>
 <header>
@@ -30,7 +48,6 @@ $rta = $objCnx->query($query);
 </tr>
 </table>
 </header>
-<br >
 <hr />
 <?php 
      require_once "../Model/conexioon.php";
@@ -38,102 +55,69 @@ $rta = $objCnx->query($query);
      $rta=$objCnx->query($sql);
      while ($datos=$rta->fetch_array()){                     
 ?>
-<ul style:text: black;><span >
-  <li class="list-group-item list-group-item-info">Nombre:  <?php echo $datos['nombre']?> </li>
-  <li class="list-group-item list-group-item-info">Cedula:  <?php echo $datos['cc']?> </li>
-  <li class="list-group-item list-group-item-info">Fecha De Nacimiento:  <?php echo $datos['fecha_nac']?> </li>
-  <li class="list-group-item list-group-item-info">Dependencia:  <?php echo $datos['dependencia']?> </li>
-  <li class="list-group-item list-group-item-info">Cargo:  <?php echo $datos['cargo']?> </li>
-  <li class="list-group-item list-group-item-info">Cargo al que Aspira:  <?php echo $datos['cargoAspira']?> </li>
-  <li class="list-group-item list-group-item-info">Telefono:  <?php echo $datos['telefono']?> </li>
-  <li class="list-group-item list-group-item-info">Aspiracion Salarial:  <?php echo $datos['aspiracionSal']?> </li>
-  <li class="list-group-item list-group-item-info">Fecha Entrevista:  <?php echo $datos['fechaEntrevista']?> </li>
-  <li class="list-group-item list-group-item-info">Entrevistador(a):  <?php echo $datos['psicologa']?> </li>
-  <li class="list-group-item list-group-item-info">Resultado de Idiomas:  <?php echo $datos['resultadoI']?> </li>
-  <li class="list-group-item list-group-item-info">Fuente de Reclutamiento:  <?php echo $datos['fuenteR']?> </li>
-  <li class="list-group-item list-group-item-info">Concepto:  <?php echo $datos['concepto']?> </li>
-  </span></ul>
-
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+<h2>Informacion Primaria</h2>
 <table class="table table-bordered" width="100%" cellspacing="10">
-                <thead>
-                  <tr>
-                    <th>Nombre </th>
-                    <th>Cedula de Ciudadania</th>
-                    <th>Telefono Celular</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                  <td><?php echo $datos['nombre']?></td>
-                  <td><?php echo $datos['cc']?></td>
-                  <td><?php echo $datos['telefono']?></td>
-                  </tr>
-                  <?php  
-                    }
-                   ?>
-                </tbody>
-              </table>
+  <tbody>
+  <tr>
+  <td>Nombre:</td>
+  <td><?php echo $datos['nombre']?></td>
+  </tr>
+  <tr>
+  <td>Cedula:</td>
+  <td><?php echo $datos['cc']?> </td>
+  </tr>
+  <tr>
+  <td>Dependencia: </td>
+  <td> <?php echo $datos['dependencia']?> </td>
+  </tr>
+  <tr>
+  <td>Cargo:  </td>
+  <td> <?php echo $datos['cargo']?></td>
+  </tr>
+  <tr>
+  <td>Cargo al que Aspira:  </td>
+  <td> <?php echo $datos['cargoAspira']?></td>
+  </tr>
+  <tr>
+  <td>Telefono: </td>
+  <td> <?php echo $datos['telefono']?> </td>
+  </tr>
+  <tr>
+  <td>Aspiracion Salarial: </td>
+  <td> <?php echo $datos['aspiracionSal']?> </td>
+  </tr>
+  <tr>
+  <td>Fecha Entrevista: </td>
+  <td> <?php echo $datos['fechaEntrevista']?> </td>
+  </tr>
+  <tr>
+  <td>Entrevistador(a): </td>
+  <td> <?php echo $datos['psicologa']?> </td>
+  </tr>
+  <tr>
+  <td>Resultado de Idiomas:  </td>
+  <td><?php echo $datos['resultadoI']?> </td>
+  </tr>
+  <tr>
+  <td>Fuente de Reclutamiento: </td>
+  <td> <?php echo $datos['fuenteR']?> </td>
+  </tr>
+  <!-- <tr>
+  <td>Concepto:  </td>
+  <td> </td>
+  </tr> -->
+  </tbody>
+</table>
+<br />
+<hr/>
+<h2>Concepto Psicóloga</h2>
+<p><?php echo $datos['concepto']?> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, reprehenderit! Cupiditate, sunt dicta. Architecto rerum, deleniti facilis aliquid ducimus quisquam! Adipisci, eum, doloribus reiciendis nemo dolorum dolor provident at accusantium corrupti, cum quia minus? Facere quos est accusantium dicta? Consectetur aliquam, necessitatibus ullam repellat laborum eaque optio quod maiores. Dignissimos.</p>
+<hr />
+<br><br><br><br>
+
+  <?php  
+  }
+  ?>
 </body>
 </html>
 <?php
@@ -141,6 +125,7 @@ require_once("../dompdf/autoload.inc.php");
 use Dompdf\Dompdf;
 $dompdf = new DOMPDF();
 $dompdf->load_html(ob_get_clean());
+// $mpdf->SetProtection(array(), '123456', '123456');  // esto es para encryptar los pdf pero con mpdf
 $dompdf->render();
 $pdf = $dompdf->output();
 $filename = 'Entrevista_psicologica.pdf';

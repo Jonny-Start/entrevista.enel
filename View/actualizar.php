@@ -181,10 +181,18 @@ sessionValidate();
 
                       if(isset($_REQUEST["msj"])){
                         if ($_REQUEST["msj"]=="1"){
-                          echo "<p> se actualizo correctamente el empleado<p>";
+                        ?>
+                            <script>
+                            alert("SE ACTUALIZO LA INFORMACIN CORRECTAMENTE ");
+                            </script>
+                        <?php
                         }else
                         {
-                          echo "<p> no se actualizo el empleado<p>";
+                        ?>
+                            <script>
+                            alert("NO SE PUDO HACER LA ACTUALIZACION, VERIFICA LOS DATOS INGRESADOS");
+                            </script>
+                        <?php
                         }
                       }
                        ?>

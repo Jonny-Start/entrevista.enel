@@ -8,11 +8,11 @@ ini_set('date.timezone', 'America/Bogota');
 $fecha= date("Y-m-d H:i:s");
 
 
-$sql= "INSERT INTO  entrevistapsicologica (nombre, cc, fecha_nac, dependencia, cargo, cargoAspira, telefono, aspiracionSal,
- fechaEntrevista, psicologa, responsabilidad,productividad, gestionCambio,
+$sql= "INSERT INTO  entrevistapsicologica (nombre, cc, dependencia, cargo, cargoAspira, telefono, aspiracionSal,
+ fechaEntrevista, psicologa, responsabilidad, productividad, gestionCambio,
   innovacion, resiliencia, confianza, comportamientoEtico, fuenteR, resultadoI, inteligenciaE,
    candidatoU, explicacion, resolucionProblemas, observaciones, adecuado, adecuadoP, parcialmente, primera, segunda, noA, concepto)
-VALUES('$_REQUEST[nombre]','$_REQUEST[cc]','$_REQUEST[fecha_nac]','$_REQUEST[dependencia]','$_REQUEST[cargo]',
+VALUES('$_REQUEST[nombre]','$_REQUEST[cc]','$_REQUEST[dependencia]','$_REQUEST[cargo]',
 '$_REQUEST[cargoAspira]','$_REQUEST[telefono]','$_REQUEST[aspiracionSal]','$fecha' ,'$_REQUEST[psicologa]',
 '$_REQUEST[responsabilidad]','$_REQUEST[productividad]','$_REQUEST[gestionCambio]','$_REQUEST[innovacion]',
 '$_REQUEST[resiliencia]','$_REQUEST[confianza]','$_REQUEST[comportamientoEtico]','$_REQUEST[fuenteR]',

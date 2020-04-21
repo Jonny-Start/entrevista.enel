@@ -22,12 +22,10 @@ $existe= $resultado->num_rows;
 
 if ($existe==1)
 {
-
 $usuario=$resultado->fetch_object();
 session_start();
 $_SESSION['user']=$usuario->correo_electronico;
 header("location:../View/principal.php");
-
 }
 else {
 

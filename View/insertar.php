@@ -84,18 +84,23 @@ sessionValidate();
                 </a>
               </form> -->
                                 <hr />
-                                <center> <?php 
+                                <?php 
                     if (isset($_GET["msj"])) {
 
                         if ($_GET["msj"]=="1") {
-                            echo "<p stile='color:green'>SE INSERTO CORRECTAMENTE</p>";
-
+                        ?>
+                        <script>
+                        alert("SE INSERTO CORRECTAMENTE");
+                        </script>
+                        <?php
                         }else if ($_GET["msj"]=="2")
-                        {
-                            echo "<p style='color:red'> NO SE PUDO HACER EL REGISTRO</p>";
-                        }
+                        ?>
+                        <script>
+                        alert("NO SE PUDO HACER EL REGISTRO, VERIFICA LOS DATOS INGRESADOS");
+                        </script>
+                         <?php
                     }
-                    ?></center>
+                    ?>
                                 <!-- <div class="text-center">
                 <a class="small" href="forgot-password.html">Forgot Password?</a>
               </div> -->
@@ -108,13 +113,11 @@ sessionValidate();
                 </div>
                 <center><img src="../img/enel.png" alt="Logo De Enel" width="40%"></center>
             </div>
-
         </div>
-
     </div>
 
     <script type="text/javascript">
-function mostrarPassword() {
+    function mostrarPassword() {
     var cambio = document.getElementById("contraseña");
     if (cambio.type == "password") {
         cambio.type = "text";
