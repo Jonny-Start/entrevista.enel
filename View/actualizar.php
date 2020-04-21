@@ -42,7 +42,7 @@ sessionValidate();
                               $correo_electronico="";
                               $contraseña="";
                               ?>
-                                                <input type="text" name="Buscar" id="Buscar"
+                                                <input type="number" name="Buscar" id="Buscar"
                                                     class="form-control form-control-user mb-2" size="40"
                                                     value="<?php echo $co;?>" required />
 
@@ -181,10 +181,18 @@ sessionValidate();
 
                       if(isset($_REQUEST["msj"])){
                         if ($_REQUEST["msj"]=="1"){
-                          echo "<p> se actualizo correctamente el empleado<p>";
+                        ?>
+                            <script>
+                            alert("SE ACTUALIZO LA INFORMACIN CORRECTAMENTE ");
+                            </script>
+                        <?php
                         }else
                         {
-                          echo "<p> no se actualizo el empleado<p>";
+                        ?>
+                            <script>
+                            alert("NO SE PUDO HACER LA ACTUALIZACION, VERIFICA LOS DATOS INGRESADOS");
+                            </script>
+                        <?php
                         }
                       }
                        ?>

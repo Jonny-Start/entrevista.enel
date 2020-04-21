@@ -62,8 +62,11 @@ sessionValidate();
                              ?>
                                           </tr>
                                           <tr align="center" bgcolor="#CFE0EE">
+                        </form>
+
+        <form id="form1" name="form1" method="post" action="../Controller/ValidarEliminarEmpleado.php">
           <td> <input class="btn btn-danger mt-3" type="submit" name="button" id="button"
-     value="ELIMINAR">
+                    value="ELIMINAR">
           </td>
           <td colspan="2" align="center" > Identificación a Eliminar
               <input type="number" name="co" id="co" readonly="readonly" size="40"
@@ -77,8 +80,6 @@ sessionValidate();
                                   </form>
                               </div>
                           </div>
-                          <form id="form1" name="form1" method="post"
-                              action="../Controller/ValidarEliminarEmpleado.php">
                               <table class="table table-striped table-bordered table-hover" width="42%" border="0"
                                   align="center">
                                   <tr>
