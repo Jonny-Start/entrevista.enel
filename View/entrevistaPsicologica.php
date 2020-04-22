@@ -174,6 +174,179 @@ sessionValidate();
                     </select>
                 </div>
             </div>
+            <div class="container card o-hidden border-0 shadow-lg my-5 row justify-content-center p-5">
+        <h3 class="tituloc pb-3 text-center"><b>Digital Skills- Self-assessment</b></h3>
+        <div class="row row-cols-3">
+
+            <div class="col pr-5">
+                <h5 class="tituloc pb-2 float-left"><b>Working Tools & Methodologies</b></h5>
+                <div class="col ml-2 pb-2">
+                    <input type="checkbox" class="form-check-input" id="office_basics" value="si" name="office_basics"
+                        required>
+                    <label class="form-check-label" for="defaultCheck1">MS Office basics (Word, Excel,
+                        Powerpoint</label>
+                </div>
+
+
+                <div class="col ml-2 pr-5 pb-2">
+                    <input class="form-check-input" type="checkbox" value="si" id="office_advanced"
+                        name="office_advanced" required>
+                    <label class="form-check-label" for="defaultCheck1">
+                        MS Office advanced (Access, Project)
+                    </label>
+                </div>
+
+                <div class="col ml-2 pb-2">
+                    <input type="checkbox" class="form-check-input" id="outlook" value="si" name="outlook" required>
+                    <label class="form-check-label" for="defaultCheck1"> Outlook</label>
+                </div>
+                <div class="col ml-2 pr-4 pb-2">
+                    <input type="checkbox" class="form-check-input" id="communication_tools" value="si"
+                        name="communication_tools" required>
+                    <label class="form-check-label" for="defaultCheck1"> Communication tools (Teams, Yammer)</label>
+                </div>
+                <div class="col ml-2 pb-2">
+                    <input type="checkbox" class="form-check-input" id="project_management" value="si"
+                        name="project_management" required>
+                    <label class="form-check-label" for="defaultCheck1"> Project Management</label>
+                </div>
+                <div class="col ml-2 pb-2">
+                    <input type="checkbox" class="form-check-input" id="agile" value="si" name="agile" required>
+                    <label class="form-check-label" for="defaultCheck1"> Agile</label>
+                </div>
+                <div class="col ml-2 pb-2">
+                    <input type="checkbox" class="form-check-input" id="desing_thinking" value="si"
+                        name="desing_thinking" required>
+                    <label class="form-check-label" for="defaultCheck1"> Desing thinking</label>
+                </div>
+                <div class="col mr-2 pb-2">
+                    <label for=""><b>Other</b></label><br>
+                    <textarea class="mensaje" id="mensaje" placeholder="" required></textarea>
+                </div>
+            </div>
+
+            <div class="col">
+                <h5 class="tituloc pb-2"><b>Soft Digital Skills</b></h5>
+                <div class="col ml-2 pb-2">
+                    <input class="form-check-input" type="checkbox" value="si" id="knowledge_networking"
+                        name="knowledge_networking" required>
+                    <label class="form-check-label" for="defaultCheck1">
+                        Knowledge Networking
+                    </label>
+                </div>
+                <div class="col ml-2 pb-2">
+                    <input class="form-check-input" type="checkbox" value="si" id="problem_solving"
+                        name="problem_solving" required>
+                    <label class="form-check-label" for="defaultCheck1">
+                        Problem Solving
+                    </label>
+                </div>
+                <div class="col ml-2 pb-2">
+                    <input class="form-check-input" type="checkbox" value="si" id="virtual_communication"
+                        name="virtual_communication" required>
+                    <label class="form-check-label" for="defaultCheck1">
+                        Virtual Communication
+                    </label>
+                </div>
+                <div class="col ml-2 pb-2">
+                    <input class="form-check-input" type="checkbox" value="si" id="digital_awareness"
+                        name="digital_awareness" required>
+                    <label class="form-check-label" for="defaultCheck1">
+                        Digital Awareness
+                    </label>
+                </div>
+                <div class="col ml-2 pb-2">
+                    <input class="form-check-input" type="checkbox" value="si" id="data_and_device_security"
+                        name="data_and_device_security" required>
+                    <label class="form-check-label" for="defaultCheck1">
+                        Data and device security
+                    </label>
+                </div>
+                <div class="col ml-2 pb-2">
+                    <input class="form-check-input" type="checkbox" value="si" id="content_creation"
+                        name="content_creation" required>
+                    <label class="form-check-label" for="defaultCheck1">
+                        Content creation
+                    </label>
+                </div>
+                <div class="col mr-2 pb-2">
+                    <label for=""><b>Other</b></label><br>
+                    <textarea class="mensaje" id="mensaje" placeholder="" required></textarea>
+                </div>
+            </div>
+            <div class="col">
+                <h5 class="tituloc pb-2 float-left"><b>Digital Hard Skills</b></h5>
+                <div class="col ml-2 pb-2">
+                    <input class="form-check-input" type="checkbox" value="si" id="programming" name="programming"
+                        required>
+                    <label class="form-check-label" for="defaultCheck1">
+                        Programming languages
+                    </label>
+                </div>
+                <div class="col ml-2 pb-2">
+                    <input class="form-check-input" type="checkbox" value="si" id="cloud" name="cloud" required>
+                    <label class="form-check-label" for="defaultCheck1">
+                        Cloud Services
+                    </label>
+                </div>
+                <div class="col ml-2 pr-4 pb-2">
+                    <input class="form-check-input" type="checkbox" value="si" id="it_system" name="it_system" required>
+                    <label class="form-check-label" for="defaultCheck1">
+                        It System Management and Enterprise architecture
+                    </label>
+                </div>
+                <div class="col ml-2 pb-2">
+                    <input class="form-check-input" type="checkbox" value="si" id="cyber_security" name="cyber_security"
+                        required>
+                    <label class="form-check-label" for="defaultCheck1">
+                        Cyber Security
+                    </label>
+                </div>
+                <div class="col ml-2 pb-2">
+                    <input class="form-check-input" type="checkbox" value="si" id="ux/ui_desing" name="ux/ui_desing"
+                        required>
+                    <label class="form-check-label" for="defaultCheck1">
+                        UX/UI Desing
+                    </label>
+                </div>
+                <div class="col ml-2 pb-2">
+                    <input class="form-check-input" type="checkbox" value="si" id="mobile" name="mobile" required>
+                    <label class="form-check-label" for="defaultCheck1">
+                        Mobile
+                    </label>
+                </div>
+                <div class="col ml-2 pb-2">
+                    <input class="form-check-input" type="checkbox" value="si" id="data_analytics" name="data_analytics" required>
+                    <label class="form-check-label" for="defaultCheck1">
+                    Data & Analytics
+                    </label>
+                </div>
+                <div class="col ml-2 pb-2">
+                    <input class="form-check-input" type="checkbox" value="si" id="internet_of_things" name="internet_of_things" required>
+                    <label class="form-check-label" for="defaultCheck1">
+                    Internet of Things
+                    </label>
+                </div>
+                <div class="col ml-2 pb-2">
+                    <input class="form-check-input" type="checkbox" value="si" id="it_plataforms" name="it_plataforms" required>
+                    <label class="form-check-label" for="defaultCheck1">
+                    It Plataforms
+                    </label>
+                </div>
+                <div class="col ml-2 pb-2">
+                    <input class="form-check-input" type="checkbox" value="si" id="robotic_process" name="robotic_process" required>
+                    <label class="form-check-label" for="defaultCheck1">
+                    Robotic Process Automation
+                    </label>
+                </div>
+                <div class="col mr-2 ">
+                    <label for=""><b>Other</b></label><br>
+                    <textarea class="mensaje" id="mensaje" placeholder="" required></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
             <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
             <input type="button" name="next" class="next btn btn-info" value="Siguiente" />
         </fieldset>
