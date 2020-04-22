@@ -183,8 +183,10 @@ td.desktop-hide {
           <table cellspacing='0' cellpadding='0' width='600' class='w320'>
             <tr>
               <td valign='top' class='mobile-block mobile-no-padding-bottom mobile-center' width='270' style='background:#1f1f1f;padding:10px 10px 10px 20px;'>
-                <a href='#' style='text-decoration:none;'>
-                  <img src='https://www.filepicker.io/api/file/X9R4FqRPaEIS3vMxFXgl' width='142' height='30' alt='Your Logo'/>
+                <a href='../index.php' style='text-decoration:none;'>
+                <img src='../img/PsicologiaPNG.png' alt='Entrevista_Enel.com' width='142' height='30'>
+                <b>Entrevistas Enel Colombia</b>
+                <img src='../img/enel.png' alt='Entrevista_Enel.com' width='142' height='30'>
                 </a>
               </td>
     </tr>
@@ -235,7 +237,7 @@ td.desktop-hide {
                 <table cellspacing='0' cellpadding='0' width='100%'>
                   <tr>
                     <td align='right' valign='bottom' style='padding-bottom:0; vertical-align:bottom;'>
-                      <img  style='vertical-align:bottom;' src='https://www.filepicker.io/api/file/9f3sP1z8SeW1sMiDA48o'  width='174' height='294' />
+                      <img  style='vertical-align:bottom;' src='../View/insertar.php'  width='174' height='294' />
                     </td>
                   </tr>
                 </table>
