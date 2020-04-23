@@ -14,7 +14,7 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?=URL_PROY?>Model/logout.php">
         <div class="sidebar-brand-icon rotate-n-15">
-        <img src="../img/PsicologiaPNG.ico" class="col-lg-10 d-none d-lg-block" alt="" height="" width="">
+        <img src="../img/Psicologiaico.ico" class="col-lg-10 d-none d-lg-block" alt="" height="" width="">
         </div>
         <div class="sidebar-brand-text mx-2"><i class='fas fa-power-off' style='font-size:15px;color:red'><span style='font-size:15px;color:black'>SALIR</span></i>
         </div>
