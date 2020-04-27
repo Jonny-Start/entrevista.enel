@@ -1,6 +1,5 @@
 <?php include"../config.php";
 sessionValidate();
-      
 
 ?>
 <?php include FOLDER_TEMPLATE. "head.php"; ?>
