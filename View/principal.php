@@ -1,30 +1,21 @@
 <?php include"../config.php";
 sessionValidate();
+      
+
 ?>
-
-
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
 <?php include FOLDER_TEMPLATE. "head.php"; ?>
 <?php include FOLDER_TEMPLATE."sidebar.php"; ?>
-<link href="<?=URL_CSS?>https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-<body>    
+<link href="<?=URL_CSS?>https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"> 
 
-                    <div class="col-md-12">
-                     <h2>Bienvenido <?php echo $_SESSION['user']?></h2>  
+<div class="container">
+                    <div> 
+                     <h1>Bienvenido <?php echo $_SESSION['nombre']?> {<?php echo $_SESSION['rol']?>}</h1>  
                      <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#logoutModal">
                         Modal
                     </button>
-                    </div>
-                    
-
-                   
-                    
-
-
-
+</div>
 <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -40,10 +31,38 @@ sessionValidate();
         </div>
       </div>
     </div>
-  </div>
+  </div> 
 
 
-                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php include FOLDER_TEMPLATE. "scripts.php"; ?>
 </body>
 </html>
