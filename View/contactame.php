@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php include "../config.php";
 //sessionValidate();
 ?>
@@ -6,6 +7,15 @@
 ?>
 
 <?php include FOLDER_TEMPLATE . "head.php"; ?>
+=======
+<?php include"../config.php";
+//sessionValidate();
+?>
+<?php include FOLDER_TEMPLATE. "scripts.php"; ?>
+<?php //include FOLDER_TEMPLATE."head.php"; ?>
+
+<?php include FOLDER_TEMPLATE. "head.php"; ?>
+>>>>>>> 62337f6660364554e7a760dc1e4f5fdc8499f069
 
 <body class="bg-gradient-primary">
     <div class="container">
@@ -20,6 +30,7 @@
                             </div>
                             <form class="user justify-content-center" method="POST" action="../Controller/ValidacionContactame.php">
                                 <div class="form-group">
+<<<<<<< HEAD
                                     <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Escribe tu Nombre" required><br>
                                     <div class="form-group">
                                         <input type="text" name="apellido" class="form-control" id="apellido" placeholder="Escribe tu Apellido" required><br>
@@ -51,3 +62,45 @@
                         </div>
                     </div>
                 </div>
+=======
+                                    <input type="text" name="nombre" class="form-control" id="nombre"
+
+                                        placeholder="Escribe tu Nombre" required><br>
+                                        <div class="form-group">
+                                    <input type="text" name="apellido" class="form-control" id="apellido"
+                                        placeholder="Escribe tu Apellido"required><br>
+                                        <div class="form-group">
+                                    <input type="text" name="co" class="form-control" id="co"
+                                        placeholder="Escribe tu Co" required><br>
+                                    <div class="form-group">
+                                        <!-- <input type="number" name="telefono" class="form-control form-control-user" -->
+                                        <!-- id="telefono"  placeholder="Teléfono/Celular" -->
+                                        <!-- required><br> -->
+                                        <div class="form-group">
+                                            <input type="email" name="email" class="form-control"
+                                                id="email" placeholder="Escribe tu correo Empresarial" required>
+                                            <br>
+                                            <div class="input-group">
+                                                <textarea class="form-control" name="mensaje"
+                                                    id="mensaje" placeholder="Escribe un el motivo de tu mensaje"
+                                                    required></textarea>
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                <button type="submit" name="botton"
+                                                    class="btn btn-primary btn-user btn-block btn-primary">
+                                                    <i class="fas fa-envelope"></i> Enviar</button>
+                                            </div>
+                                            <a href="../index.php"
+                                                class="btn btn-primary btn-user btn-block btn-danger ">
+                                                <i class="fas fa-ban"></i> Cancelar
+                                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+>>>>>>> 62337f6660364554e7a760dc1e4f5fdc8499f069

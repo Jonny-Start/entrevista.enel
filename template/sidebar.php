@@ -14,7 +14,11 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?=URL_PROY?>Model/logout.php">
         <div class="sidebar-brand-icon rotate-n-15">
+<<<<<<< HEAD
         <img src="../img/Psicologiaico.ico" class="col-lg-10 d-none d-lg-block" alt="" height="" width="">
+=======
+        <img src="../img/PsicologiaPNG.ico" class="col-lg-10 d-none d-lg-block" alt="" height="" width="">
+>>>>>>> 62337f6660364554e7a760dc1e4f5fdc8499f069
         </div>
         <div class="sidebar-brand-text mx-2"><i class='fas fa-power-off' style='font-size:15px;color:red'><span style='font-size:15px;color:black'>SALIR</span></i>
         </div>
@@ -48,7 +52,11 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Generar Entrevistas:</h6>
+<<<<<<< HEAD
             <a class="collapse-item" data-toggle="modal" data-target="#logoutModal">Psicologicas</a>
+=======
+            <a class="collapse-item" href="entrevistaPsicologica.php">Psicologicas</a>
+>>>>>>> 62337f6660364554e7a760dc1e4f5fdc8499f069
             <a class="collapse-item" href="entrevistaBP.php">Business Partner</a>
             <a class="collapse-item" href="entrevistaTecnica.php">Tecnicas</a>
           </div>
@@ -125,6 +133,7 @@
     </ul>
     <!-- End of Sidebar -->
 
+<<<<<<< HEAD
     </body>
 
 
@@ -150,3 +159,6 @@
       </div>
     </div>
   </div> 
+=======
+    </body>
+>>>>>>> 62337f6660364554e7a760dc1e4f5fdc8499f069

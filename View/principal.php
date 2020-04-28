@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php include "../config.php";
 sessionValidate();
 
@@ -16,6 +17,34 @@ sessionValidate();
     </button>
   </div>
   <!-- Logout Modal-->
+=======
+<?php include"../config.php";
+sessionValidate();
+?>
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<?php include FOLDER_TEMPLATE. "head.php"; ?>
+<?php include FOLDER_TEMPLATE."sidebar.php"; ?>
+<link href="<?=URL_CSS?>https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<body>    
+
+                    <div class="col-md-12">
+                     <h2>Bienvenido <?php echo $_SESSION['user']?></h2>  
+                     <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#logoutModal">
+                        Modal
+                    </button>
+                    </div>
+                    
+
+                   
+                    
+
+
+
+<!-- Logout Modal-->
+>>>>>>> 62337f6660364554e7a760dc1e4f5fdc8499f069
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -35,6 +64,7 @@ sessionValidate();
   </div>
 
 
+<<<<<<< HEAD
   <div class="row">
     <div class="col-sm-12">
       <div class="panel panel-primary">
@@ -65,3 +95,9 @@ sessionValidate();
     $('#cargaBarras').load('../Plotly/barras.php');
   });
 </script>
+=======
+                     
+<?php include FOLDER_TEMPLATE. "scripts.php"; ?>
+</body>
+</html>
+>>>>>>> 62337f6660364554e7a760dc1e4f5fdc8499f069
