@@ -45,7 +45,7 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h1 text-gray-1000 mb-4">Bienvenido</h1>
+                                        <h1 class="h1 text-gray-1000 mb-4"><b>¡Bienvenido!</b></h1>
                                     </div>
                                     <form class="user" method="POST" action="<?=URL_PROY?>Model/sesiones.php">
                                         <div class="form-group">

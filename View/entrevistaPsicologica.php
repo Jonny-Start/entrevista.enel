@@ -5,6 +5,7 @@ sessionValidate();
 <?php include FOLDER_TEMPLATE . "head.php"; ?>
 <link href="../vendor/fontawesome-free/css/bootstrap.css" rel="stylesheet" type="text/css">
 <link href="../vendor/fontawesome-free/css/regular.css" rel="stylesheet" type="text/css">
+<link href="../css/style.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 #regiration_form fieldset:not(:first-of-type) {
     display: none;
@@ -14,12 +15,13 @@ sessionValidate();
     <div class="text-center">
         <h1 class="jumbotron">Entrevista Psicológica</h1>
     </div>
-    <a href="consultarEntrevistaPsicologa.php" style="text-rigth">Administrar</a>
+    <a href="consultarEntrevistaPsicologa.php" class="text-right btn btn-primary mb-4">Administrar</a> <br>
+
     <div class="progress">
         <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
         </div>
     </div>
-    
+
     <script>
     function seguro() {
         window.onbeforeunload = function() {
@@ -27,7 +29,7 @@ sessionValidate();
         }
     }
     </script>
-    <h3><a href="principal.php" onclick="seguro()">Salir</a></h3>
+    <a href="principal.php" class="float-right btn btn-danger" onclick="seguro()">Salir</a>
     <form id="regiration_form" novalidate action="../Controller/ValidarinsertarEntrevistaPs.php" method="post">
         <fieldset>
             <h2>Paso 1: Datos</h2>
@@ -174,7 +176,184 @@ sessionValidate();
                     </select>
                 </div>
             </div>
-            <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
+            <div class="contenedor">
+                <div>
+                    <h3 class="titulo"><b>Digital Skills- Self-assessment</b></h3>
+                    <div class="contenedor1">
+                        <div class="">
+                            <h5 class="titulo2"><b>Working Tools & Methodologies</b></h5>
+                            <div class="">
+                                <input type="checkbox" class="" id="office_basics" value="si" name="office_basics"
+                                    required>
+                                <label class="" for="defaultCheck1">MS Office basics (Word, Excel,</label>
+                                <label class="texto">Powerpoint)</label>
+                            </div>
+                            <div class="">
+                                <input class="" type="checkbox" value="si" id="office_advanced" name="office_advanced"
+                                    required>
+                                <label class="" for="defaultCheck1">
+                                    MS Office advanced (Access, Project)
+                                </label>
+                            </div>
+                            <input type="checkbox" class="" id="outlook" value="si" name="outlook" required>
+                            <label class="" for="defaultCheck1"> Outlook</label>
+                        </div>
+                        <div class="">
+                            <input type="checkbox" class="" id="communication_tools" value="si"
+                                name="communication_tools" required>
+                            <label class="" for="defaultCheck1"> Communication tools (Teams, Yammer)</label>
+                        </div>
+                        <div class="">
+                            <input type="checkbox" class="" id="project_management" value="si" name="project_management"
+                                required>
+                            <label class="" for="defaultCheck1"> Project Management</label>
+                        </div>
+                        <div class="">
+                            <input type="checkbox" class="" id="agile" value="si" name="agile" required>
+                            <label class="" for="defaultCheck1"> Agile</label>
+                        </div>
+                        <div class="">
+                            <input type="checkbox" class="" id="desing_thinking" value="si" name="desing_thinking"
+                                required>
+                            <label class="" for="defaultCheck1"> Desing thinking</label>
+                        </div>
+                        <div class="">
+                            <label for="text1"><b>Other</b></label><br>
+                            <textarea class="" id="mensaje" placeholder="" required></textarea>
+                        </div><br><br><br><br>
+                        <!-- </div> -->
+                        <!-- <div class=""> -->
+                        <h5 class="titulo3"><b>Soft Digital Skills</b></h5>
+                        <div class="">
+                            <input class="" type="checkbox" value="si" id="knowledge_networking"
+                                name="knowledge_networking" required>
+                            <label class="" for="defaultCheck1">
+                                Knowledge Networking
+                            </label>
+                        </div>
+                        <div class="">
+                            <input class="" type="checkbox" value="si" id="problem_solving" name="problem_solving"
+                                required>
+                            <label class="" for="defaultCheck1">
+                                Problem Solving
+                            </label>
+                        </div>
+                        <div class="">
+                            <input class="" type="checkbox" value="si" id="virtual_communication"
+                                name="virtual_communication" required>
+                            <label class="" for="defaultCheck1">
+                                Virtual Communication
+                            </label>
+                        </div>
+                        <div class="">
+                            <input class="" type="checkbox" value="si" id="digital_awareness" name="digital_awareness"
+                                required>
+                            <label class="" for="defaultCheck1">
+                                Digital Awareness
+                            </label>
+                        </div>
+                        <div class="">
+                            <input class="" type="checkbox" value="si" id="data_and_device_security"
+                                name="data_and_device_security" required>
+                            <label class="" for="defaultCheck1">
+                                Data and device security
+                            </label>
+                        </div>
+                        <div class="">
+                            <input class="" type="checkbox" value="si" id="content_creation" name="content_creation"
+                                required>
+                            <label class="" for="defaultCheck1">
+                                Content creation
+                            </label>
+                        </div>
+                        <div class="">
+                            <label for=""><b>Other</b></label><br>
+                            <textarea class="text2" id="mensaje" placeholder="" required></textarea>
+                        </div><br><br>
+                        <!-- </div> -->
+                        <!-- <div class=""> -->
+                        <h5 class="titulo4"><b>Digital Hard Skills</b></h5>
+                        <div class="">
+                            <input class="" type="checkbox" value="si" id="programming" name="programming" required>
+                            <label class="" for="defaultCheck1">
+                                Programming languages
+                            </label>
+                        </div>
+                        <div class="">
+                            <input class="" type="checkbox" value="si" id="cloud" name="cloud" required>
+                            <label class="" for="defaultCheck1">
+                                Cloud Services
+                            </label>
+                        </div>
+                        <div class="">
+                            <input class="" type="checkbox" value="si" id="it_system" name="it_system" required>
+                            <label class="" for="defaultCheck1">
+                                It System Management and
+                            </label>
+                            <label class="texto">Enterprise architecture</label>
+                        </div>
+                        <div class="">
+                            <input class="" type="checkbox" value="si" id="cyber_security" name="cyber_security"
+                                required>
+                            <label class="" for="defaultCheck1">
+                                Cyber Security
+                            </label>
+                        </div>
+                        <div class="">
+                            <input class="" type="checkbox" value="si" id="ux/ui_desing" name="ux/ui_desing" required>
+                            <label class="" for="defaultCheck1">
+                                UX/UI Desing
+                            </label>
+                        </div>
+                        <div class="">
+                            <input class="" type="checkbox" value="si" id="mobile" name="mobile" required>
+                            <label class="" for="defaultCheck1">
+                                Mobile
+                            </label>
+                        </div>
+                        <div class="">
+                            <input class="" type="checkbox" value="si" id="data_analytics" name="data_analytics"
+                                required>
+                            <label class="" for="defaultCheck1">
+                                Data & Analytics
+                            </label>
+                        </div>
+                        <div class="">
+                            <input class="" type="checkbox" value="si" id="internet_of_things" name="internet_of_things"
+                                required>
+                            <label class="" for="defaultCheck1">
+                                Internet of Things
+                            </label>
+                        </div>
+                        <div class="">
+                            <input class="" type="checkbox" value="si" id="it_plataforms" name="it_plataforms" required>
+                            <label class="" for="defaultCheck1">
+                                It Plataforms
+                            </label>
+                        </div>
+                        <div class="">
+                            <input class="" type="checkbox" value="si" id="robotic_process" name="robotic_process"
+                                required>
+                            <label class="" for="defaultCheck1">
+                                Robotic Process Automation
+                            </label>
+                        </div>
+                        <div class="">
+                            <label for=""><b>Other</b></label><br>
+                            <textarea class="" id="mensaje" placeholder="" required></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <input type="button" name="previous" class="previous btn btn-default " value="Previo" />
             <input type="button" name="next" class="next btn btn-info" value="Siguiente" />
         </fieldset>
         <fieldset>
@@ -300,7 +479,7 @@ sessionValidate();
             </SCRIPT>
 
             <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
-            <input type="submit" name="boton" class="submit btn btn-success" value="registrar" id="boton" /><br>
+            <input type="submit" name="boton" class="submit btn btn-success" value="Registrar" id="boton" /><br>
 
         </fieldset>
         <?php //<a href="../Reportes/pdf-Entrevista_Psicologa.php?cc=<?php echo $datos['cc']">

@@ -19,6 +19,7 @@
             <p class="text-gray-500 mb-0">Al parecer intentas entrar a una página que no existe</p> 
             <p class="text-gray-500 mb-0"> verifica la URL a la quieres entrar.</p>
             <a href="principal.php">&larr; Regresa a la página Principal</a>
+            <!-- window.history.go(-1); -->
           </div>
         </div>
         <!-- /.container-fluid -->

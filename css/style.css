@@ -1,0 +1,129 @@
+
+.contenedor{
+    background-color: rgb(255, 255, 255);
+    padding: 40px;
+    width: 1090px;
+    height: 650px;
+    position: relative;
+    margin-left: 20px;
+    color: black;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    /* box-shadow: 5px 5px 5px 5px #635d5d70; */
+  }
+  .contenedor3{
+    background-image:url("../img/enel.png"); 
+    height: 450px;
+   
+    width: 1090px;
+    background-color: rgba(255, 255, 255, 0.507);
+    background-position: center; 
+    background-repeat: no-repeat; 
+    border-radius: 10px;
+    padding: 40px;
+    width: 1090px;
+    height: 450px;
+    position: relative;
+    margin-left: 150px;
+    color: black;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    margin-top: 63px;
+    box-shadow: 5px 5px 5px 5px #635d5d70;
+  
+  }
+  .contenedor4{
+    padding-top: 20px;
+    column-count: 2; 
+    column-gap: 35px;
+  }
+  .contenedor5{
+    padding-left: 90px;
+    /* padding-right: 90px; */
+    column-count: 2; 
+    column-gap: 35px;
+    margin-bottom: 30px;
+  }
+  .titulo{
+    color: black;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  .titulo2{
+      padding-bottom: 10px;
+      font-size: 17px;
+      
+  }
+  .titulo3{
+     margin-top: 40px;
+     font-size: 17px;
+}
+  .titulo4{
+    margin-top: 60px;
+    font-size: 17px;
+}
+  .contenedor1{
+    padding-top: 20px;
+    column-count: 3; 
+    column-gap: 45px;
+  }
+  .check1{
+      margin-right: 10px;
+  }
+  .text2{
+      margin-bottom: 90px;
+  }
+  .texto{
+      margin-top: -6px;
+      margin-bottom: 10px;
+  }
+ .caja1{
+  margin-bottom: 13px;
+  border-radius: 6px;
+  height: 40px;
+  width: 380px;
+  margin-left: 50px;
+ }
+ .caja1:hover{
+  border: 3px solid rgba(59, 119, 209, 0.349);
+  border-radius: 5px;
+ }
+ .caja2{
+  border-radius: 6px;
+  margin-bottom: 10px;
+  height: 40px;
+  width: 400px;
+ }
+ .caja2:hover{
+  border: 3px solid rgba(59, 119, 209, 0.349);
+  border-radius: 5px;
+ }
+ .caja3{
+  border-radius: 6px;
+  height: 92px;
+  width: 400px;
+ }
+ .caja3:hover{
+  border: 3px solid rgba(59, 119, 209, 0.349);
+  border-radius: 5px;
+ }
+ .boton1{
+   width: 200px;
+   margin-left: 160px;
+   color: white;
+ }
+ .boton2{
+  width: 200px;
+  margin-left: 400px;
+  margin-bottom: 10px;
+  margin-top: -36px;
+  color: white;
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
