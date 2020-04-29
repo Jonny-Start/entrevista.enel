@@ -84,23 +84,27 @@ sessionValidate();
                 </a>
               </form> -->
                                 <hr />
-                                <?php 
-                    if (isset($_GET["msj"])) {
-
-                        if ($_GET["msj"]=="1") {
-                        ?>
-                        <script>
-                        alert("SE INSERTO CORRECTAMENTE");
-                        </script>
-                        <?php
-                        }else if ($_GET["msj"]=="2")
-                        ?>
-                        <script>
-                        alert("NO SE PUDO HACER EL REGISTRO, VERIFICA LOS DATOS INGRESADOS");
-                        </script>
-                         <?php
-                    }
-                    ?>
+                                <?php
+                                  
+                                  extract($_REQUEST);
+            
+                                  if(isset($_REQUEST["msj"])){
+                                    if ($_REQUEST["msj"]=="1"){
+                                    ?>
+                                        <script>
+                                        alert("SE REGISTRO CORRECTAMENTE ");
+                                        </script>
+                                    <?php
+                                    }else
+                                    {
+                                    ?>
+                                        <script>
+                                        alert("NO SE PUDO REGISTRAR EL USUARIO, VERIFICA LOS DATOS");
+                                        </script>
+                                    <?php
+                                    }
+                                  }
+                            ?>
                                 <!-- <div class="text-center">
                 <a class="small" href="forgot-password.html">Forgot Password?</a>
               </div> -->

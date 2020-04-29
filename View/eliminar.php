@@ -122,6 +122,31 @@ sessionValidate();
                               }
                             }
                             ?>
+<<<<<<< HEAD
+                            <?php
+                            
+                            extract($_REQUEST);
+            
+                                  if(isset($_REQUEST["msj"])){
+                                    if ($_REQUEST["msj"]=="1"){
+                                    ?>
+                                        <script>
+                                        alert("SE ELIMINO CORRECTAMENTE ");
+                                        </script>
+                                    <?php
+                                    }else
+                                    {
+                                    ?>
+                                        <script>
+                                        alert("NO SE PUDO ELIMINAR EL USUARIO, VERIFICA LOS DATOS");
+                                        </script>
+                                    <?php
+                                    }
+                                  }
+                            ?>
+
+=======
+>>>>>>> 62337f6660364554e7a760dc1e4f5fdc8499f069
                           </form>
                       </div>
                   </div>

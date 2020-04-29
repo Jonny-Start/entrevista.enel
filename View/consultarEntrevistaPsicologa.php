@@ -50,7 +50,7 @@ sessionValidate();
                   <td><?php echo $datos['nombre']?></td>
                   <td><?php echo $datos['cc']?></td>
                   <td><?php echo $datos['telefono']?></td>
-                  <td><a href="../Reportes/pdf-Entrevista_Psicologa.php?cc=<?php echo $datos['cc']?>"><img src="../img/pdf.png" alt="Sacar Reporte" width="30" height="40"></a></td>
+                  <td><a href="../Reportes/pdf-Entrevista_Psicologa.php?cc=<?php echo $datos['cc']?>" target="_blank"><img src="../img/pdf.png" alt="Sacar Reporte" width="30" height="40"></a></td>
                   </tr>
                   <?php  
                     }

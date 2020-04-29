@@ -14,7 +14,7 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?=URL_PROY?>Model/logout.php">
         <div class="sidebar-brand-icon rotate-n-15">
-        <img src="../img/PsicologiaPNG.ico" class="col-lg-10 d-none d-lg-block" alt="" height="" width="">
+        <img src="../img/Psicologiaico.ico" class="col-lg-10 d-none d-lg-block" alt="" height="" width="">
         </div>
         <div class="sidebar-brand-text mx-2"><i class='fas fa-power-off' style='font-size:15px;color:red'><span style='font-size:15px;color:black'>SALIR</span></i>
         </div>
@@ -48,7 +48,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Generar Entrevistas:</h6>
-            <a class="collapse-item" href="entrevistaPsicologica.php">Psicologicas</a>
+            <a class="collapse-item" data-toggle="modal" data-target="#logoutModal">Psicologicas</a>
             <a class="collapse-item" href="entrevistaBP.php">Business Partner</a>
             <a class="collapse-item" href="entrevistaTecnica.php">Tecnicas</a>
           </div>
@@ -126,3 +126,27 @@
     <!-- End of Sidebar -->
 
     </body>
+
+
+
+
+    <!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Hola <?php echo $_SESSION['nombre']?>,  ¿Que entrevista haras el dia de hoy?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Recuerda que para todas las entrevistas generadas, la informacion de la Psicologa sera anexada</div>
+        <a class="btn btn-success"  href="entrevistaPsicologica.php" >Profecionales</a>
+        <br>
+        <a class="btn btn-info"  href="entrevistaAprendices.php" >Aprendices</a>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div> 
