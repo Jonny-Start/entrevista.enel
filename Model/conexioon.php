@@ -9,8 +9,8 @@ if ($objCnx->connect_errno) {
 	Error de conexion en la base de datos".$objCnx->connect_error."</p>";
 	exit();
 }else{
-echo "<h6 style='color:#0000'>
-	 conexion a la base de datos OK (BD=".$bd.")</h6>";
+// echo "<h6 style='color:#0000'>
+// 	 conexion a la base de datos OK (BD=".$bd.")</h6>";
 }
  ?>
 

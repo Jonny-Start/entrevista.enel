@@ -115,6 +115,204 @@ h2
 <hr />
 <br><br><br><br>
 
+<style>
+.contenedor{
+    background-color: rgb(255, 255, 255);
+    padding: 40px;
+    width: 1090px;
+    height: 650px;
+    position: relative;
+    margin-left: 20px;
+    color: black;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    /* box-shadow: 5px 5px 5px 5px #635d5d70; */
+  }
+
+  .titulo{
+    color: black;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  .titulo2{
+      padding-bottom: 10px;
+      font-size: 17px;
+      
+  }
+  .titulo3{
+     margin-top: 40px;
+     font-size: 17px;
+}
+  .titulo4{
+    margin-top: 60px;
+    font-size: 17px;
+}
+
+.contenedor1{
+    padding-top: 20px;
+    column-count: 3; 
+    column-gap: 45px;
+  }
+  
+  .texto{
+      margin-top: -6px;
+      margin-bottom: 10px;
+  }
+
+</style>
+
+<div class="contenedor">
+        <div>
+            <h3 class="titulo"><b>Digital Skills- Self-assessment</b></h3>
+            <div class="contenedor1">
+
+                <div>  <h5 class="titulo2"><b>Working Tools & Methodologies</b></h5>
+                    <div>
+                        <input type="checkbox" value="si" >
+                        <label >MS Office basics (Word, Excel,</label>
+                        <label class="texto">Powerpoint)</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" value="si">
+                        <label>
+                            MS Office advanced (Access, Project)
+                        </label>
+                    </div>
+
+
+                    <input type="checkbox" value="si">
+                    <label > Outlook</label>
+                </div>
+                <div>
+                    <input type="checkbox" value="si" >
+                    <label > Communication tools (Teams, Yammer)</label>
+                </div>
+                <div >
+                    <input type="checkbox" value="si">
+                    <label > Project Management</label>
+                </div>
+                <div >
+                    <input type="checkbox" value="si">
+                    <label > Agile</label>
+                </div>
+                <div >
+                    <input type="checkbox" value="si">
+                    <label > Desing thinking</label>
+                </div>
+                <div >
+                    <label><b>Other</b></label><br>
+                    <textarea></textarea>
+                </div><br><br><br><br>
+                
+
+                <h5 class="titulo3"><b>Soft Digital Skills</b></h5>
+                <div>
+                    <input type="checkbox" value="si">
+                    <label>
+                        Knowledge Networking
+                    </label>
+                </div>
+                <div>
+                    <input type="checkbox" value="si">
+                    <label >
+                        Problem Solving
+                    </label>
+                </div>
+                <div>
+                    <input type="checkbox" value="si">
+                    <label>
+                        Virtual Communication
+                    </label>
+                </div>
+                <div>
+                    <input type="checkbox" value="si">
+                    <label>
+                        Digital Awareness
+                    </label>
+                </div>
+                <div>
+                    <input type="checkbox" value="si">
+                    <label>
+                        Data and device security
+                    </label>
+                </div>
+                <div>
+                    <input type="checkbox" value="si">
+                    <label>
+                        Content creation
+                    </label>
+                </div>
+                <div>
+                    <label><b>Other</b></label><br>
+                    <textarea></textarea>
+                </div><br><br>
+
+                
+                <h5 class="titulo4"><b>Digital Hard Skills</b></h5>
+                <div>
+                    <input type="checkbox" value="si">
+                    <label >
+                        Programming languages
+                    </label>
+                </div>
+                <div>
+                    <input type="checkbox" value="si">
+                    <label>
+                        Cloud Services
+                    </label>
+                </div>
+                <div>
+                    <input type="checkbox" value="si">
+                    <label>
+                        It System Management and
+                    </label>
+                    <label class="texto">Enterprise architecture</label>
+                </div>
+                <div>
+                    <input type="checkbox" value="si">
+                    <label>
+                        Cyber Security
+                    </label>
+                </div>
+                <div>
+                    <input value="si">
+                    <label >
+                        UX/UI Desing
+                    </label>
+                </div>
+                <div>  <input value="si">
+                    <label >
+                        Mobile
+                    </label>
+                </div>
+                <div>  <input value="si">
+                    <label >
+                        Data & Analytics
+                    </label>
+                </div>
+                <div>  <input value="si">
+                    <label >
+                        Internet of Things
+                    </label>
+                </div>
+                <div>  <input value="si">
+                    <label >
+                        It Plataforms
+                    </label>
+                </div>
+                <div>  <input value="si">
+                    <label >
+                        Robotic Process Automation
+                    </label>
+                </div>
+                <div>  <label ><b>Other</b></label><br>
+                    <textarea></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 

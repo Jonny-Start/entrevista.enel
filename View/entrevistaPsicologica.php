@@ -73,7 +73,7 @@ sessionValidate();
             <div class="form-group row">
                 <div class="col-sm-6">
                     <label for="fechaEntrevista">Fecha de la Entrevista</label>
-                    <input type="text" class="form-control form-control-user" id="fechaEntrevista" name="fechaEntrevista" value="<?php echo $fecha_actual ?>" readonly="readonly" required>
+                    <input type="text" class="form-control form-control-user" id="fechaEntrevista" name="fechaEntrevista" value="<?php echo $fecha_now?>" readonly="readonly" required>
                 </div>
                 <div class="col-sm-6">
                     <label for="psicologa">Entrevistador(a)</label>

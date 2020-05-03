@@ -1,33 +1,150 @@
 <?php include "../config.php";
 sessionValidate();
-
+require_once "../Model/conexioon.php";
+//tarjeta#4
+		$sql ="SELECT count(*) as conteo FROM usuario";
+		$resultado = mysqli_query($objCnx,$sql);
+    while ($datos=mysqli_fetch_array($resultado))
+    {
+		$tarjeta4 = $datos["conteo"];
+    }
+//tarjeta#1
+$sql ="SELECT count(*) as conteo FROM entrevistapsicologica";
+$resultado = mysqli_query($objCnx,$sql);
+while ($datos=mysqli_fetch_array($resultado))
+{
+$tarjeta1 = $datos["conteo"];
+}
+  
 ?>
 <?php include FOLDER_TEMPLATE . "head.php"; ?>
 <?php include FOLDER_TEMPLATE . "sidebar.php"; ?>
-<?php include  "bar.php"; ?>
 <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-<script type="text/javaScript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+<!-- <script type="text/javaScript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script> -->
 <div class="container">
   <div>
-    <h1>Bienvenido <?php echo $_SESSION['nombre'] ?> {<?php echo $_SESSION['rol'] ?>}</h1>
-    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#logoutModal">
-      Modal
-    </button>
+    <h1 class="text-center">Bienvenido <?php echo $_SESSION['nombre'] ?> <b class="text-right" style="color: #ACC9E4; ">[<?php echo $_SESSION['rol'] ?>]</b></h1>
   </div>
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">que dice perro?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
+  <hr />
+
+
+
+
+
+   <!-- Begin Page Content -->
+   <div class="container-fluid">
+
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+  <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+</div>
+
+<!-- Content Row -->
+<div class="row">
+
+  <!-- Earnings (Monthly) Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Entrevistas Totales Psicologa</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $tarjeta1?></div>
+          </div>
+          <div class="col-auto">
+          <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+          </div>
         </div>
-        <div class="modal-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, iusto totam cupiditate nam dignissimos blanditiis in modi provident eum corporis.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">cancelar</button>
-          <a class="btn btn-primary" href="login.html">Guardar</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Earnings (Monthly) Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-success shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Entrevistas Totale Jefes</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $_SESSION['co']?></div>
+          </div>
+          <div class="col-auto">
+          <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Earnings (Monthly) Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-info shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Entrevistas Totales Business_Partner</div>
+            <div class="row no-gutters align-items-center">
+              <div class="col-auto">
+              </div>
+              <div class="col">
+                <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $_SESSION['co']?></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pending Requests Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-warning shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total Personas Registradas </div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $tarjeta4 ?></div>
+          </div>
+          <div class="col-auto">
+          <i class="fas fa-calendar fa-2x text-gray-300"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Content Row -->
+
+<div class="row">
+
+  <!-- Area Chart -->
+  <div class="col-xl-8 col-lg-12">
+    <div class="card shadow mb-8">
+      <!-- Card Header - Dropdown -->
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold text-primary">Reporte por dias</h6>
+        <div class="dropdown no-arrow">
+          <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+            <div class="dropdown-header">Dropdown Header:</div>
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card Body -->
+      <div class="card-body">
+        <div class="chart-area">
+          <canvas id="Lineal"><?php include 'line.php'?></canvas>
         </div>
       </div>
     </div>
@@ -45,118 +162,9 @@ sessionValidate();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-   <!-- Page Heading -->
-   <h1 class="h3 mb-2 text-gray-800">Charts</h1>
-          <p class="mb-4">Chart.js is a third party plugin that is used to generate the charts in this theme. The charts below have been customized - for further customization options, please visit the <a target="_blank" href="https://www.chartjs.org/docs/latest/">official Chart.js documentation</a>.</p>
-
-          <!-- Content Row -->
-          <div class="row">
-
-            <div class="col-xl-8 col-lg-7">
-
-              <!-- Area Chart -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
-                </div>
-                <div class="card-body">
-                  <div class="chart-area">
-                  <?php
-require_once "../Model/conexioon.php";
-?>
-		
-		<script src="../chartJS/Chart.js"></script>
-		<div style="width: 50%">
-			<canvas id="Barras" height="450" width="600"></canvas>
-
-	<script>
-	// var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
-
-	var barChartData = {
-		labels : [
-		<?php
-		$sql ="SELECT fechaEntrevista, count(*) as conteo FROM entrevistapsicologica group by fechaEntrevista";
-		$resultado = mysqli_query($objCnx,$sql); 
-		while ($datos=mysqli_fetch_array($resultado)){ 
-
-		'echo $datos["fechaEntrevista"]'?>,
-		
-		<?php } ?>
-		],
-		datasets : [
-			{
-				fillColor : "rgba(220,220,220,0.5)",
-				strokeColor : "rgba(220,220,220,0.8)",
-				highlightFill: "rgba(220,220,220,0.75)",
-				highlightStroke: "rgba(220,220,220,1)",
-				data :
-				<?php
-				$sql ="SELECT fechaEntrevista, count(*) as conteo FROM entrevistapsicologica group by fechaEntrevista";
-				$resultado = mysqli_query($objCnx,$sql); 
-				?>[<?php while ($datos=mysqli_fetch_array($resultado)){  echo $datos["conteo"] ?>,<?php } ?>]
-			}
-		]
-
-	}
-	window.onload = function(){
-		var ctx = document.getElementById("Barras").getContext("2d");
-		window.myBar = new Chart(ctx).Bar(barChartData, {
-			responsive : true
-		});
-	}
-
-	</script>
-		
-                  </div>
-                  <hr>
-                  Styling for the area chart can be found in the <code>/js/demo/chart-area-demo.js</code> file.
-                </div>
-              </div>
-
-
-            </div>
-
-            <!-- Donut Chart -->
-            <div class="col-xl-4 col-lg-5">
-              <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Donut Chart</h6>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                  <div class="chart-pie pt-4">
-                    <canvas id="myPieChart"></canvas>
-                  </div>
-                  <hr>
-                  Styling for the donut chart can be found in the <code>/js/demo/chart-pie-demo.js</code> file.
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <!-- /.container-fluid -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
 
 <?php include FOLDER_TEMPLATE . "scripts.php"; ?>
-</body>
-
-</html>
-

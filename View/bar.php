@@ -4,19 +4,18 @@ require_once "../Model/conexioon.php";
 		
 		<script src="../chartJS/Chart.js"></script>
 		<div style="width: 50%">
-			<canvas id="Barras" height="450" width="600"></canvas>
-
-	<script>
+		<canvas id="Barras" height="450" width="600"></canvas>
+		<script>
 	// var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
 
 	var barChartData = {
 		labels : [
 		<?php
-		$sql ="SELECT fechaEntrevista, count(*) as conteo FROM entrevistapsicologica group by fechaEntrevista";
+		$sql ="SELECT fechaEntrevista FROM entrevistapsicologica Where year(fechaEntrevista)=year(Now()) group by Month(fechaEntrevista)";
 		$resultado = mysqli_query($objCnx,$sql); 
-		while ($datos=mysqli_fetch_array($resultado)){ 
+		while ($datos=mysqli_fetch_array($resultado)){ ?>
 
-		'echo $datos["fechaEntrevista"] '?>,
+		['<?php echo $datos["fechaEntrevista"]?>'],
 		
 		<?php } ?>
 		],
@@ -28,7 +27,8 @@ require_once "../Model/conexioon.php";
 				highlightStroke: "rgba(220,220,220,1)",
 				data :
 				<?php
-				$sql ="SELECT fechaEntrevista, count(*) as conteo FROM entrevistapsicologica group by fechaEntrevista";
+				$sql="SELECT fechaEntrevista, count(*) as conteo,Month(fechaEntrevista) FROM entrevistapsicologica
+				Where year(fechaEntrevista)=year(Now()) group by Month(fechaEntrevista)";
 				$resultado = mysqli_query($objCnx,$sql); 
 				?>[<?php while ($datos=mysqli_fetch_array($resultado)){  echo $datos["conteo"] ?>,<?php } ?>]
 			}

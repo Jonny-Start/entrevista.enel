@@ -1,0 +1,80 @@
+
+
+
+
+// X
+$sql ="SELECT fechaEntrevista, count(*) as conteo FROM entrevistapsicologica group by fechaEntrevista";
+
+
+// Datos
+$sql ="SELECT fechaEntrevista, count(*) as conteo FROM entrevistapsicologica group by fechaEntrevista";
+
+
+
+
+
+require_once "../Model/conexioon.php";
+$sql="SELECT Perfil FROM usuario as rol where co = $_SESSION['co']";
+$resultado=$objCnx->query($sql);
+$dato=$resultado->fetch_array();
+
+  if ($dato['rol']  == 'Administrador'){
+    header('Location: principal.php');
+       }else{
+    header('Location: contactame.php');
+       }
+
+
+
+
+
+
+
+require_once "../Model/conexioon.php";
+$mysql="SELECT Perfil FROM usuario where co = '1006844604'";
+$resultado=$objCnx->query($mysql);
+$dato=$resultado->fetch_array();
+
+
+if (isset($_SESSION['Perfil'])){
+  if ($dato['Perfil']  == 'Administrador'){
+    header('Location: principal.php');
+       }else{
+    header('Location: contactame.php');
+       }
+      }else
+       {
+         echo("No se Encontro el usuario");
+       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>
+<?php 
+  //                   require_once "../Model/conexioon.php";
+  //                   $sql = "SELECT COUNT(*)as cantidad FROM entrevistapsicologica";
+  //                   $rta=$objCnx->query($sql);
+  //                   while ($datos=$rta->fetch_array()){
+
+  //                   ?>
+                  <?php //$datos['cantidad']?>
+                   <?php  
+  // 
+
+
+
+
+estoy ocupado 
+aaaa perdon nbb bueno cielo se arreglo, me avisas cuando te desocupes para seguir mirando okas? bueno bb 
+gracias <3 dale amor, me avisas mientras trabajo <3 te amoooooo

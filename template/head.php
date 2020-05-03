@@ -5,11 +5,13 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>SB Admin 2 - Dashboard</title>
+<title>Entrevistas Enel</title>
 
 <?php
 ini_set('date.timezone', 'America/Bogota'); //https://www.php.net/manual/es/timezones.america.php
-$fecha_actual = date("d/M/Y H:i:s");
+$fecha_hora = date("d/M/Y H:i:s");
+$fecha_now = date("d/M/Y");
+$hora_now = date("H:i:s");
 ?>
 
 <!-- Custom fonts for this template-->
@@ -22,3 +24,4 @@ $fecha_actual = date("d/M/Y H:i:s");
 <link href="<?=URL_CSS?>dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
+<body id="page-top">
