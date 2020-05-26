@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-04-2020 a las 23:11:46
+-- Tiempo de generación: 26-05-2020 a las 06:55:20
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.2
 
@@ -31,13 +31,12 @@ SET time_zone = "+00:00";
 CREATE TABLE `entrevistapsicologica` (
   `nombre` varchar(40) NOT NULL,
   `cc` int(12) NOT NULL,
-  `fecha_nac` date NOT NULL,
   `dependencia` varchar(20) NOT NULL,
-  `cargo` varchar(20) NOT NULL,
-  `cargoAspira` varchar(20) NOT NULL,
+  `cargo` varchar(40) NOT NULL,
+  `cargoAspira` varchar(40) NOT NULL,
   `telefono` varchar(30) NOT NULL,
   `aspiracionSal` varchar(10) DEFAULT NULL,
-  `fechaEntrevista` datetime DEFAULT current_timestamp(),
+  `fechaEntrevista` date DEFAULT current_timestamp(),
   `psicologa` varchar(30) NOT NULL,
   `responsabilidad` tinyint(1) NOT NULL,
   `productividad` tinyint(1) NOT NULL,
@@ -45,6 +44,32 @@ CREATE TABLE `entrevistapsicologica` (
   `innovacion` tinyint(1) NOT NULL,
   `resiliencia` tinyint(1) NOT NULL,
   `confianza` tinyint(1) NOT NULL,
+  `dswm1` varchar(5) NOT NULL DEFAULT 'NO',
+  `dswm2` varchar(5) NOT NULL DEFAULT 'NO',
+  `dswo3` varchar(5) NOT NULL DEFAULT 'NO',
+  `dswc4` varchar(5) NOT NULL DEFAULT 'NO',
+  `dswp5` varchar(5) NOT NULL DEFAULT 'NO',
+  `dswa6` varchar(5) NOT NULL DEFAULT 'NO',
+  `dswd7` varchar(5) NOT NULL DEFAULT 'NO',
+  `other1` text DEFAULT NULL,
+  `dssk1` varchar(5) NOT NULL DEFAULT 'NO',
+  `dssp2` varchar(5) NOT NULL DEFAULT 'NO',
+  `dssv3` varchar(5) NOT NULL DEFAULT 'NO',
+  `dssd4` varchar(5) NOT NULL DEFAULT 'NO',
+  `dssd5` varchar(5) NOT NULL DEFAULT 'NO',
+  `dssc6` varchar(5) NOT NULL DEFAULT 'NO',
+  `other2` text DEFAULT NULL,
+  `dsdp1` varchar(5) NOT NULL DEFAULT 'NO',
+  `dsdc2` varchar(5) NOT NULL DEFAULT 'NO',
+  `dsdi3` varchar(5) NOT NULL DEFAULT 'NO',
+  `dsdc4` varchar(5) NOT NULL DEFAULT 'NO',
+  `dsdu5` varchar(5) NOT NULL DEFAULT 'NO',
+  `dsdm6` varchar(5) NOT NULL DEFAULT 'NO',
+  `dsdd7` varchar(5) NOT NULL DEFAULT 'NO',
+  `dsdi8` varchar(5) NOT NULL DEFAULT 'NO',
+  `dsdi9` varchar(5) NOT NULL DEFAULT 'NO',
+  `dsdr10` varchar(5) NOT NULL DEFAULT 'NO',
+  `other3` text DEFAULT NULL,
   `comportamientoEtico` varchar(30) NOT NULL,
   `fuenteR` varchar(20) NOT NULL,
   `resultadoI` varchar(3) DEFAULT NULL,
@@ -53,25 +78,35 @@ CREATE TABLE `entrevistapsicologica` (
   `explicacion` text DEFAULT NULL,
   `resolucionProblemas` varchar(30) NOT NULL,
   `observaciones` text DEFAULT NULL,
-  `adecuado` char(5) DEFAULT NULL,
-  `adecuadoP` char(5) DEFAULT NULL,
-  `parcialmente` char(5) DEFAULT NULL,
-  `primera` char(5) DEFAULT NULL,
-  `segunda` char(5) DEFAULT NULL,
-  `noA` char(5) DEFAULT NULL,
+  `adecuado` varchar(5) NOT NULL DEFAULT 'NO',
+  `adecuadoP` varchar(5) NOT NULL DEFAULT 'NO',
+  `parcialmente` varchar(5) NOT NULL DEFAULT 'NO',
+  `primera` varchar(5) NOT NULL DEFAULT 'NO',
+  `segunda` varchar(5) NOT NULL DEFAULT 'NO',
+  `noA` varchar(5) NOT NULL DEFAULT 'NO',
   `concepto` text DEFAULT NULL,
-  `co` int(11) DEFAULT NULL
+  `co` int(11) DEFAULT NULL,
+  `terminado` varchar(5) NOT NULL DEFAULT 'False'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `entrevistapsicologica`
 --
 
-INSERT INTO `entrevistapsicologica` (`nombre`, `cc`, `fecha_nac`, `dependencia`, `cargo`, `cargoAspira`, `telefono`, `aspiracionSal`, `fechaEntrevista`, `psicologa`, `responsabilidad`, `productividad`, `gestionCambio`, `innovacion`, `resiliencia`, `confianza`, `comportamientoEtico`, `fuenteR`, `resultadoI`, `inteligenciaE`, `candidatoU`, `explicacion`, `resolucionProblemas`, `observaciones`, `adecuado`, `adecuadoP`, `parcialmente`, `primera`, `segunda`, `noA`, `concepto`, `co`) VALUES
-('Jonny Alejandro ', 2135675, '2005-01-01', 'fasdgafdg', 'dASDFGDHFDFAS', 'ASDFGDHJHRGAESFS', '23546213413', '127', '1970-01-01 00:00:00', 'jonny.cano@enel.com', 127, 3, 4, 3, 4, 5, 'DAASf', 'fSDFds', '\r\n', '200', 'no', 'fsdfasdfasdkjfgkjhsdlhjfglGLHJDFJABCBKJABLFKJHLKdhfkljhsdakjlhflkjahsdlkjfhalkfh alkshdflkjasdhlf  asfhadtkjshflkjds  klafhsdj alsjdh fKJHKJHLKJGJKGDLKJG lkjeh flkash llwkjel jewhlkjhsflkjhlgkjhasdflkgjhaljsdhlgkjahlkgjsdahjk.aljslgfkhlsdakjghsda joNNY ', 'masomenos ', 'ewagfhfdsfdaskdjGHJTRDSGAHDJFMFGDFSFAKGFAHRAJTKSYLÑDHFSDFALJGALFJGHlskdjhfñkjdshflkjaghlsdkjfgljskdfgljkasdflkjljkfgsdflkjsgdlfglkjdsfljlsdkjfglakjg. jonny ', 'si', '', 'si', '', 'si', '', 'gjkfsdkjlglkjasflkjsaldkjfgkJHSDFGKHJASDJHFGSDAJFJHASDFKHJAGSDKJHFGAHKJSDFG.JONNY', NULL),
-('Jonny Alejandro ', 1006844604, '2001-10-09', 'Enel X', 'Profecional Seleccio', 'Jefe', '3015018468', '100.000', '2020-04-16 08:05:34', 'jonny.cano@enel.com', 2, 2, 4, 3, 4, 5, 'nose ', 'Facebook', 'A1', '200', 'no', 'nos', 'masomenos ', 'hlsAJNHDSA', 'si', '', '', 'si', 'si', '', 'DKJHLASKJHFKDJFHALKSJDHFLAKSDJHFLKJASHDLKFHLASKDHJFUASDHFALKSJDHFK SDAd,JHGSDFKJHsakhjfgASKHFKHJGsahkfkjhgSAHDFKGsdkfggDSKHFGGDFSJHGSDKFGHKASDHFGJASDFKJAJHSDFGAJHSDFG DYGDKJHAsfkhjdhdasdKJHAGgjhfgjhfgfjhfjhgfgjhfhjfjhjfjhfjhJHGHFKJHGJSKDAHFGKSADFJHGSDFASD hjhsjhjshjhsjhsjhgjhgdjshfgjhsdahjgsjhdfgjhsdgjhjsdahfgjfjghafdajhffjhgfghjfJONNY ', NULL),
-('Jonny Alejandro ', 1123321772, '2002-10-09', 'kjhkljasdfasd', 'lkjglkjhglkjghjlk', 'kjhlkjglkjgljglkjglk', '3107550085', '1', '1970-01-01 00:00:00', '', 1, 1, 1, 1, 1, 1, 'nose ', 'fcaebook', '\r\n', '200', 'no', 'kahflsdkjghlaskdjhflkadsjhlfkjasdhlkfjhasdlkjfhlasdkjhflkajsdhflkjashdlfkjh lorem200', 'fsadlkjfhlaksjdhflaksjdhflkjas', 'lkhdkshfsdakjhglkajhflkjha ñlasdh lgvhlsdakjhflkjhasdlkfjlsdhjlfas ljsda jlflasdb lgalsdb jlsad ljasdhvl ljb l jlxc  ladpij vljafblkjhñkuhsa d jonny alejandro ', '', '', '', '', '', 'si', 'd,jkasFGKJHGSKDFJHGASKDJFHGSKDAJHFGJHSD FBISADFJHKSDFKJASDKHJFGOG OIWER OEWUJFHSDLJBFKJASDKJHFGKJASDFKJHASDKFAKJSHDFHASDBVHKASDBKUFASYDH', NULL),
-('Jonny Alejandro ', 2147483647, '2001-10-09', 'fdsafds', 'fasdfads', 'adsfasdf', '423415134', '100', '1970-01-01 00:00:00', '', 1, 1, 1, 1, 1, 1, 'nose ', 'fcaebook', '\r\n', '200', 'no', 'dasfdgDLSFJKHCGJSKAHDFKJHGsdakjfgkjhasdkfjhacnisehfbliuhascdljfhglkjasdh fkjabsdjkf jhsdhlkjfl agdksjhfglksdahlfkjgalsdjhfglkjahsdJOnny cano', 'wetrsdafgsdgdfgdfgfsd', 'dasKJLFHGLKhfglkjSDLJHFLHldjshflhsdaljflhasdljflhsdlhflkjhasdlkjfhlkjasdhflkjashdlkjfhalksdjfglkjasdfljh Jonny alejandro cano', 'si', '', '', '', '', 'si', 'lcjGLSDFGALSDKHFLLKJSDAHFLHJKASDLKJHFHASDLKJHFLJKAHSDLJFHLKJASDHJLFHASDLVCJHASDBF JONNY CANO', NULL);
+INSERT INTO `entrevistapsicologica` (`nombre`, `cc`, `dependencia`, `cargo`, `cargoAspira`, `telefono`, `aspiracionSal`, `fechaEntrevista`, `psicologa`, `responsabilidad`, `productividad`, `gestionCambio`, `innovacion`, `resiliencia`, `confianza`, `dswm1`, `dswm2`, `dswo3`, `dswc4`, `dswp5`, `dswa6`, `dswd7`, `other1`, `dssk1`, `dssp2`, `dssv3`, `dssd4`, `dssd5`, `dssc6`, `other2`, `dsdp1`, `dsdc2`, `dsdi3`, `dsdc4`, `dsdu5`, `dsdm6`, `dsdd7`, `dsdi8`, `dsdi9`, `dsdr10`, `other3`, `comportamientoEtico`, `fuenteR`, `resultadoI`, `inteligenciaE`, `candidatoU`, `explicacion`, `resolucionProblemas`, `observaciones`, `adecuado`, `adecuadoP`, `parcialmente`, `primera`, `segunda`, `noA`, `concepto`, `co`, `terminado`) VALUES
+('', 0, '', 'Profesional Selección', '', '', '', '2020-05-25', 'Jonny AlejandroCano Acosta', 1, 1, 1, 1, 1, 1, '', '', '', 'SI', '', '', '', '1', '', '', '', '', 'SI', '', '2', '', '', '', '', '', '', '', '', 'SI', '', '3', '', '', '', '', 'NO', '', '', '', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 1006844604, 'False'),
+('', 123, '', 'Profesional Selección', '', '', '', '2020-05-25', 'Jonny AlejandroCano Acosta', 1, 1, 1, 1, 1, 1, '', '', 'SI', '', '', 'SI', '', '', '', '', '', '', 'SI', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'NO', '', '', '', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 1006844604, 'False'),
+('', 123321, '', 'Profesional Selección', '', '', '', '2020-05-25', 'Jonny AlejandroCano Acosta', 1, 1, 1, 1, 1, 1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'NO', '', '', '', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 1006844604, 'False'),
+('Carlos Santiago', 1986711, '', '', '', '523523453', '', '2020-05-20', '', 0, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'si', 'si', 'si', 'si', 'si', '', 'cas,kjhlaskdas', 1006844604, 'True'),
+('Juan jose', 9657968, 'gggjghjg', 'hgjfkjfk', 'kjhfkjhfk', '765874864', '9765658', '2020-04-30', 'hgfhgfjfjhgfj', 5, 5, 3, 5, 4, 4, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'mjhkjhgkhj', 'facebook', 'a2', 'yfgjhgj', 'no', 'khfkhfjgfyugjh', 'jhghjghjgjhgj', 'jhgjhgjhgj', '', 'si', 'si', '', '', 'si', 'listo pero ', 1006844604, 'True'),
+('Jeison sanchez', 12654346, '', '', '', '745763214', NULL, '0000-00-00', '', 0, 0, 0, 0, 0, 0, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, '', '', NULL, '', '', NULL, '', NULL, '', '', 'si', 'si', '', '', 'hola', 1006844604, 'False'),
+('carlos ', 19283746, '', 'Profesional Selección', '', '312312312', '21093112', '2020-05-21', 'Jonny AlejandroCano Acosta', 1, 1, 1, 1, 1, 1, 'SI', 'SI', 'SI', 'SI', 'SI', 'SI', 'SI', '', 'SI', 'SI', 'SI', 'SI', 'SI', 'SI', '', 'SI', 'SI', 'SI', 'SI', '', 'SI', 'SI', 'SI', 'SI', 'SI', '', '', '', '', '', 'NO', '', '', '', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 1006844604, 'False'),
+('Miguel Rodriguez', 31862531, '', '', '', '42342252', NULL, '2020-04-28', '', 0, 0, 0, 0, 0, 0, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, '', '', NULL, '', '', NULL, '', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 1006844604, 'True'),
+('', 123752367, '', 'Profesional Selección', '', '', '', '2020-05-25', 'Jonny AlejandroCano Acosta', 1, 1, 1, 1, 1, 1, '', '', '', '', '', '', '', '1', '', '', '', '', '', '', '2', '', '', '', '', '', '', '', '', '', '', '3', '', '', '', '', 'NO', '', '', '', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 1006844604, 'False'),
+('Rogelio ', 354676587, 'gggjghjg', 'hgjfkjfk', 'kjhfkjhfk', '54234864', '97654238', '2020-03-23', 'hgfhgfjfjhgfj', 5, 5, 3, 5, 4, 4, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'mjhkjhgkhj', 'facebook', 'a2', 'yfgjhgj', 'no', 'khfkhfjgfyugjh', 'jhghjghjgjhgj', 'jhgjhgjhgj', 'si', 'no', 'si', 'no', 'si', 'no', 'ljhgjkgjhg', 1006844604, 'True'),
+('Jonny Alejandro ', 1006844604, 'Enel X', 'Profesional Seleccion', 'Jefe', '3015018468', '100.000', '2020-06-20', 'Jonny Alejandro Cano Acosta', 1, 2, 4, 3, 4, 5, 'Si', 'NO', 'SI', 'NO', 'NO', 'NO', 'NO', 'Hola Carlos ', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'Hola Santiago', 'NO', 'NO', 'NO', 'NO', 'NO', 'SI', 'NO', 'NO', 'NO', 'NO', 'Hola Miguel', 'nose ', 'Facebook', 'A1', '200', 'no', 'nos', 'masomenos ', 'hlsAJNHDSA', 'si', 'si', 'si', 'si', 'si', 'si', 'Hora si que pero guey?', 1006844604, 'False'),
+('Irene Acosta Villarreal', 1123321772, 'I&N', 'Profesional Selección', 'Bussines', '3107550085', '1002020392', '2020-05-21', 'Jonny AlejandroCano Acosta', 1, 2, 3, 4, 5, 1, 'SI', 'SI', 'SI', 'SI', '', '', '', '', '', '', '', '', 'SI', '', '', 'SI', 'SI', '', 'SI', '', 'SI', 'SI', 'SI', '', 'SI', '', 'Bueno', 'Linkeding', 'B2', 'Buena', 'SI', 'NO pues que te digo es seleccion directa, pero lo mas importante es que es buena papa', 'bueno ', 'No ninguna Observacion', 'si', '', '', 'si', 'si', '', 'En la entrevista fue re chimbita', 1006844604, 'True'),
+('Natalia Tabarez lozano', 2147483647, '', '', '', '234502488', NULL, '2010-02-28', '', 0, 0, 0, 0, 0, 0, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, '', '', NULL, '', '', NULL, '', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 1006844604, 'False');
 
 -- --------------------------------------------------------
 
@@ -83,10 +118,10 @@ CREATE TABLE `usuario` (
   `nombre` varchar(20) NOT NULL,
   `apellidos` varchar(20) NOT NULL,
   `co` int(15) NOT NULL,
-  `Perfil` varchar(15) NOT NULL,
+  `Perfil` varchar(16) NOT NULL,
   `correo_electronico` varchar(40) NOT NULL,
   `contraseña` varchar(20) NOT NULL,
-  `EGeneradas` bigint(20) DEFAULT NULL
+  `EGeneradas` bigint(30) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -94,10 +129,13 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`nombre`, `apellidos`, `co`, `Perfil`, `correo_electronico`, `contraseña`, `EGeneradas`) VALUES
-('Daniel ', 'Suarez', 1000458752, 'Admin', 'daniel.suarez@enel.com', 'daniel123456', NULL),
-('Jonny Alejandro ', 'Cano Acosta ', 1006844604, 'Jefe', 'jonny.cano@enel.com', '1006844604jonny', 0),
-('ANGELICA MARIA ', 'BARBOSA PERILLA', 1022407151, 'Admin', 'angelica.barbosa@enel.com', 'Codensa2020', NULL),
-('Santiago ', 'Garcia', 1193200780, 'Jefe', 'santy1234789@outlook.com', 'holaquetal?', NULL);
+('Joselito', 'Torres', 411123412, 'Business_Partner', 'jonnyalejandro.ca0910@gmail.com', '123', 0),
+('Daniel ', 'Suarez', 1000458752, 'Jefe', 'daniel.suarez@enel.com', 'daniel123456', 0),
+('carlos ', 'santiago', 1004423423, 'Jefe', 'jkldajs@enel.com', 'rewrwerqwe', 0),
+('Jonny Alejandro', 'Cano Acosta', 1006844604, 'Administrador', 'jonny.cano@enel.com', '123', 0),
+('ANGELICA MARIA ', 'BARBOSA PERILLA', 1022407151, 'Business_partner', 'angelica.barbosa@enel.com', 'Codensa2020', 0),
+('Santiago ', 'Garcia', 1193200780, 'Jefe', 'santy1234789@outlook.com', 'holaquetal?', 0),
+('Jonny Alejandro ', 'e3rewrqew', 2147483647, 'Business_Partner', 'qwrqwerwqer@enel.com', 'fwesdfatrwetrqew', 0);
 
 --
 -- Índices para tablas volcadas

@@ -1,80 +1,269 @@
 
+Digital Skills
+
+  `dswm1` char(5) DEFAULT 'NO',
+  `dswm2` char(5) DEFAULT 'NO',
+  `dswo3` char(5) DEFAULT 'NO',
+  `dswc4` char(5) DEFAULT 'NO',
+  `dswp5` char(5) DEFAULT 'NO',
+  `dswa6` char(5) DEFAULT 'NO',
+  `dswd7` char(5) DEFAULT 'NO',
+  `other1` text DEFAULT NULL,
+
+  `dssk1` char(5) DEFAULT 'NO',
+  `dssp2` char(5) DEFAULT 'NO',
+  `dssv3` char(5) DEFAULT 'NO',
+  `dssd4` char(5) DEFAULT 'NO',
+  `dssd5` char(5) DEFAULT 'NO',
+  `dssc6` char(5) DEFAULT 'NO',
+  `other2` text DEFAULT NULL,
+
+  `dsdp1` char(5) DEFAULT 'NO',
+  `dsdc2` char(5) DEFAULT 'NO',
+  `dsdi3` char(5) DEFAULT 'NO',
+  `dsdc4` char(5) DEFAULT 'NO',
+  `dsdu5` char(5) DEFAULT 'NO',
+  `dsdm6` char(5) DEFAULT 'NO',
+  `dsdd7` char(5) DEFAULT 'NO',
+  `dsdi8` char(5) DEFAULT 'NO',
+  `dsdi9` char(5) DEFAULT 'NO',
+  `dsdr10` char(5) DEFAULT 'NO',
+  `other3` text DEFAULT NULL,
 
 
 
-// X
-$sql ="SELECT fechaEntrevista, count(*) as conteo FROM entrevistapsicologica group by fechaEntrevista";
+function calcularTiempo($dato)
+                        {
+                          ini_set('date.timezone', 'America/Bogota'); 
+                          $fecha_now = date("d/M/Y");
+
+                          $fechaEntrevista = date_create($dato);
+                          $fechaHora = date_create($fecha_now);
+                          $intervalo = date_diff($fecha_now,$dato);
+                          if($intervalo['days']== 1)
+                          {
+                            echo "<td style='background-color: red;'>$dato</td>"; 
+                          } else
+                          {
+                            echo "<td>$dato</td>";
+                          }
+                        }
 
 
-// Datos
-$sql ="SELECT fechaEntrevista, count(*) as conteo FROM entrevistapsicologica group by fechaEntrevista";
+$a1 = $_REQUEST['dswm1']; $a2 = $_REQUEST['dswm2']; $a3 = $_REQUEST['dswo3']; $a4 = $_REQUEST['dswc4']; $a5 = $_REQUEST['dswp5']; $a6 = $_REQUEST['dswa6']; $a7 = $_REQUEST['dswd7']; 
 
-
-
-
-
-require_once "../Model/conexioon.php";
-$sql="SELECT Perfil FROM usuario as rol where co = $_SESSION['co']";
-$resultado=$objCnx->query($sql);
-$dato=$resultado->fetch_array();
-
-  if ($dato['rol']  == 'Administrador'){
-    header('Location: principal.php');
-       }else{
-    header('Location: contactame.php');
-       }
-
-
-
-
-
-
-
-require_once "../Model/conexioon.php";
-$mysql="SELECT Perfil FROM usuario where co = '1006844604'";
-$resultado=$objCnx->query($mysql);
-$dato=$resultado->fetch_array();
-
-
-if (isset($_SESSION['Perfil'])){
-  if ($dato['Perfil']  == 'Administrador'){
-    header('Location: principal.php');
-       }else{
-    header('Location: contactame.php');
-       }
-      }else
-       {
-         echo("No se Encontro el usuario");
-       }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-?>
-<?php 
-  //                   require_once "../Model/conexioon.php";
-  //                   $sql = "SELECT COUNT(*)as cantidad FROM entrevistapsicologica";
-  //                   $rta=$objCnx->query($sql);
-  //                   while ($datos=$rta->fetch_array()){
-
-  //                   ?>
-                  <?php //$datos['cantidad']?>
-                   <?php  
-  // 
+$dssk1 = $_REQUEST['dssk1']; $dssp2 = $_REQUEST['dssp2']; $dssv3 = $_REQUEST['dssv3']; $dssd4 = $_REQUEST['dssd4']; $dssd5 = $_REQUEST['dssd5']; $dssc6 = $_REQUEST['dssc6'];
+$dsdp1 = $_REQUEST['dsdp1']; $dsdc2 = $_REQUEST['dsdc2']; $dsdi3 = $_REQUEST['dsdi3']; $dsdc4 = $_REQUEST['dsdc4']; $dsdc4 = $_REQUEST['dsdc4']; $dsdu5 = $_REQUEST['dsdu5']; $dsdm6 = $_REQUEST['dsdm6']; $dsdd7 = $_REQUEST['dsdd7']; $dsdi8 = $_REQUEST['dsdi8']; $dsdi9 = $_REQUEST['dsdi9']; $dsdr10 = $_REQUEST['dsdr10'];
 
 
 
 
-estoy ocupado 
-aaaa perdon nbb bueno cielo se arreglo, me avisas cuando te desocupes para seguir mirando okas? bueno bb 
-gracias <3 dale amor, me avisas mientras trabajo <3 te amoooooo
+<div class="container">
+                <h1 class="tituloc">Concepto (Resumen de la Valoración)</h1>
+                <div class="casilla">
+                    <div class="form-group row">
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="adecuado" value="si" name="adecuado" required>
+                            <label class="form-check-label minimal" for="defaultCheck1">Adecuado(a)</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input " type="checkbox" value="si" id="adecuadoP" name="adecuadoP" required>
+                            <label class="form-check-label minimal" for="defaultCheck1">
+                                Adecuado(a) para otro cargo
+                            </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input derecha" id="parcialmente" value="si" name="parcialmente" required>
+                            <label class="form-check-label minimal" for="defaultCheck1"> Parcialmente
+                                adecuado(a)</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="si" id="primera" name="primera" required>
+                            <label class="form-check-label" for="defaultCheck1">
+                                Primera Opción
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="si" id="segunda" name="segunda" required>
+                            <label class="form-check-label" for="defaultCheck1">
+                                Segunda Opción
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input derecha" type="checkbox" value="si" id="noA" name="noA" required>
+                            <label class="form-check-label" for="defaultCheck1">
+                                No Adecuado(a)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <!-- <div class="col-sm-6"> -->
+                    <label class="titulocp" for="concepto">Concepto Psicóloga</label><br><br>
+                    <textarea class="campo form-control" onKeyUp="Habilitar()" name="concepto" id="concepto" placeholder="¿Cual es tu Concepto?" required></textarea>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            
+            <div>
+                <h3 class="titulo"><b>Digital Skills- Self-assessment</b></h3>
+                <div class="contenedor1">
+                    <div>
+                        <h5 class="titulo2"><b>Working Tools & Methodologies</b></h5>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="dswm1" value="SI" name="dswm1">
+                            <label>MS Office basics (Word, Excel,</label>
+                            <label class="texto">Powerpoint)</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" value="SI" id="dswm2" name="dswm2">
+                            <label>
+                                MS Office advanced (Access, Project)
+                            </label>
+                        </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" id="dswo3" value="SI" name="dswo3">
+                        <label> Outlook</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" id="dswc4" value="SI" name="dswc4">
+                        <label> Communication tools (Teams, Yammer)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" id="dswp5" value="SI" name="dswp5">
+                        <label> Project Management</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" id="dswa6" value="SI" name="dswa6">
+                        <label>Agile</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" id="dswd7" value="SI" name="dswd7">
+                        <label> Desing thinking</label>
+                    </div>
+                    <div>
+                        <label for="text1"><b>Other</b></label><br>
+                        <textarea class="form-check-input" name="other1" id="other1"></textarea>
+                    </div><br><br><br><br>
+                    <!-- </div> -->
+                    <!-- <div> -->
+                    <h5 class="titulo3"><b>Soft Digital Skills</b></h5>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" value="SI" id="dssk1" name="dssk1">
+                        <label>
+                            Knowledge Networking
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" value="SI" id="dssp2" name="dssp2">
+                        <label>
+                            Problem Solving
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" value="SI" id="dssv3" name="dssv3">
+                        <label>
+                            Virtual Communication
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" value="SI" id="dssd4" name="dssd4">
+                        <label>
+                            Digital Awareness
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" value="SI" id="dssd5" name="dssd5">
+                        <label>
+                            Data and device security
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" value="SI" id="dssc6" name="dssc6">
+                        <label>
+                            Content creation
+                        </label>
+                    </div>
+                    <div>
+                        <label><b>Other</b></label><br>
+                        <textarea class="form-check-input" name="other2" id="other2"></textarea>
+                    </div><br><br><br>
+                    <!-- </div> -->
+                    <!-- <div> -->
+                    <h5 class="titulo4"><b>Digital Hard Skills</b></h5>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" value="SI" id="dsdp1" name="dsdp1">
+                        <label>
+                            Programming languages
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" value="SI" id="dsdc2" name="dsdc2">
+                        <label>
+                            Cloud Services
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" value="SI" id="dsdi3" name="dsdi3">
+                        <label>
+                            It System Management and
+                        </label>
+                        <label class="texto">Enterprise architecture</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" value="SI" id="dsdc4" name="dsdc4">
+                        <label>
+                            Cyber Security
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" value="SI" id="dsdu5" name="dsdu5">
+                        <label>
+                            UX/UI Desing
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" value="SI" id="dsdm6" name="dsdm6">
+                        <label>
+                            Mobile
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" value="SI" id="dsdd7" name="dsdd7">
+                        <label>
+                            Data & Analytics
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" value="SI" id="dsdi8" name="dsdi8">
+                        <label>
+                            Internet of Things
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" value="SI" id="dsdi9" name="dsdi9">
+                        <label>
+                            It Plataforms
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" value="SI" id="dsdr10" name="dsdr10">
+                        <label>
+                            Robotic Process Automation
+                        </label>
+                    </div>
+                    <div>
+                        <label><b>Other</b></label><br>
+                        <textarea id="other3" name="other3" class="form-check-input"></textarea>
+                    </div>
+                </div>
+            </div>

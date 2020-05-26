@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <title>Entrevistas Enel</title>
 
 <?php
@@ -23,5 +23,6 @@ $hora_now = date("H:i:s");
 <!-- Custom styles for this page  esto solo es para la tabla de busqueda--> 
 <link href="<?=URL_CSS?>dataTables.bootstrap4.min.css" rel="stylesheet">
 
+<!-- <link href="../vendor/fontawesome-free/css/bootstrap.css" rel="stylesheet" type="text/css"> -->
 </head>
 <body id="page-top">

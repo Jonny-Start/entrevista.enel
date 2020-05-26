@@ -102,16 +102,16 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="Chart.php">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Charts</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="insertar.php">
+        <a class="nav-link" href="misDatos.php">
           <i class="fas fa-fw fa-table"></i>
-          <span>Entrevista</span></a>
+          <span><?php echo $_SESSION['nombre']?>Perfil</span></a>
       </li>
 
       <!-- Divider -->
@@ -130,22 +130,29 @@
 
 
 
+    
     <!-- Logout Modal-->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Hola <?php echo $_SESSION['nombre']?>,  ¿Que entrevista haras el dia de hoy?</h5>
+          <h5 class="modal-title aling-center" style="color: black" id="exampleModalLabel"><?php echo $_SESSION['nombre']?>, Bienvenido al portal de entrevistas</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Recuerda que para todas las entrevistas generadas, la informacion de la Psicologa sera anexada</div>
-        <a class="btn btn-success"  href="entrevistaPsicologica.php" >Profecionales</a>
-        <br>
-        <a class="btn btn-info"  href="entrevistaAprendices.php" >Aprendices</a>
+        <div class="modal-body aling-center" style="color: black"><b>Recuerda, la información que se ingrese será anexada a tu portal de entrevistas</b></div>
+        <div class="container">
+        <img src="../img/Profesional.jpg" alt="Profecional" width="45%">
+        <img src="../img/aprendiz.png" alt="Profecional" width="30%"> 
+        </div>
+        <div class="mt-6 mr-12">
+        <a class="btn btn-success ml-6"  href="entrevistaPsicologica.php"  >Profesionales</a>
+        <a class="btn btn-info mr-12"  href="entrevistaAprendices.php" style="float: right" >Aprendices y/o Practicantes</a>
+        </div>
+        
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">cancelar</button>
+          <button class="btn btn-danger" type="button" data-dismiss="modal">cancelar</button>
         </div>
       </div>
     </div>

@@ -34,8 +34,8 @@
                         <!-- Nested Row within Card Body -->
                         <div class="row">
                             <!-- <div class="col-lg-6 d-none d-lg-block" ></div>  bg-login-image -->
-                            <img src="img/Psicologia.jpg" class="col-lg-6 d-none d-lg-block" alt="" height="" width="">
-                            <div class="col-lg-6">
+                            <img src="img/enel.png" class="col-lg-7 d-none d-lg-block my-0" alt="Imagen de Enel" height="" width="">
+                            <div class="col-lg-5">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h1 text-gray-1000 mb-4"><b>¡Bienvenido!</b></h1>

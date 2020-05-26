@@ -23,6 +23,7 @@ $_SESSION['user']=$user->correo_electronico;
 $_SESSION['rol'] = $user->Perfil;
 $_SESSION['co'] = $user->co;
 $_SESSION['nombre'] = $user->nombre;
+$_SESSION['apellidos'] = $user->apellidos;
 header("location:../View/principal.php");
 }
 else {

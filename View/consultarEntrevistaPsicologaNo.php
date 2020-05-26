@@ -1,10 +1,12 @@
 <?php include "../config.php";
 sessionValidate();
+$co = $_SESSION['co'];
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php include FOLDER_TEMPLATE . "head.php"; ?>
 <?php include FOLDER_TEMPLATE . "sidebar.php"; ?>
+
 
 <body id="page-top">
   <div class="container">
@@ -18,7 +20,7 @@ sessionValidate();
                 <div class="card shadow mb-4">
                   <div class="card-header py-3">
                     <center>
-                      <h2 class="m-0 font-weight-bold text">Personas Entrevistadas</h2>
+                      <h2 class="m-0 font-weight-bold text">Entrevistas no terminadas</h2>
                     </center>
                   </div>
                   <div class="card-body">
@@ -29,7 +31,8 @@ sessionValidate();
                             <th>Nombre </th>
                             <th>Cedula de Ciudadania</th>
                             <th>Telefono Celular</th>
-                            <th>Reporte</th>
+                            <th>Fecha de Entrevista</th>
+                            <th>Accion</th>
                           </tr>
                         </thead>
                         <tfoot>
@@ -37,13 +40,15 @@ sessionValidate();
                             <th>Nombre </th>
                             <th>Cedula de Ciudadania</th>
                             <th>Telefono Celular</th>
-                            <th>Reporte</th>
+                            <th>Fecha de Entrevista</th>
+                            <th>Accion</th>
                           </tr>
                         </tfoot>
                         <?php
                         require_once "../Model/conexioon.php";
-                        $sql = "SELECT * FROM `entrevistapsicologica` where terminado = 'True'  ";
+                        $sql = "SELECT * FROM `entrevistapsicologica` where terminado = 'False' and co ='$co' ";
                         $rta = $objCnx->query($sql);
+                        
                         while ($datos = $rta->fetch_array()) {
                         ?>
                           <tbody>
@@ -51,7 +56,8 @@ sessionValidate();
                               <td><?php echo $datos['nombre'] ?></td>
                               <td><?php echo $datos['cc'] ?></td>
                               <td><?php echo $datos['telefono'] ?></td>
-                              <td><a href="../Reportes/pdf-EntrevistaPsicologicaCompleta.php?cc=<?php echo $datos['cc'] ?>" target="_blank"><img src="../img/pdf.png" alt="Sacar Reporte" width="30" height="40"></a></td>
+                              <td><?php echo $datos['fechaEntrevista']?></td>
+                              <td><a href="entrevistaPsTerminada.php?cc=<?php echo $datos['cc'] ?>"><i class="fas fa-user-edit" style="color: green; padding: 5px"></i></a>   <i class="fas fa-user-minus"  style="color: red; padding: 5px"></i></td>
                             </tr>
 
                           <?php

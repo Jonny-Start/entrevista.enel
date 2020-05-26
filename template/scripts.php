@@ -15,6 +15,9 @@
 
   <!-- Page level custom scripts -->
   <script src="<?=URL_JS?>datatables-demo.js"></script>
+  
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
 
 
  

@@ -183,10 +183,10 @@ td.desktop-hide {
           <table cellspacing='0' cellpadding='0' width='600' class='w320'>
             <tr>
               <td valign='top' class='mobile-block mobile-no-padding-bottom mobile-center' width='270' style='background:#1f1f1f;padding:10px 10px 10px 20px;'>
-                <a href='../index.php' style='text-decoration:none;'>
-                <img src='../img/PsicologiaPNG.png' alt='Entrevista_Enel.com' width='142' height='30'>
+                // <a href='../index.php' style='text-decoration:none;'>
+                // <img src='../img/PsicologiaPNG.png' alt='Entrevista_Enel.com' width='142' height='30'>
                 <b>Entrevistas Enel Colombia</b>
-                <img src='../img/enel.png' alt='Entrevista_Enel.com' width='142' height='30'>
+                // <img src='../img/enel.png' alt='Entrevista_Enel.com' width='142' height='30'>
                 </a>
               </td>
     </tr>
@@ -277,7 +277,7 @@ try {
     $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
     //Recipients
-    $mail->setFrom('entrevistasenel2020@gmail.com', 'Entrevistas Enel Jonny Cano'); //desde donde se va a enviar
+    $mail->setFrom('entrevistasenel2020@gmail.com', 'Entrevistas Enel'); //desde donde se va a enviar
     $mail->addAddress('jonnyalejandro.ca0910@gmail.com','PETICION PAGINA ENTREVISTA');  //a quien se le va a enviar    // Add a recipient
     // $mail->addAddress('ellen@example.com');// para agregar a alguien mas                // Name is optional
     //$mail->addReplyTo('jonnyalejandro.ca0910@gmail.com', 'PETICION PAGINA ENTREVISTA');  // esto es para agregar una copia

@@ -13,6 +13,6 @@ if ($resul) {
 	mysqli_close($objCnx);
 }else{
 	header("location:../View/eliminar.php?page=actualizar&msj=2");
-	mysql_close($objCnx);
+	mysqli_close($objCnx);
 }
- ?>
+?>|
