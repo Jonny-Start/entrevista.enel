@@ -182,14 +182,15 @@ td.desktop-hide {
         <center>
           <table cellspacing='0' cellpadding='0' width='600' class='w320'>
             <tr>
-              <td valign='top' class='mobile-block mobile-no-padding-bottom mobile-center' width='270' style='background:#1f1f1f;padding:10px 10px 10px 20px;'>
-                // <a href='../index.php' style='text-decoration:none;'>
-                // <img src='../img/PsicologiaPNG.png' alt='Entrevista_Enel.com' width='142' height='30'>
-                <b>Entrevistas Enel Colombia</b>
-                // <img src='../img/enel.png' alt='Entrevista_Enel.com' width='142' height='30'>
-                </a>
-              </td>
+              <td valign='top' class='mobile-block mobile-no-padding-bottom mobile-center' width='270' style='background:#1f1f1f;padding:10px 10px 10px 20px;'></td>
     </tr>
+    <table cellspacing='0' cellpadding='0' width='100%'>
+    <tr>
+      <td align='right' valign='bottom' style='padding-bottom:0; vertical-align:bottom;'>
+        <img  style='vertical-align:bottom;' src='../img/banner.png'  width='100%' height='15px' />
+      </td>
+    </tr>
+  </table>
     </table>
     <tr>
       <td style='border-bottom:1px solid #e7e7e7;'>
@@ -221,8 +222,7 @@ td.desktop-hide {
                           <w:anchorlock/>
                           <center>
                         <![endif]-->
-                            <a href='#'
-                      style='background-color:#D84A38;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:13px;font-weight:bold;line-height:33px;text-align:center;text-decoration:none;width:100px;-webkit-text-size-adjust:none;'>My Account</a>
+                            <a href='#' style='background-color:#D84A38;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:13px;font-weight:bold;line-height:33px;text-align:center;text-decoration:none;width:100px;-webkit-text-size-adjust:none;'>Registrar</a>
                         <!--[if mso]>
                           </center>
                         </v:rect>
@@ -237,7 +237,7 @@ td.desktop-hide {
                 <table cellspacing='0' cellpadding='0' width='100%'>
                   <tr>
                     <td align='right' valign='bottom' style='padding-bottom:0; vertical-align:bottom;'>
-                      <img  style='vertical-align:bottom;' src='../View/insertar.php'  width='174' height='294' />
+                      <img  style='vertical-align:bottom;' src='https://www.filepicker.io/api/file/9f3sP1z8SeW1sMiDA48o'  width='174' height='294' />
                     </td>
                   </tr>
                 </table>

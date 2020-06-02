@@ -72,44 +72,182 @@ function seguro() {
 function responsabilidad() {
     swal("Preguntas para la entrevista (Responsabilidad)", {
         buttons: {
-            cancel: "Run away!",
+            cancel: "Cancelar",
             catch: {
                 text: "Disparadoras",
                 value: "catch",
             },
-            defeat: true,
+            defeat: {
+                text: "Complemento",
+                value: "defeat",
+            }
         },
     })
         .then((value) => {
             switch (value) {
 
                 case "defeat":
-                    swal("Pikachu fainted! You gained 500 XP!");
+                    swal("Complementarias", "-¿Dentro de su roll quienes son sus clientes? ___________ -¿Como mides la satisfacción con tu cliente? ____________ -¿Como generas un plan de acción para mejorar la satisfacción con tu cliente?_____________");
                     break;
 
                 case "catch":
-                    swal("Disparadoras", "Cuentanos un proyecto que hayas desarrollado con éxito. Objetivo: Se debe evaluar la gestión de recursos propios y de otros (planeo, Lidero bien, optimizó recursos) -----------------------------------------------------------------------------   -Cuentanos un proyecto fallido.      -¿Que rescatas de la experiencia vivida?      -¿Que podrias haber hecho y que no hiciste?",);
-                break;
+                    swal("Disparadoras", "Cuentanos un proyecto que hayas desarrollado con éxito. Objetivo: Se debe evaluar la gestión de recursos propios y de otros (planeo, Lidero bien, optimizó recursos) -----------------------------------------------------------------------------   -Cuentanos un proyecto fallido.___________________ -¿Que rescatas de la experiencia vivida?______________ -¿Que podrias haber hecho y que no hiciste?____________");
+                    break;
 
                 default:
-                    swal("Got away safely!");
+                    swal("¡Si tienes dudas, aquí estare!");
             }
         });
 }
 function productividad() {
-    swal("¡PRODUCTIVIDAD! ", " La productividad es la relación entre el resultado de una actividad productiva y los medios que han sido necesarios para obtener dicha producción. En el campo empresarial se define la productividad empresarial como el resultado de las acciones que se deben llevar a término para conseguir los objetivos de la empresa y un buen clima laboral, teniendo en cuenta la relación entre los recursos que se invierten para alcanzar los objetivos y los resultados de los mismos. ");
+    swal("Preguntas para la entrevista (Productividad)", {
+        buttons: {
+            cancel: "Cancelar",
+            catch: {
+                text: "Disparadoras",
+                value: "catch",
+            },
+            defeat: {
+                text: "Complemento",
+                value: "defeat",
+            }
+        },
+    })
+        .then((value) => {
+            switch (value) {
+
+                case "defeat":
+                    swal("Complementarias", "-¿A cuales redes estas afiliados? (red que promueva el conocimiento) -¿Como te mantienes actualizado e informado?");
+                    break;
+
+                case "catch":
+                    swal("Disparadoras", "-Conclusión a la que se llega a través de la entrevista si la persona hace o no inversión en su propio desarrollo. -¿Cual fue la última retroalimentación que recibiste? -¿Que te resaltaron en tu ultima evaluación?,  -¿Que te invitaron a mejorar? -¿Que acciones realizaste para desarrollar?");
+                    break;
+
+                default:
+                    swal("¡Si tienes dudas, aquí estare!");
+            }
+        });
 }
 function gestionCambio() {
-    swal("¡GESTION DEL CAMBIO! ", " Es la gestión de la continuidad es decir alcanzar nuevos objetivos pero también consolidar los ya conseguidos mediante un proceso de adaptación, comprensión del impacto a largo plazo y del plan de acción para lograr un óptimo cambio en las políticas, procesos y métodos de trabajo en una organización.");
+    swal("Preguntas para la entrevista (Gestion del Cambio)", {
+        buttons: {
+            cancel: "Cancelar",
+            catch: {
+                text: "Disparadoras",
+                value: "catch",
+            },
+            defeat: {
+                text: "Complemento",
+                value: "defeat",
+            }
+        },
+    })
+        .then((value) => {
+            switch (value) {
+
+                case "defeat":
+                    swal("-¿Cuentanos un cambio organizacional que hayas vivido?. -Como vendes la idea que esta nueva situación es adecuada o favorece a todo el grupo.");
+                    break;
+
+                case "catch":
+                    swal("-¿Cuentanos un gran cambio que has tenido en tu vida?");
+                    break;
+
+                default:
+                    swal("¡Si tienes dudas, aquí estare!");
+            }
+        });
 }
 function innovacion() {
-    swal("¡INNOVACION! ", " Es la capacidad para modificar las cosas, incluso partiendo de formas o situaciones no pensadas con anterioridad. Implica idear soluciones nuevas y diferentes ante problemas o situaciones requeridas por el cargo, la compañía y la cultura organizacional. ");
+    swal("Preguntas para la entrevista (Innovacion)", {
+        buttons: {
+            cancel: "Cancelar",
+            catch: {
+                text: "Disparadoras",
+                value: "catch",
+            },
+            defeat: {
+                text: "Complemento",
+                value: "defeat",
+            }
+        },
+    })
+        .then((value) => {
+            switch (value) {
+
+                case "defeat":
+                    swal("-¿Cuales son los temas que más te gustan para pasar tu tiempo libre?, por ejemplo Lectura o Actividades culturales. -¿Cual fue la situación más novedosa, diferente o inesperada que sucedio en  tu vida, y como la enfrentaste?");
+                    break;
+
+                case "catch":
+                    swal("-¿Cuales son las oportunidades de mejoramiento que identificas o identificaste en tu actual area del trabajo? Dime una. -¿Cual es el benficio para la empresa?");
+                    break;
+
+                default:
+                    swal("¡Si tienes dudas, aquí estare!");
+            }
+        });
 }
 function resiliencia() {
-    swal("¡RESILIENCIA! ", " Capacidad humana de asumir con flexibilidad situaciones limite y sobreponerse a ellas. (RAE) Es la capacidad de recuperarse frente a la adversidad y aprender de ella. “La habilidad y capacidad de una persona para fortalecerse y recuperarse bajo condiciones de enorme stress y cambio Es la capacidad de las personas para sobreponerse a situaciones adversas y adaptarse rápidamente a cambios, ambientes laborales y personas, manteniendo los niveles de eficacia y efectividad.");
+    swal("Preguntas para la entrevista (Resiliencia)", {
+        buttons: {
+            cancel: "Cancelar",
+            catch: {
+                text: "Disparadoras",
+                value: "catch",
+            },
+            defeat: {
+                text: "Complemento",
+                value: "defeat",
+            }
+        },
+    })
+        .then((value) => {
+            switch (value) {
+
+                case "defeat":
+                    swal("No se requieren preguntas puesto que este criterio ya fue evaluado previamente en las pruebas psicotécnicas.");
+                    break;
+
+                case "catch":
+                    swal("-¿Cual fue el evento más dificil de tu vida? ¿Que pasó? ¿Qué hiciste? ¿Como percibiste que habias superado este evento? ¿Que aprendiste de este evento en tu vida?  Observación: Que tanto tiempo esta persona estuvo en la fase más dificil del evento, cada cuanto te pasa esto y cada cuanto te sientes así.");
+                    break;
+
+                default:
+                    swal("¡Si tienes dudas, aquí estare!");
+            }
+        });
 }
 function confianza() {
-    swal("¡CONFIANZA O INTELIGENCIA EMOCIONAL! ", " Es la capacidad de describrir, reconocer, manejar, crear motivación y gestionar las emociones  y sentimientos propios, lo cual permite gestionar adecuadamente las relaciones interpersonales y así mismo  adaptarse a las diferentes situaciones que impliquen emociones tanto positivas como negativas. ");
+    swal("Preguntas para la entrevista (Confianza)", {
+        buttons: {
+            cancel: "Cancelar",
+            catch: {
+                text: "Disparadoras",
+                value: "catch",
+            },
+            defeat: {
+                text: "Complemento",
+                value: "defeat",
+            }
+        },
+    })
+        .then((value) => {
+            switch (value) {
+
+                case "defeat":
+                    swal("-¿En algún momento has asumido rol de tutor o mentor? Cuentanos una experiencia donde te hayas visto enfrentado a transferir conocimiento? Como lo hiciste?, ¿Cual fue el resultado? -¿Como Inspiras a tu equipo? -¿Como haces a que tu equipo encuentre sentido a lo que hace? -Cuentanos un evento donde hayas tenido oportunidad de dar feedback a tus compañeros de trabajo,¿ Que tan frecuente sucede? -¿Como logras que la gente te siga y haga lo que tenga que hacer? -Cuentame un caso que evidencia que hayas inspirado a tu equipo? -¿Como logras que tus amigos hagan lo que tu crees que deben hacer?");
+                    break;
+
+                case "catch":
+                    swal("¿Como es la comunicación con tus jefes, compañeros y colaboradores de trabajo? Enfocarnos en retroalimentación, oportunidad, manejo del error, periodicidad de reuniones y segurimiento. Asertividad. -Para el caso de pares se identifica si se puede hacer sinergia, si se cultiva los vinculos, o se mantiene de manera saludable, para que cuando yo lo necesito sea más fluido.");
+                    break;
+
+                default:
+                    swal("¡Si tienes dudas, aquí estare!");
+            }
+        });
 }
 
 
