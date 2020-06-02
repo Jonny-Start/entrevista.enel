@@ -3,11 +3,11 @@
 ?>
 <?php include FOLDER_TEMPLATE . "scripts.php"; ?>
 <?php include FOLDER_TEMPLATE . "head.php"; ?>
-<link href="../css/style.css" rel="stylesheet" type="text/css">
+<link href="../css/contactame.css" rel="stylesheet" type="text/css">
 
 <body class="bg-primary">
   <div class="contenedor3">
-  <img src="../img/enel.png" alt="imagen Enel" style="opacity: 0.5; width: 80%" >
+  <img src="../img/enel.png" alt="imagen Enel" >
     <div>
       <h2 class="titulo"><b>¡Solicita una cuenta!</b></h2>
     </div>
@@ -32,7 +32,7 @@
     </div>
     <div class="contenedor5">
       <!-- <div class="form-group"> -->
-      <button type="submit" name="botton" class="btn btn-success boton1" style="width: 90%">
+      <button type="submit" name="botton" class="btn btn-success boton1" >
         <i class="fas fa-envelope"></i> Enviar</button>
       <!-- </div> -->
     </div>
