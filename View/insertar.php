@@ -1,12 +1,12 @@
-<?php include"../config.php";
+<?php include "../config.php";
 sessionValidate();
 ?>
 
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<?php include FOLDER_TEMPLATE. "head.php"; ?>
-<?php include FOLDER_TEMPLATE."sidebar.php"; ?>
+<?php include FOLDER_TEMPLATE . "head.php"; ?>
+<?php include FOLDER_TEMPLATE . "sidebar.php"; ?>
 
 
 <body>
@@ -21,24 +21,20 @@ sessionValidate();
                             <div class="text-center">
                                 <h1 class="h1 text-gray-1000 mb-5">Crea una cuenta!</h1>
                             </div>
-                            <form class="user" id="form1" name="form1" method="post"
-                                action="../Controller/ValidarInsertarUsuario.php">
+                            <form class="user" id="form1" name="form1" method="post" action="../Controller/ValidarInsertarUsuario.php">
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
-                                        <input name="nombre" type="text" class="form-control form-control-user"
-                                            id="nombre" placeholder="Nombre(s)" required>
+                                        <input name="nombre" type="text" class="form-control form-control-user" id="nombre" placeholder="Nombre(s)" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-12">
-                                        <input type="text" name="apellidos" class="form-control form-control-user"
-                                            id="apellidos" placeholder="Apellido(s)" required>
+                                        <input type="text" name="apellidos" class="form-control form-control-user" id="apellidos" placeholder="Apellido(s)" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-12">
-                                        <input type="text" name="co" class="form-control form-control-user" id="co"
-                                            placeholder="CO" required>
+                                        <input type="text" name="co" class="form-control form-control-user" id="co" placeholder="CO" required>
                                     </div>
                                     <!-- <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
@@ -47,32 +43,26 @@ sessionValidate();
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-12">
-                                        <input type="text" name="Perfil" class="form-control form-control-user"
-                                            id="Perfil" placeholder="Perfil" required>
+                                        <input type="text" name="Perfil" class="form-control form-control-user" id="Perfil" placeholder="Perfil" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-12">
-                                        <input type="email" name="correo_electronico"
-                                            class="form-control form-control-user" id="correo_electronico"
-                                            placeholder="Correo electronico de Enel" required>
+                                        <input type="email" name="correo_electronico" class="form-control form-control-user" id="correo_electronico" placeholder="Correo electronico de Enel" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                <div class="col-lg-12">
-                                    <div class="input-group">
-                                        <input type="password" class="form-control form-control-user" id="contraseña"
-                                            name="contraseña" placeholder="contraseña" required>
-                                        <div class="input-group-append">
-                                            <button id="show_password" class="btn btn-primary" type="button"
-                                                onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span>
-                                            </button>
+                                    <div class="col-lg-12">
+                                        <div class="input-group">
+                                            <input type="password" class="form-control form-control-user" id="contraseña" name="contraseña" placeholder="contraseña" required>
+                                            <div class="input-group-append">
+                                                <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                </div>
-                                <input type="submit" class="btn btn-primary btn-user btn-block border-bottom-success "
-                                    id="button" name="button" value="Registrar Cuenta">
+                                <input type="submit" class="btn btn-primary btn-user btn-block border-bottom-success " id="button" name="button" value="Registrar Cuenta">
 
 
                                 <!-- <hr>
@@ -84,27 +74,6 @@ sessionValidate();
                 </a>
               </form> -->
                                 <hr />
-                                <?php
-                                  
-                                  extract($_REQUEST);
-            
-                                  if(isset($_REQUEST["msj"])){
-                                    if ($_REQUEST["msj"]=="1"){
-                                    ?>
-                                        <script>
-                                        alert("SE REGISTRO CORRECTAMENTE ");
-                                        </script>
-                                    <?php
-                                    }else
-                                    {
-                                    ?>
-                                        <script>
-                                        alert("NO SE PUDO REGISTRAR EL USUARIO, VERIFICA LOS DATOS");
-                                        </script>
-                                    <?php
-                                    }
-                                  }
-                            ?>
                                 <!-- <div class="text-center">
                 <a class="small" href="forgot-password.html">Forgot Password?</a>
               </div> -->
@@ -121,33 +90,24 @@ sessionValidate();
     </div>
 
     <script type="text/javascript">
-    function mostrarPassword() {
-    var cambio = document.getElementById("contraseña");
-    if (cambio.type == "password") {
-        cambio.type = "text";
-        $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
-    } else {
-        cambio.type = "password";
-        $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
-    }
-}
-$(document).ready(function() {
-    //CheckBox mostrar contraseña
-    $('#ShowPassword').click(function() {
-        $('#Password').attr('type', $(this).is(':checked') ? 'text' : 'password');
-    });
-});
-</script>
+        function mostrarPassword() {
+            var cambio = document.getElementById("contraseña");
+            if (cambio.type == "password") {
+                cambio.type = "text";
+                $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+            } else {
+                cambio.type = "password";
+                $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+            }
+        }
+        $(document).ready(function() {
+            //CheckBox mostrar contraseña
+            $('#ShowPassword').click(function() {
+                $('#Password').attr('type', $(this).is(':checked') ? 'text' : 'password');
+            });
+        });
+    </script>
 </body>
-
-
-
-
-
-
-
-
-
 
 <!-- <a class="nav-link dropdown-toggle"  id="Perfil" name="Perfil" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Perfil
@@ -161,16 +121,27 @@ $(document).ready(function() {
               </div>
                 </div> -->
 
+<?php include FOLDER_TEMPLATE . "scripts.php"; ?>
 
-
-
-
-
-
-
-
-
-<?php include FOLDER_TEMPLATE. "scripts.php"; ?>
+<?php //<a href="../Reportes/pdf-Entrevista_Psicologa.php?cc=<?php echo $datos['cc']">
+extract($_REQUEST);
+if (isset($_REQUEST["msj"])) {
+    if ($_REQUEST["msj"] == "1") {
+        echo "<script type='text/javascript'>
+        Swal.fire({
+        icon: 'success',
+        title: 'Agregado',
+        text: 'Se inserto correctamente el usuario',
+        })</script>";
+    } else {
+        echo "<script type='text/javascript'>
+        Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'No se pudo hacer el registro, verifica los datos',
+        })</script>";
+    }
+}
+?>
 </body>
-
 </html>

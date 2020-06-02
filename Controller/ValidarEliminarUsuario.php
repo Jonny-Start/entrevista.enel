@@ -15,4 +15,4 @@ if ($resul) {
 	header("location:../View/eliminar.php?page=actualizar&msj=2");
 	mysqli_close($objCnx);
 }
-?>|
+?>

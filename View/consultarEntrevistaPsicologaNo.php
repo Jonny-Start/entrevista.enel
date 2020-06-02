@@ -48,18 +48,18 @@ $co = $_SESSION['co'];
                         require_once "../Model/conexioon.php";
                         $sql = "SELECT * FROM `entrevistapsicologica` where terminado = 'False' and co ='$co' ";
                         $rta = $objCnx->query($sql);
-                        
+
                         while ($datos = $rta->fetch_array()) {
+                          $cc = $datos['cc'];
                         ?>
                           <tbody>
                             <tr>
                               <td><?php echo $datos['nombre'] ?></td>
-                              <td><?php echo $datos['cc'] ?></td>
+                              <td><?php echo $cc ?></td>
                               <td><?php echo $datos['telefono'] ?></td>
-                              <td><?php echo $datos['fechaEntrevista']?></td>
-                              <td><a href="entrevistaPsTerminada.php?cc=<?php echo $datos['cc'] ?>"><i class="fas fa-user-edit" style="color: green; padding: 5px"></i></a>   <i class="fas fa-user-minus"  style="color: red; padding: 5px"></i></td>
+                              <td><?php echo $datos['fechaEntrevista'] ?></td>
+                              <td><a href="entrevistaPsTerminada.php?cc=<?php echo $datos['cc'] ?>"><i class="fas fa-user-edit" style="color: green; padding: 5px"></i></a> <a href="../Controller/ValidarEliminarEntrevistaPs.php?cc=<?php echo $cc ?>"><i class="fas fa-user-minus" onclick="verificar()" style="color: red; padding: 5px"></i></a></td>
                             </tr>
-
                           <?php
                         }
                           ?>
@@ -69,22 +69,47 @@ $co = $_SESSION['co'];
                   </div>
                 </div>
               </div>
-              <!-- /.container-fluid -->
-
             </div>
-            <!-- End of Main Content -->
-
           </div>
-          <!-- End of Content Wrapper -->
-
         </div>
-        <!-- End of Page Wrapper -->
-
+        <?php include FOLDER_TEMPLATE . "scripts.php"; ?>
         <!-- Scroll to Top Button-->
         <a class="scroll-to-top rounded" href="#page-top">
           <i class="fas fa-angle-up"></i>
         </a>
-        <?php include FOLDER_TEMPLATE . "scripts.php"; ?>
+        <?php
+        extract($_REQUEST);
+        if (isset($_REQUEST["msj"])) {
+          if ($_REQUEST["msj"] == "1") {
+            echo "<script type='text/javascript'>
+            Swal.fire({
+            icon: 'success',
+            title: '¡COMPLETADO!',
+            text: 'Se completo correctamente la entrevista',
+            })</script>";
+          } else if ($_REQUEST["msj"] == "2"){
+            echo "<script type='text/javascript'>
+            Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'No se pudo completar la entrevista intentalo nuevamente',
+          })</script>";
+          }else if ($_REQUEST["msj"] == "3") {
+            echo "<script type='text/javascript'>
+            Swal.fire({
+            icon: 'success',
+            title: 'Eliminado',
+            text: 'Se Elimino el registro correctamente',
+          })</script>";
+          } else if ($_REQUEST["msj"] == "4"){
+            echo "<script type='text/javascript'>
+            Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'No se pudo eliminar la informacion, verifica los datos',
+          })</script>";
+          }
+        }
+        ?>
 </body>
-
 </html>

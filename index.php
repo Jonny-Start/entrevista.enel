@@ -34,7 +34,7 @@
                         <!-- Nested Row within Card Body -->
                         <div class="row">
                             <!-- <div class="col-lg-6 d-none d-lg-block" ></div>  bg-login-image -->
-                            <img src="img/enel.png" class="col-lg-7 d-none d-lg-block my-0" alt="Imagen de Enel" height="" width="">
+                            <img src="img/enel.png" class="col-lg-7 d-none d-lg-block my-0" style="padding-top:11%" alt="Imagen de Enel" height="20%" width="">
                             <div class="col-lg-5">
                                 <div class="p-5">
                                     <div class="text-center">
@@ -43,13 +43,13 @@
                                     <form class="user" method="POST" action="<?=URL_PROY?>Model/sesiones.php">
                                         <div class="form-group">
                                             <input type="email" name="usuario" class="form-control form-control-user"
-                                                id="usuario" aria-describedby="emailHelp" placeholder="EMAIL ENEL"
+                                                id="usuario" aria-describedby="emailHelp" placeholder="Correo ENEL"
                                                 required>
                                             <br>
                                             <div class="input-group">
                                                 <input type="password" name="password"
                                                     class="form-control form-control-user" id="password"
-                                                    placeholder="PASSWORD" required>
+                                                    placeholder="Contraseña" required>
                                                 <div class="input-group-append">
                                                     <button id="show_password" class="btn btn-primary" type="button"
                                                         onclick="mostrarPassword()"> <span

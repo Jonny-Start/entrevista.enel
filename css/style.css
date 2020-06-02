@@ -13,7 +13,6 @@
     /* box-shadow: 5px 5px 5px 5px #635d5d70; */
   }
   .contenedor3{
-    background-image:url("../img/enel.png"); 
     height: 450px;
     width: 1090px;
     
@@ -25,7 +24,7 @@
     width: 1090px;
     height: 450px;
     position: relative;
-    margin-left: 150px;
+    margin-left: 100px;
     border-radius: 10px;
     margin-bottom: 30px;
     margin-top: 63px;

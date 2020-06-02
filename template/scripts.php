@@ -18,6 +18,7 @@
   
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
+  <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
-
- 

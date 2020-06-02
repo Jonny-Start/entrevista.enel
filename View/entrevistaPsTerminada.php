@@ -8,18 +8,10 @@ $rta = $objCnx->query($query);
 ?>
 <link href="../vendor/fontawesome-free/css/bootstrap.css" rel="stylesheet" type="text/css">
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-
 <div class="container">
     <div class="text-center">
         <h1 class="jumbotron">Entrevista Psicológica</h1>
     </div>
-    <script>
-        function seguro() {
-            window.onbeforeunload = function() {
-                return "¿Estás seguro que deseas salir de la actual página?"
-            }
-        }
-    </script>
     <a href="principal.php" class="btn btn-danger btn-sm" style="width: 100%" onclick="seguro()">Salir</a>
     <form id="regiration_form" novalidate action="../Controller/ValidarActualizarEntrevistaPs.php" method="post">
 
@@ -29,7 +21,6 @@ $rta = $objCnx->query($query);
         $rta = $objCnx->query($sql);
         while ($datos = $rta->fetch_array()) {
         ?>
-
             <h2 style="color: black"><b>Datos</b></h2><br>
             <div class="form-group row">
                 <div class="col-sm-12">
@@ -115,7 +106,6 @@ $rta = $objCnx->query($query);
                 }
             }
             ?>
-
             <div class="contenedor">
                 <div>
                     <h3 class="titulo" style="color: black"><b>Digital Skills- Self-assessment</b></h3>
@@ -342,35 +332,28 @@ $rta = $objCnx->query($query);
             </div>
         <?php
         } ?>
-        <script type="text/javascript">
-            function control(caracter) {
-                caracter = (document.layers) ? caracter.which : event.keyCode;
-                if (caracter == 13) {
-                    alert('Se ha pulsado la tecla Enter, esta tecla esta deshabilitada para este formulario');
-                    return false;
-                }
-            }
-            document.onkeypress = control;
-        </script>
-
         <input type="submit" name="boton" class="submit btn btn-success" value="Registrar" id="boton" /><br>
 
 
-        <?php //<a href="../Reportes/pdf-Entrevista_Psicologa.php?cc=<?php echo $datos['cc']">
+        <?php
         if (isset($_GET["msj"])) {
 
             if ($_GET["msj"] == "1") {
-        ?>
-                <script>
-                    alert("SE REGISTRO CORRECTAMENTE");
-                </script>
-            <?php
+                echo " <script type='text/javascript'>
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'COMPLETADO!',
+                        text: 'se completo correctamente la entrevista Psicologica',
+                    })
+                </script>";
             } else if ($_GET["msj"] == "2") {
-            ?>
-                <script>
-                    alert("NO SE PUDO HACER EL REGISTRO");
-                </script>
-        <?php
+               echo "<script type='text/javascript'>
+                    Swal.fire({
+                        icon: 'error',
+                        title: '¡ERROR!',
+                        text: 'No se pudo Terminar la entrevista, intentalo nuevamente',
+                    })
+                </script>";
             }
         }
         ?>
@@ -379,4 +362,4 @@ $rta = $objCnx->query($query);
 </div>
 <?php include FOLDER_TEMPLATE . "scripts.php"; ?>
 
-<!-- <script type="text/javaScript" src="../vendor/.js"></script> -->
+<script type="text/javaScript" src="../vendor/.js"></script>

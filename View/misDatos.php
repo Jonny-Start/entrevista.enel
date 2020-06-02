@@ -36,7 +36,7 @@ sessionValidate();
 
         </style>
         <!-- fin de la consulta -->
-        <div >
+        <div>
           <center><img src="../img/misDatos.png" alt="Img_Modificar_Usuario"></center>
         </div>
         <form id="form1" name="form1" method="post" action="../Controller/controllermisDatos.php">
@@ -81,17 +81,6 @@ sessionValidate();
           </div>
         </form>
 
-        <?php
-        extract($_REQUEST);
-        if(isset($_REQUEST["msj"])){
-          if ($_REQUEST["msj"]=="1"){
-            echo "<script>alert('SE ACTUALIZO LA INFORMACION CORRECTAMENTE');</script>";
-          }else
-          {
-            echo "<script>alert('NO SE PUDO HACER LA ACTUALIZACION, VERIFICA LOS DATOS INGRESADOS');</script>";
-          }
-        }
-         ?>
         <!-- firma Digital -->
         <form action="../Controller/controllerFirma.php" enctype="multipart/form-data" method="post">
           <b style="color: black">Firma Digital</b>
@@ -112,4 +101,63 @@ sessionValidate();
 </div>
 </div>
 </div>
+<button id="btn7" class="btn btn-info btn-lg btn-block">Progresivo</button>
+
 <?php include FOLDER_TEMPLATE . "scripts.php"; ?>
+
+<script type="text/javascript">
+  //Progresivo
+$("#btn7").click(function(){
+    Swal.mixin({
+      input: 'text', //puede ser text, number, email, password, textarea, select, radio
+      confirmButtonText: 'Siguiente &rarr;',
+      showCancelButton: true,
+      progressSteps: ['1', '2', '3']
+    }).queue([
+      {
+        title: 'Pregunta 1',
+        text: '¿Color favorito?'
+      },
+      {
+        title: 'Pregunta 2',
+        text: '¿Animal favorito?'
+      },
+        {
+        title: 'Pregunta 3',
+        text: '¿País de origen?'
+      }      
+    ]).then((result) => {
+      if (result.value) {
+        Swal.fire({
+          title: '¡Completado!',
+          html:
+            'Tus respuestas: <pre><code>' +
+              JSON.stringify(result.value) +
+            '</code></pre>',
+          confirmButtonText: 'Ok'
+        })
+      }
+    });    
+});
+</script>
+
+
+<?php
+extract($_REQUEST);
+if (isset($_REQUEST["msj"])) {
+  if ($_REQUEST["msj"] == "1") {
+    echo "<script type='text/javascript'>
+      Swal.fire({
+      icon: 'success',
+      title: 'Actualizado',
+      text: 'Se actualizo correctamente',
+    })</script>";
+  } else {
+    echo "<script type='text/javascript'>Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'No se pudo hacer la actualizacion, verifica los datos',
+    })</script>";
+  }
+}
+?>

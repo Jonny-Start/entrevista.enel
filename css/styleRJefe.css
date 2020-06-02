@@ -1,0 +1,127 @@
+
+#circulo {
+    width: 30rem; /* para el ancho */
+    height: 30rem; /* para lo alto del div */
+    border-radius: 50%; /* para el radio */
+
+    background: red; 
+    display: flex; /* para el texto se ajuste a el circulo*/
+    text-align: center; /* para ajustar el texto */
+    justify-content: center; /* para el texto se ajuste a el circulo */
+    align-items: center; /* para centrar en contenido */
+    position: relative; /* para asignar el valor de pocition absolute y ser el punto de referencia*/
+    top: 8rem;
+}
+
+#circulo1 {
+    width: 15rem; /* para el ancho */
+    height: 15rem; /* para lo alto del div */
+    border-radius: 50%; /* para el radio */
+
+    background: green; 
+    display: flex; /* para el texto se ajuste a el circulo*/
+    text-align: center; /* para ajustar el texto */
+    justify-content: center; /* para el texto se ajuste a el circulo */
+    align-items: center; /* para centrar en contenido */
+    position: absolute; /* dejar de manera fija respecto  un elemento de referencia*/ 
+    top: -8rem;
+    left: -3rem;
+}   
+
+#circulo2 {
+    width: 15rem; /* para el ancho */
+    height: 15rem; /* para lo alto del div */
+    border-radius: 50%; /* para el radio */
+
+    background: blue; 
+    display: flex; /* para el texto se ajuste a el circulo*/
+    text-align: center; /* para ajustar el texto */
+    justify-content: center; /* para el texto se ajuste a el circulo */
+    align-items: center; /* para centrar en contenido */
+    position: absolute; /* dejar de manera fija respecto  un elemento de referencia*/ 
+    top: -9rem;
+    left: 23rem;
+} 
+
+#circulo3 {
+    width: 15rem; /* para el ancho */
+    height: 15rem; /* para lo alto del div */
+    border-radius: 50%; /* para el radio */
+
+    background: black; 
+    display: flex; /* para el texto se ajuste a el circulo*/
+    text-align: center; /* para ajustar el texto */
+    justify-content: center; /* para el texto se ajuste a el circulo */
+    align-items: center; /* para centrar en contenido */
+    position: absolute; /* dejar de manera fija respecto  un elemento de referencia*/ 
+    top: -3rem;
+    left: 40rem;
+} 
+
+#circulo4 {
+    width: 15rem; /* para el ancho */
+    height: 15rem; /* para lo alto del div */
+    border-radius: 50%; /* para el radio */
+
+    background: yellow; 
+    display: flex; /* para el texto se ajuste a el circulo*/
+    text-align: center; /* para ajustar el texto */
+    justify-content: center; /* para el texto se ajuste a el circulo */
+    align-items: center; /* para centrar en contenido */
+    position: absolute; /* dejar de manera fija respecto  un elemento de referencia*/ 
+    top: 11rem;
+    left: 31rem;
+} 
+
+#circulo5 {
+    width: 15rem; /* para el ancho */
+    height: 15rem; /* para lo alto del div */
+    border-radius: 50%; /* para el radio */
+
+    background: purple; 
+    display: flex; /* para el texto se ajuste a el circulo*/
+    text-align: center; /* para ajustar el texto */
+    justify-content: center; /* para el texto se ajuste a el circulo */
+    align-items: center; /* para centrar en contenido */
+    position: absolute; /* dejar de manera fija respecto  un elemento de referencia*/ 
+    top: 10rem;
+    left: 40rem;
+}
+
+#circulo6 {
+    width: 15rem; /* para el ancho */
+    height: 15rem; /* para lo alto del div */
+    border-radius: 50%; /* para el radio */
+
+    background: pink; 
+    display: flex; /* para el texto se ajuste a el circulo*/
+    text-align: center; /* para ajustar el texto */
+    justify-content: center; /* para el texto se ajuste a el circulo */
+    align-items: center; /* para centrar en contenido */
+    position: absolute; /* dejar de manera fija respecto  un elemento de referencia*/ 
+    top: 30rem;
+    left:2rem;
+}
+
+#circulo7 {
+    width: 15rem; /* para el ancho */
+    height: 15rem; /* para lo alto del div */
+    border-radius: 50%; /* para el radio */
+
+    background: lawngreen; 
+    display: flex; /* para el texto se ajuste a el circulo*/
+    text-align: center; /* para ajustar el texto */
+    justify-content: center; /* para el texto se ajuste a el circulo */
+    align-items: center; /* para centrar en contenido */
+    position: absolute; /* dejar de manera fija respecto  un elemento de referencia*/ 
+    top: 20rem;
+    left:-7rem;
+}
+
+p {
+    font-family: sans-serif; /* tipo de letra del contenido */
+    color: white; /*color de la letra */
+    font-size: 0.75rem; /* tamaño de la letra */
+    font-weight: bold; /* HAcer la letra negrilla */ 
+    padding: 20px;
+}   
