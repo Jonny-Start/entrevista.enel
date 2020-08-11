@@ -355,23 +355,17 @@ $fecha_now = date("d/M/Y");
 <?php include FOLDER_TEMPLATE . "scripts.php"; ?>
 <script type="text/javaScript" src="../vendor/.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<?php
-extract($_REQUEST);
-if (isset($_REQUEST["msj"])) {
-    if ($_REQUEST["msj"] == "1") {
-        echo "<script type='text/javascript'>
-        Swal.fire({
-        icon: 'success',
-        title: 'Registrado',
-        text: 'Se registraron los datos correctamente',
-        })</script>";
-    } else {
-        echo "<script type='text/javascript'>
-        Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'No se guardo la informacion, un dato reguistrado esta mal',
-        })</script>";
+    <?php
+    extract($_REQUEST);
+    if (isset($_REQUEST["msj"])) {
+        if ($_REQUEST["msj"] == "1") {
+            echo "<script type='text/javascript'>
+                swal('Registrado', 'Se registraron los datos correctamente', 'success');
+                </script>";
+        } else {
+            echo "<script type='text/javascript'>
+                swal('Error', 'No se guardo la informacion, un dato reguistrado esta mal', 'error');
+                </script>";
+        }
     }
-}
-?>
+    ?>

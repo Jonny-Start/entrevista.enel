@@ -101,8 +101,6 @@ sessionValidate();
 </div>
 </div>
 </div>
-<button id="btn7" class="btn btn-info btn-lg btn-block">Progresivo</button>
-
 <?php include FOLDER_TEMPLATE . "scripts.php"; ?>
 
 <?php

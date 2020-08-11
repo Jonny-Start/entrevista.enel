@@ -1,5 +1,16 @@
 <?php include "../config.php";
 sessionValidate();
+
+if (isset($_SESSION["rol"])) {
+  if (isset($_SESSION["rol"]) == "Jefe") {
+    header("http://localhost/proyecto/View/Chart.php");
+  } else {
+    header("http://localhost/proyecto/View/principal.php");
+  }
+} else {
+  header("http://localhost/proyecto/index.php");
+}
+
 require_once "../Model/conexioon.php";
 $co = $_SESSION['co'];
 //tarjeta#1

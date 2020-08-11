@@ -87,11 +87,11 @@ function responsabilidad() {
             switch (value) {
 
                 case "defeat":
-                    swal("Complementarias", "-¿Dentro de su roll quienes son sus clientes? ___________ -¿Como mides la satisfacción con tu cliente? ____________ -¿Como generas un plan de acción para mejorar la satisfacción con tu cliente?_____________");
+                    swal("Complementarias", "  1) ¿Dentro de su roll quienes son sus clientes?  2) ¿Como mides la satisfacción con tu cliente?  3) ¿Como generas un plan de acción para mejorar la satisfacción con tu cliente?");
                     break;
 
                 case "catch":
-                    swal("Disparadoras", "Cuentanos un proyecto que hayas desarrollado con éxito. Objetivo: Se debe evaluar la gestión de recursos propios y de otros (planeo, Lidero bien, optimizó recursos) -----------------------------------------------------------------------------   -Cuentanos un proyecto fallido.___________________ -¿Que rescatas de la experiencia vivida?______________ -¿Que podrias haber hecho y que no hiciste?____________");
+                    swal("Disparadoras", "  1) Cuentanos un proyecto que hayas desarrollado con éxito. Objetivo: Se debe evaluar la gestión de recursos propios y de otros (planeo, Lidero bien, optimizó recursos)   2) Cuentanos un proyecto fallido  3) ¿Que rescatas de la experiencia vivida?  4) ¿Que podrias haber hecho y que no hiciste?");
                     break;
 
                 default:
@@ -117,11 +117,11 @@ function productividad() {
             switch (value) {
 
                 case "defeat":
-                    swal("Complementarias", "-¿A cuales redes estas afiliados? (red que promueva el conocimiento) -¿Como te mantienes actualizado e informado?");
+                    swal("Complementarias", "  1) ¿A cuales redes estas afiliados? (red que promueva el conocimiento)  2) ¿Como te mantienes actualizado e informado?");
                     break;
 
                 case "catch":
-                    swal("Disparadoras", "-Conclusión a la que se llega a través de la entrevista si la persona hace o no inversión en su propio desarrollo. -¿Cual fue la última retroalimentación que recibiste? -¿Que te resaltaron en tu ultima evaluación?,  -¿Que te invitaron a mejorar? -¿Que acciones realizaste para desarrollar?");
+                    swal("Disparadoras", "  1) Conclusión a la que se llega a través de la entrevista si la persona hace o no inversión en su propio desarrollo.  2) ¿Cual fue la última retroalimentación que recibiste?  3) ¿Que te resaltaron en tu ultima evaluación?,   4) ¿Que te invitaron a mejorar?  5) ¿Que acciones realizaste para desarrollar?");
                     break;
 
                 default:
@@ -147,11 +147,11 @@ function gestionCambio() {
             switch (value) {
 
                 case "defeat":
-                    swal("-¿Cuentanos un cambio organizacional que hayas vivido?. -Como vendes la idea que esta nueva situación es adecuada o favorece a todo el grupo.");
+                    swal("Complementarias","  1) ¿Cuentanos un cambio organizacional que hayas vivido?.  2) Como vendes la idea que esta nueva situación es adecuada o favorece a todo el grupo.");
                     break;
 
                 case "catch":
-                    swal("-¿Cuentanos un gran cambio que has tenido en tu vida?");
+                    swal("Disparadoras","  1) ¿Cuentanos un gran cambio que has tenido en tu vida?");
                     break;
 
                 default:
@@ -177,11 +177,11 @@ function innovacion() {
             switch (value) {
 
                 case "defeat":
-                    swal("-¿Cuales son los temas que más te gustan para pasar tu tiempo libre?, por ejemplo Lectura o Actividades culturales. -¿Cual fue la situación más novedosa, diferente o inesperada que sucedio en  tu vida, y como la enfrentaste?");
+                    swal("Complementarias","  1) ¿Cuales son los temas que más te gustan para pasar tu tiempo libre?, por ejemplo Lectura o Actividades culturales.  2) ¿Cual fue la situación más novedosa, diferente o inesperada que sucedio en  tu vida, y como la enfrentaste?");
                     break;
 
                 case "catch":
-                    swal("-¿Cuales son las oportunidades de mejoramiento que identificas o identificaste en tu actual area del trabajo? Dime una. -¿Cual es el benficio para la empresa?");
+                    swal("Disparadoras"," ¿Cuales son las oportunidades de mejoramiento que identificas o identificaste en tu actual area del trabajo? Dime una. -¿Cual es el benficio para la empresa?");
                     break;
 
                 default:
@@ -265,3 +265,4 @@ function confianza() {
     //         text: '¿Animal favorito?'
     //     }
     // ])
+

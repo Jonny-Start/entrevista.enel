@@ -344,10 +344,6 @@ $rta = $objCnx->query($query);
                     <td> <?php echo $datos['dependencia'] ?> </td>
                 </tr>
                 <tr>
-                    <td>Cargo: </td>
-                    <td> <?php echo $datos['cargo'] ?></td>
-                </tr>
-                <tr>
                     <td>Cargo al que Aspira: </td>
                     <td> <?php echo $datos['cargoAspira'] ?></td>
                 </tr>
@@ -366,6 +362,10 @@ $rta = $objCnx->query($query);
                 <tr>
                     <td>Entrevistador(a): </td>
                     <td> <?php echo $datos['psicologa'] ?> </td>
+                </tr>
+                <tr>
+                    <td>Cargo: </td>
+                    <td> <?php echo $datos['cargo'] ?></td>
                 </tr>
                 <tr>
                     <td>Resultado de Idiomas: </td>
@@ -618,7 +618,7 @@ $rta = $objCnx->query($query);
         <br />
         <hr />
         <h2>Concepto Psicóloga</h2>
-        <p><?php echo $datos['concepto'] ?> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, reprehenderit! Cupiditate, sunt dicta. Architecto rerum, deleniti facilis aliquid ducimus quisquam! Adipisci, eum, doloribus reiciendis nemo dolorum dolor provident at accusantium corrupti, cum quia minus? Facere quos est accusantium dicta? Consectetur aliquam, necessitatibus ullam repellat laborum eaque optio quod maiores. Dignissimos.</p>
+        <p><?php echo $datos['concepto'] ?></p>
         <hr />
         <br><br><br><br>
 

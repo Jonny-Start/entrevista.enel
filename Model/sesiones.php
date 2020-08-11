@@ -1,3 +1,14 @@
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<html><head><body style="background-color: black;">
+</body></head></html>
+<script type="text/javascript">
+  function inicio(){    
+  setTimeout( ()=>{
+    window.location='../index.php';
+    },3000)
+    swal("Error", "¡Error en la contraseña o correo electronico!", "error");
+  }
+</script>
 <?php
 session_start();
 extract($_REQUEST);
@@ -15,8 +26,7 @@ $resultado=$objConexion->query($sql);
 
 $existe= $resultado->num_rows;
 
-if ($existe==1)
-{
+if ($existe==1){
 $user=$resultado->fetch_object();
 session_start();
 $_SESSION['user']=$user->correo_electronico;
@@ -24,10 +34,11 @@ $_SESSION['rol'] = $user->Perfil;
 $_SESSION['co'] = $user->co;
 $_SESSION['nombre'] = $user->nombre;
 $_SESSION['apellidos'] = $user->apellidos;
-header("location:../View/principal.php");
+header("location:../View/Chart.php");
 }
 else {
-  header ("location:../index.php");
-  echo"No se encuentra el usuario";
+ echo("<script type='text/javascript'>
+ inicio();
+ </script>");
 }
-require '../View/principal.php';
+?>

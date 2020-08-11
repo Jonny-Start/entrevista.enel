@@ -18,7 +18,7 @@ sessionValidate();
                 <div class="card shadow mb-4">
                   <div class="card-header py-3">
                     <center>
-                      <h2 class="m-0 font-weight-bold text">Personas Entrevistadas</h2>
+                      <h2 class="m-0 font-weight-bold text">Apendices y Practicantes Entrevistados</h2>
                     </center>
                   </div>
                   <div class="card-body">
@@ -28,40 +28,30 @@ sessionValidate();
                           <tr>
                             <th>Nombre </th>
                             <th>Cedula de Ciudadania</th>
-                            <th>Telefono Celular</th>
+                            <th>Area a desarrollar practicas</th>
                             <th>Reporte</th>
                           </tr>
                         </thead>
                         <tfoot>
                           <tr>
-                            <th>Nombre </th>
+                            <th>Nombre</th>
                             <th>Cedula de Ciudadania</th>
-                            <th>Telefono Celular</th>
+                            <th>Area a desarrollar practicas</th>
                             <th>Reporte</th>
                           </tr>
                         </tfoot>
                         <?php
                         require_once "../Model/conexioon.php";
-                        $sql = "SELECT * FROM `entrevistapsicologica` where terminado = 'True'  ";
+                        $sql = "SELECT * FROM `entrevistaaprendices_practicantes` ";
                         $rta = $objCnx->query($sql);
                         while ($datos = $rta->fetch_array()) {
                         ?>
-                          <style>
-                            i {
-                              margin-top: 3px;
-                            }
-
-                            td {
-                              width: auto;
-                              height: auto;
-                            }
-                          </style>
                           <tbody>
                             <tr>
                               <td><?php echo $datos['nombre'] ?></td>
                               <td><?php echo $datos['cc'] ?></td>
-                              <td><?php echo $datos['telefono'] ?></td>
-                              <td><a href="../Reportes/pdf-EntrevistaPsicologicaCompleta.php?cc=<?php echo $datos['cc'] ?>" target="_blank"><img src="../img/pdf.png" alt="Sacar Reporte" width="30" height="40" style="margin-top: 0px;"></a> <a href=""><i class="fas fa-2x fa-mail-bulk" style=" padding: 10px; color: #68CCFE;"></i></a></td>
+                              <td><?php echo $datos['areaPractica'] ?></td>
+                              <td><a href="../Reportes/pdf-EntrevistaPsicologicaAyP.php?cc=<?php echo $datos['cc'] ?>" target="_blank"><img src="../img/pdf.png" alt="Sacar Reporte" width="30" height="40"></a></td>
                             </tr>
 
                           <?php

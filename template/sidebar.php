@@ -156,7 +156,7 @@
          <div style="text-align: center; width: 45%; height: 50%; float: center;">
            <img src="../img/aprendiz.png" alt="Profecional" width="90%" style="margin-bottom: 1%; padding:10%"><br>
            <div style="text-align: center">
-             <a class="btn btn-info mr-12 btn-ml" href="entrevistaAprendices.php" style="float: center; margin-bottom: 5% ">Aprendices y/o Practicantes</a>
+             <a class="btn btn-info mr-12 btn-ml" href="entrevistaAyP.php" style="float: center; margin-bottom: 5% ">Aprendices y/o Practicantes</a>
            </div>
          </div>
        </div>

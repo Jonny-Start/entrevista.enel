@@ -1,6 +1,7 @@
 <?php include"config.php"?>
 <?php include FOLDER_TEMPLATE. "scripts.php"; ?>
-<?php //include FOLDER_TEMPLATE."head.php"; ?>
+<?php //include FOLDER_TEMPLATE."head.php";
+?>
 
 
 
