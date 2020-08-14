@@ -24,37 +24,44 @@ sessionValidate();
                             <form class="user" id="form1" name="form1" method="post" action="../Controller/ValidarInsertarUsuario.php">
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
-                                        <input name="nombre" type="text" class="form-control form-control-user" id="nombre" placeholder="Nombre(s)" required>
+                                        <input name="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre(s)" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-12">
-                                        <input type="text" name="apellidos" class="form-control form-control-user" id="apellidos" placeholder="Apellido(s)" required>
+                                        <input type="text" name="apellidos" class="form-control" id="apellidos" placeholder="Apellido(s)" required>
+                                    </div>
+                                </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-12" id="divg">
+                                            <input type="number" name="co" class="form-control" id="co" placeholder="CO" required>
+                                        </div>
+                                        <div class="form-group row" id="boton" style="display: none;">
+                                            <div class="col-sm-12 mb-3 mb-sm-0">
+                                                <input type="button" class="btn btn-primary" id="validarI" name="validarI" value="Verificar">
+                                            </div>
+                                        </div>
+                                    </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-12">
+                                        <select id="Perfil" name="Perfil" class="form-control" required>
+                                            <option selected>Perfil</option>
+                                            <option value="1">Administrador</option>
+                                            <option value="2">Psicologa</option>
+                                            <option value="3">Jefe</option>
+                                            <option value="4">Business Partner</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-12">
-                                        <input type="text" name="co" class="form-control form-control-user" id="co" placeholder="CO" required>
-                                    </div>
-                                    <!-- <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
-                  </div> -->
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-lg-12">
-                                        <input type="text" name="Perfil" class="form-control form-control-user" id="Perfil" placeholder="Perfil" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-lg-12">
-                                        <input type="email" name="correo_electronico" class="form-control form-control-user" id="correo_electronico" placeholder="Correo electronico de Enel" required>
+                                        <input type="email" name="correo_electronico" class="form-control" id="correo_electronico" placeholder="Correo electronico de Enel" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-12">
                                         <div class="input-group">
-                                            <input type="password" class="form-control form-control-user" id="contraseña" name="contraseña" placeholder="contraseña" required>
+                                            <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="contraseña" required>
                                             <div class="input-group-append">
                                                 <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span>
                                                 </button>
@@ -63,67 +70,15 @@ sessionValidate();
                                     </div>
                                 </div>
                                 <input type="submit" class="btn btn-primary btn-user btn-block border-bottom-success " id="button" name="button" value="Registrar Cuenta">
-
-
-                                <!-- <hr>
-                <a href="index.html" class="btn btn-google btn-user btn-block">
-                  <i class="fab fa-google fa-fw"></i> Register with Google
-                </a>
-                <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                  <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                </a>
-              </form> -->
-                                <hr />
-                                <!-- <div class="text-center">
-                <a class="small" href="forgot-password.html">Forgot Password?</a>
-              </div> -->
-                                <!-- <div class="text-center">
-                <a class="small" href="login.html">Already have an account? Login!</a>
-              </div> -->
                         </div>
                     </div>
-
                 </div>
-                <center><img src="../img/enel.png" alt="Logo De Enel" width="40%"></center>
             </div>
         </div>
     </div>
-
-    <script type="text/javascript">
-        function mostrarPassword() {
-            var cambio = document.getElementById("contraseña");
-            if (cambio.type == "password") {
-                cambio.type = "text";
-                $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
-            } else {
-                cambio.type = "password";
-                $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
-            }
-        }
-        $(document).ready(function() {
-            //CheckBox mostrar contraseña
-            $('#ShowPassword').click(function() {
-                $('#Password').attr('type', $(this).is(':checked') ? 'text' : 'password');
-            });
-        });
-    </script>
 </body>
-
-<!-- <a class="nav-link dropdown-toggle"  id="Perfil" name="Perfil" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Perfil
-              </a>
-              <div class="dropdown-menu" aria-labelledby="Perfil">
-                <a class="dropdown-item" value="Business Partner">Business Partner</a>
-                <a class="dropdown-item" value="Psicologa">Psicologa</a>
-                <a class="dropdown-item" value="Jefe">Jefe</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" value="Administrador">Administrador</a>
-              </div>
-                </div> -->
-
 <?php include FOLDER_TEMPLATE . "scripts.php"; ?>
-
-<?php //<a href="../Reportes/pdf-Entrevista_Psicologa.php?cc=<?php echo $datos['cc']">
+<?php
 extract($_REQUEST);
 if (isset($_REQUEST["msj"])) {
     if ($_REQUEST["msj"] == "1") {
@@ -143,5 +98,7 @@ if (isset($_REQUEST["msj"])) {
     }
 }
 ?>
+<script src="../js/funcionesI.js"></script>
 </body>
+
 </html>

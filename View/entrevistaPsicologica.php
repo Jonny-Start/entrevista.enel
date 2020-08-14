@@ -34,9 +34,12 @@ $fecha_now = date("d/M/Y");
                 </div>
             </div>
             <div class="form-group row">
-                <div class="col-sm-4">
+                <div class="col-sm-4" id="divP">
                     <label for="cedula">Cédula</label>
                     <input type="number" class="form-control form-control-user" id="cc" name="cc" placeholder="NUMERO DE DOCUMENTO" required>
+                </div>
+                <div class="col-sm-1" id="botonP" style="padding: 0px; display: none;">
+                    <input type="button" class="btn btn-primary" id="validarP" name="validarP" value="Verificar">
                 </div>
                 <div class="col-sm-4">
                     <label for="dependencia">Línea de Negocio</label>
@@ -354,18 +357,19 @@ $fecha_now = date("d/M/Y");
 </div>
 <?php include FOLDER_TEMPLATE . "scripts.php"; ?>
 <script type="text/javaScript" src="../vendor/.js"></script>
+<script type="text/javaScript" src="../js/funcionesP.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <?php
-    extract($_REQUEST);
-    if (isset($_REQUEST["msj"])) {
-        if ($_REQUEST["msj"] == "1") {
-            echo "<script type='text/javascript'>
+<?php
+extract($_REQUEST);
+if (isset($_REQUEST["msj"])) {
+    if ($_REQUEST["msj"] == "1") {
+        echo "<script type='text/javascript'>
                 swal('Registrado', 'Se registraron los datos correctamente', 'success');
                 </script>";
-        } else {
-            echo "<script type='text/javascript'>
+    } else {
+        echo "<script type='text/javascript'>
                 swal('Error', 'No se guardo la informacion, un dato reguistrado esta mal', 'error');
                 </script>";
-        }
     }
-    ?>
+}
+?>

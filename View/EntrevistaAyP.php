@@ -16,9 +16,12 @@ $fecha_now = date("d/M/Y");
     <br><br>
     <form id="regiration_form" novalidate action="../Controller/ValidarinsertarEntrevistaAyP.php" method="post">
         <div class="form-group row">
-            <div class="col-sm-6">
+            <div class="col-sm-6" id="divAyP">
                 <label for="cc">Numero de cedula o tarjeta de identidad</label>
                 <input type="number" class="form-control form-control-user" id="cc" name="cc" placeholder="#" required>
+            </div>
+            <div class="col-sm-1" id="botonAyP" style="padding: 0px; display: none;">
+                    <input type="button" class="btn btn-primary" id="validarAyP" name="validarAyP" value="Verificar">
             </div>
             <div class="col-sm-6">
                 <label for="nombre">Nombre Completo</label>
@@ -139,8 +142,9 @@ $fecha_now = date("d/M/Y");
             <a href="principal.php" class="btn btn-danger btn-sm" onclick="seguro()">Salir</a>
         </div>
     </form>
-    <script type="text/javaScript" src="../vendor/.js"></script>
+    <script type="text/javascript" src="../vendor/.js"></script>
     <?php include FOLDER_TEMPLATE . "scripts.php"; ?>
+    <script type="text/javascript" src="../js/funcionesAyP.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <?php
     extract($_REQUEST);

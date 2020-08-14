@@ -5,10 +5,6 @@ sessionValidate();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php include FOLDER_TEMPLATE."head.php"; ?>
 <?php include FOLDER_TEMPLATE."sidebar.php"; ?>
-
-
-
-
 <body>
     <div class="container col-md-10 mx-auto my-5">
         <div class="bg-gray-200 page-wrapper">
@@ -37,7 +33,6 @@ sessionValidate();
                         <?php 
                     require_once "../Model/conexioon.php";
                     $sql= "SELECT * FROM usuario";
-
                     $rta=$objCnx->query($sql);
 
                     while ($datos=$rta->fetch_array()){
@@ -63,8 +58,6 @@ sessionValidate();
 
     </div>
     </div>
-
-
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>

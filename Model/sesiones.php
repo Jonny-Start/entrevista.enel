@@ -23,7 +23,6 @@ $objConexion=conectarse();
 $sql="SELECT * FROM usuario where correo_electronico = '$user' and contraseña = '$pass'";
 
 $resultado=$objConexion->query($sql);
-
 $existe= $resultado->num_rows;
 
 if ($existe==1){

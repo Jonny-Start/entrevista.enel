@@ -1,7 +1,5 @@
-<?php include"config.php"?>
-<?php include FOLDER_TEMPLATE. "scripts.php"; ?>
-<?php //include FOLDER_TEMPLATE."head.php";
-?>
+<?php include "config.php" ?>
+<?php include FOLDER_TEMPLATE . "scripts.php"; ?>
 
 
 
@@ -41,41 +39,31 @@
                                     <div class="text-center">
                                         <h1 class="h1 text-gray-1000 mb-4"><b>¡Bienvenido!</b></h1>
                                     </div>
-                                    <form class="user" method="POST" action="<?=URL_PROY?>Model/sesiones.php">
+                                    <form class="user" method="POST" action="<?= URL_PROY ?>Model/sesiones.php">
                                         <div class="form-group">
-                                            <input type="email" name="usuario" class="form-control form-control-user"
-                                                id="usuario" aria-describedby="emailHelp" placeholder="Correo ENEL"
-                                                required>
+                                            <input type="email" name="usuario" class="form-control form-control-user" id="usuario" aria-describedby="emailHelp" placeholder="Correo ENEL" required>
                                             <br>
                                             <div class="input-group">
-                                                <input type="password" name="password"
-                                                    class="form-control form-control-user" id="password"
-                                                    placeholder="Contraseña" required>
+                                                <input type="password" name="password" class="form-control form-control-user" id="password" placeholder="Contraseña" required>
                                                 <div class="input-group-append">
-                                                    <button id="show_password" class="btn btn-primary" type="button"
-                                                        onclick="mostrarPassword()"> <span
-                                                            class="fa fa-eye-slash icon"></span> </button>
+                                                    <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
                                                 </div>
                                             </div>
                                             <br>
                                             <div class="form-group">
                                                 <div class="custom-control custom-checkbox small">
-                                                    <input type="checkbox" class="custom-control-input"
-                                                        id="customCheck">
-                                                    <label class="custom-control-label"
-                                                        for="customCheck">Recuérdame</label>
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck">
+                                                    <label class="custom-control-label" for="customCheck">Recuérdame</label>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <button type="submit" name="btningresar"
-                                                    class="btn btn-primary btn-user btn-block btn-success">
+                                                <button type="submit" name="btningresar" class="btn btn-primary btn-user btn-block btn-success">
                                                     <i class="fas fa-check"></i>
                                                     Ingresar</button>
                                             </div>
 
                                             <hr>
-                                            <a href="View/recordarContraseña.php"
-                                                class="btn btn-primary btn-user btn-block btn-danger">
+                                            <a href="View/recordarContraseña.php" class="btn btn-primary btn-user btn-block btn-danger">
                                                 <!-- btn-google -->
                                                 <i class="fas fa-exclamation-triangle"></i> Olvidé mi contraseña
                                             </a>
@@ -102,24 +90,24 @@
         </div>
 
     </div>
-        <script type="text/javascript">
-    function mostrarPassword() {
-        var cambio = document.getElementById("password");
-        if (cambio.type == "password") {
-            cambio.type = "text";
-            $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
-        } else {
-            cambio.type = "password";
-            $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+    <script type="text/javascript">
+        function mostrarPassword() {
+            var cambio = document.getElementById("password");
+            if (cambio.type == "password") {
+                cambio.type = "text";
+                $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+            } else {
+                cambio.type = "password";
+                $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+            }
         }
-    }
 
-    $(document).ready(function() {
-        //CheckBox mostrar contraseña
-        $('#ShowPassword').click(function() {
-            $('#Password').attr('type', $(this).is(':checked') ? 'text' : 'password');
+        $(document).ready(function() {
+            //CheckBox mostrar contraseña
+            $('#ShowPassword').click(function() {
+                $('#Password').attr('type', $(this).is(':checked') ? 'text' : 'password');
+            });
         });
-    });
     </script>
 </body>
 
