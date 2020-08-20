@@ -1,8 +1,23 @@
 <?php include "../config.php";
 sessionValidate();
+if (isset($_SESSION["rol"])) {
+  switch($_SESSION['rol']){
+    case 1:
+      include "../template/sidebar.php";
+    break;
+    case 2:
+      include "../template/sidebar-Psicologa.php";
+      break;
+    case 3:
+      include "../template/sidebar-Jefe.php";
+    break;
+    case 4:
+      include "../template/sidebar-BusinessPartner.php";
+    break;
+  }
+}
 ?>
 <?php include FOLDER_TEMPLATE . "head.php"; ?>
-<?php include FOLDER_TEMPLATE . "sidebar.php"; ?>
 <style type="text/css" rel="stylesheet" src="../SW2/sweetalert2.min.css"></style>
 <div class="container">
   <!-- Donut Chart -->
@@ -67,7 +82,7 @@ sessionValidate();
           <div class="form-group row">
             <div class="col-sm-12">
               <label style="color: black">Co</label>
-              <input type="text" name="co" id="co" class="form-control" value="<?php echo $co; ?>" required />
+              <input type="text" name="co" id="co" class="form-control" value="<?php echo $co; ?>" readonly/>
             </div>
           </div>
           <div class="form-group row">

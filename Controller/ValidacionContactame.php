@@ -170,30 +170,30 @@ td.desktop-hide {
     }
   }
 </style>
-</head>
 <body class='body' style='padding:0; margin:0; display:block; background:#ffffff; -webkit-text-size-adjust:none' bgcolor='#ffffff'>
 <table align='center' cellpadding='0' cellspacing='0' width='100%' height='100%'>
-<tr>
-  <td align='center' valign='top' bgcolor='#ffffff'  width='100%'>
+  <tr>
+    <td align='center' valign='top' bgcolor='#ffffff'  width='100%'>
 
-  <table cellspacing='0' cellpadding='0' width='100%'>
-    <tr>
-      <td style='background:#1f1f1f' width='100%'>
-        <center>
-          <table cellspacing='0' cellpadding='0' width='600' class='w320'>
-            <tr>
-              <td valign='top' class='mobile-block mobile-no-padding-bottom mobile-center' width='270' style='background:#1f1f1f;padding:10px 10px 10px 20px;'></td>
-    </tr>
     <table cellspacing='0' cellpadding='0' width='100%'>
-    <tr>
-      <td align='right' valign='bottom' style='padding-bottom:0; vertical-align:bottom;'>
-        <img  style='vertical-align:bottom;' src='../img/banner.png'  width='100%' height='15px' />
-      </td>
-    </tr>
-  </table>
-    </table>
-    <tr>
-      <td style='border-bottom:1px solid #e7e7e7;'>
+      <tr>
+        <td style='background:#1f1f1f' width='100%'>
+
+          <center>
+            <table cellspacing='0' cellpadding='0' width='600' class='w320'>
+              <tr>
+                <td valign='top' class='mobile-block mobile-no-padding-bottom mobile-center' width='270' style='background:#1f1f1f;padding:10px 10px 10px 20px;'>
+                  <a href='#' style='text-decoration:none;'>
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Enel_Group_logo.svg/800px-Enel_Group_logo.svg.png' width='142' height='50' alt='Your Logo'/>
+                  </a>
+                </td>
+                </tr></table>
+          </center>
+
+        </td>
+      </tr>
+      <tr>
+        <td style='border-bottom:1px solid #e7e7e7;'>
         <center>
           <table cellpadding='0' cellspacing='0' width='600' class='w320'>
             <tr>
@@ -202,7 +202,7 @@ td.desktop-hide {
                 <br class='mobile-hide' />
 
                 <div>
-                  <b>".$nombre.",</b>
+                  <b>".$nombre."</b>
                   <b>".$apellido.",</b><br>
                   Solicito un usuario y contraseña a la plataforma de Entrevistas<br><br>
                   Muchas Gracias<br>
@@ -305,4 +305,3 @@ try {
 } catch (Exception $e) {
     echo "Hubo un error al enviar el mensaje: {$mail->ErrorInfo}";
 }
-?>

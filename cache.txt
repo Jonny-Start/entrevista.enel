@@ -1,0 +1,9 @@
+if (isset($_SESSION["rol"])) {
+  if (isset($_SESSION["rol"]) == "Jefe") {
+    header("http://localhost/proyecto/View/Chart.php");
+  } else {
+    header("http://localhost/proyecto/View/principal.php");
+  }
+} else {
+  header("http://localhost/proyecto/index.php");
+}

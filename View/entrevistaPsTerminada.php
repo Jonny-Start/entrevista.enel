@@ -1,5 +1,22 @@
 <?php include "../config.php";
 sessionValidate();
+
+if (isset($_SESSION["rol"])) {
+    switch ($_SESSION['rol']) {
+        case 1:
+            include "../template/sidebar.php";
+            break;
+        case 2:
+            include "../template/sidebar-Psicologa.php";
+            break;
+        case 3:
+            header('location: ../index.php');
+            break;
+        case 4:
+            header('location: ../index.php');
+            break;
+    }
+}
 require_once "../Model/conexioon.php";
 
 $cc = $_GET['cc'];

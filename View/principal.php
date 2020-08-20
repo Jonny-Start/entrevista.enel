@@ -1,5 +1,22 @@
 <?php include "../config.php";
 sessionValidate();
+if (isset($_SESSION["rol"])) {
+  switch($_SESSION['rol']){
+    case 1:
+      include "../template/sidebar.php";
+    break;
+    case 2:
+      header('location: ../view/Chart.php');
+      break;
+    case 3:
+      header('location: ../view/Chart.php');
+    break;
+    case 4:
+      header('location: ../view/Chart.php');
+    break;
+  }
+}
+
 require_once "../Model/conexioon.php";
 
 //tarjeta#4
@@ -17,7 +34,6 @@ while ($datos = mysqli_fetch_array($resultado)) {
 
 ?>
 <?php include FOLDER_TEMPLATE . "head.php"; ?>
-<?php include FOLDER_TEMPLATE . "sidebar.php"; ?>
 <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 <!-- <script type="text/javaScript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script> -->
 <div class="container">

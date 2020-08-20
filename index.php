@@ -44,7 +44,7 @@
                                             <input type="email" name="usuario" class="form-control form-control-user" id="usuario" aria-describedby="emailHelp" placeholder="Correo ENEL" required>
                                             <br>
                                             <div class="input-group">
-                                                <input type="password" name="password" class="form-control form-control-user" id="password" placeholder="Contraseña" required>
+                                                <input type="password" name="password" class="form-control form-control-user" id="password" placeholder="Contraseña" autocomplete="off" required>
                                                 <div class="input-group-append">
                                                     <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
                                                 </div>

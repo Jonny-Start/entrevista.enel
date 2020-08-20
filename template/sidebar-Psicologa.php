@@ -7,7 +7,7 @@
    <div id="wrapper">
 
      <!-- Sidebar -->
-     <ul class="navbar-nav bg-gradient-info  sidebar sidebar-dark accordion" id="accordionSidebar">
+     <ul class="navbar-nav bg-gradient-success  sidebar sidebar-dark accordion" id="accordionSidebar">
 
        <!-- Sidebar - Brand -->
        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= URL_PROY ?>Model/logout.php">
@@ -24,7 +24,7 @@
 
        <!-- Nav Item - Dashboard -->
        <li class="nav-item active">
-         <a class="nav-link" href="principal.php">
+         <a class="nav-link" href="Chart.php">
            <i class="fas fa-fw fa-tachometer-alt"></i>
            <span>Principal</span></a>
        </li>
@@ -54,7 +54,7 @@
        </li>
 
        <!-- Nav Item - Utilities Collapse Menu -->
-       <li class="nav-item">
+       <!-- <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
            <i class="fas fa-fw fa-wrench"></i>
            <span>Usuarios</span>
@@ -68,7 +68,7 @@
              <a class="collapse-item" href="eliminar.php">Eliminar</a>
            </div>
          </div>
-       </li>
+       </li> -->
 
        <!-- Divider -->
        <hr class="sidebar-divider">
@@ -82,34 +82,35 @@
        <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
            <i class="fas fa-fw fa-folder"></i>
-           <span>Pages</span>
+           <span>Reportes</span>
          </a>
          <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
            <div class="bg-white py-2 collapse-inner rounded">
-             <h6 class="collapse-header">Login Screens:</h6>
-             <a class="collapse-item" href="login.html">Login</a>
-             <a class="collapse-item" href="register.html">Register</a>
-             <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+             <h6 class="collapse-header">Reportes</h6>
+             <a class="collapse-item" href="login.html">PDF Aprendices</a>
+             <a class="collapse-item" href="register.html">No Terminadas</a>
+             <a class="collapse-item" href="forgot-password.html">Enviar a Jefe</a>
+             <a class="collapse-item" href="forgot-password.html">PDF Profecionales</a>
              <div class="collapse-divider"></div>
              <h6 class="collapse-header">Other Pages:</h6>
-             <a class="collapse-item" href="404.html">404 Page</a>
-             <a class="collapse-item" href="blank.html">Blank Page</a>
+             <a class="collapse-item" href="404.html">Solicitud de eliminacion</a>
+             <a class="collapse-item" href="blank.html">aun no naa</a>
            </div>
          </div>
        </li>
 
        <!-- Nav Item - Charts -->
-       <li class="nav-item">
+       <!-- <li class="nav-item">
          <a class="nav-link" href="Chart.php">
            <i class="fas fa-fw fa-chart-area"></i>
            <span>Charts</span></a>
-       </li>
+       </li> -->
 
        <!-- Nav Item - Tables -->
        <li class="nav-item">
          <a class="nav-link" href="misDatos.php">
            <i class="fas fa-fw fa-table"></i>
-           <span><?php echo $_SESSION['nombre'] ?>Perfil</span></a>
+           <span><?php echo $_SESSION['nombre'] ?> Perfil</span></a>
        </li>
 
        <!-- Divider -->

@@ -1,10 +1,25 @@
 <?php include "../config.php";
 sessionValidate();
+if (isset($_SESSION["rol"])) {
+  switch($_SESSION['rol']){
+    case 1:
+      include "../template/sidebar.php";
+    break;
+    case 2:
+      include "../template/sidebar-Psicologa.php";
+      break;
+    case 3:
+      header('location: ../index.php');
+    break;
+    case 4:
+      header('location: ../index.php');
+    break;
+  }
+}
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php include FOLDER_TEMPLATE . "head.php"; ?>
-<?php include FOLDER_TEMPLATE . "sidebar.php"; ?>
 
 <body id="page-top">
   <div class="container">
@@ -30,6 +45,7 @@ sessionValidate();
                             <th>Cedula de Ciudadania</th>
                             <th>Telefono Celular</th>
                             <th>Reporte</th>
+                            <th>Asignar</th>
                           </tr>
                         </thead>
                         <tfoot>
@@ -38,6 +54,7 @@ sessionValidate();
                             <th>Cedula de Ciudadania</th>
                             <th>Telefono Celular</th>
                             <th>Reporte</th>
+                            <th>Asignar</th>
                           </tr>
                         </tfoot>
                         <?php
@@ -50,7 +67,6 @@ sessionValidate();
                             i {
                               margin-top: 3px;
                             }
-
                             td {
                               width: auto;
                               height: auto;
@@ -61,7 +77,8 @@ sessionValidate();
                               <td><?php echo $datos['nombre'] ?></td>
                               <td><?php echo $datos['cc'] ?></td>
                               <td><?php echo $datos['telefono'] ?></td>
-                              <td><a href="../Reportes/pdf-EntrevistaPsicologicaCompleta.php?cc=<?php echo $datos['cc'] ?>" target="_blank"><img src="../img/pdf.png" alt="Sacar Reporte" width="30" height="40" style="margin-top: 0px;"></a> <a href=""><i class="fas fa-2x fa-mail-bulk" style=" padding: 10px; color: #68CCFE;"></i></a></td>
+                              <td><a href="../Reportes/pdf-EntrevistaPsicologicaCompleta.php?cc=<?php echo $datos['cc'] ?>" target="_blank"><img src="../img/pdf.png" alt="Sacar Reporte" width="30" height="40" style="padding: 0px;"></a></td>
+                              <td><a href=""><i class="fas fa-share-square" style="width: 50px; font-size: 2rem;"></i></a></td>
                             </tr>
 
                           <?php

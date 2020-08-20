@@ -1,11 +1,26 @@
 <?php include "../config.php";
 sessionValidate();
 $co = $_SESSION['co'];
+if (isset($_SESSION["rol"])) {
+  switch($_SESSION['rol']){
+    case 1:
+      include "../template/sidebar.php";
+    break;
+    case 2:
+      include "../template/sidebar-Psicologa.php";
+      break;
+    case 3:
+      header('location: ../index.php');
+    break;
+    case 4:
+      header('location: ../index.php');
+    break;
+  }
+}
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php include FOLDER_TEMPLATE . "head.php"; ?>
-<?php include FOLDER_TEMPLATE . "sidebar.php"; ?>
 
 
 <body id="page-top">

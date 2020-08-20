@@ -1,14 +1,20 @@
 <?php include "../config.php";
 sessionValidate();
-
 if (isset($_SESSION["rol"])) {
-  if (isset($_SESSION["rol"]) == "Jefe") {
-    header("http://localhost/proyecto/View/Chart.php");
-  } else {
-    header("http://localhost/proyecto/View/principal.php");
+  switch($_SESSION['rol']){
+    case 1:
+      include "../template/sidebar.php";
+    break;
+    case 2:
+      include "../template/sidebar-Psicologa.php";
+      break;
+    case 3:
+      include "../template/sidebar-Jefe.php";
+    break;
+    case 4:
+      include "../template/sidebar-BusinessPartner.php";
+    break;
   }
-} else {
-  header("http://localhost/proyecto/index.php");
 }
 
 require_once "../Model/conexioon.php";
@@ -23,7 +29,6 @@ while ($datos = mysqli_fetch_array($resultado)) {
 ?>
 
 <?php include FOLDER_TEMPLATE . "head.php"; ?>
-<?php include FOLDER_TEMPLATE . "sidebar.php"; ?>
 
 <div class="container">
   <div>

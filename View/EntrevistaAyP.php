@@ -1,5 +1,15 @@
 <?php include "../config.php";
 sessionValidate();
+if (isset($_SESSION["rol"])) {
+    switch ($_SESSION['rol']) {
+        case 3:
+            header('location: ../index.php');
+            break;
+        case 4:
+            header('location: ../index.php');
+            break;
+    }
+}
 
 ini_set('date.timezone', 'America/Bogota'); //https://www.php.net/manual/es/timezones.america.php
 $fecha_now = date("d/M/Y");
@@ -21,7 +31,7 @@ $fecha_now = date("d/M/Y");
                 <input type="number" class="form-control form-control-user" id="cc" name="cc" placeholder="#" required>
             </div>
             <div class="col-sm-1" id="botonAyP" style="padding: 0px; display: none;">
-                    <input type="button" class="btn btn-primary" id="validarAyP" name="validarAyP" value="Verificar">
+                <input type="button" class="btn btn-primary" id="validarAyP" name="validarAyP" value="Verificar">
             </div>
             <div class="col-sm-6">
                 <label for="nombre">Nombre Completo</label>

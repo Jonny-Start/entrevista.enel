@@ -1,11 +1,11 @@
-<?php include"../config.php";
+<?php include "../config.php";
 //sessionValidate();
 ?>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<?php include FOLDER_TEMPLATE. "head.php"; ?>
-<link href="<?=URL_CSS?>https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<?php include FOLDER_TEMPLATE . "head.php"; ?>
+<link href="<?= URL_CSS ?>https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
 
 <body class="bg-gradient-primary">
@@ -20,7 +20,7 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-            <img src="../img/Psicologia.jpg" class="col-lg-12 d-none d-lg-block" alt="Imagen de Psicologia" height="" width="">  
+              <img src="../img/enel.png" class="col-lg-12 d-none d-lg-block" alt="Imagen de Psicologia">
               <div class="col-lg-6 d-none d-lg-block bg-password"></div>
               <div class="col-lg-12">
                 <div class="p-5">
@@ -29,17 +29,15 @@
                     <p class="mb-4">Te entendemos, suele pasar. Simplemente ingresa tu dirección de correo electrónico a continuación y te enviaremos un enlace para restablecer tu contraseña.</p>
                   </div>
 
-                  <form class="user" form id="loginform" class="form-horizontal" role="form" action="../controller/modifica_usuario.php" method="POST" autocomplete="off">
+                  <form class="user" class="form-horizontal" action="../Controller/controllerRecordarContraseña.php" method="POST">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="email" name="email" aria-describedby="emailHelp" placeholder="Ingresa tu correo electronico..."  required>
+                      <input type="email" class="form-control form-control-user" id="email" name="email" aria-describedby="emailHelp" placeholder="Ingresa tu correo electronico..." required>
                     </div>
-                    <a href="#" type="submit" id="btn-login" class="btn btn-primary btn-user btn-block">
-                     Restablecer Contraseña
-                    <i class="fas fa-exclamation-triangle"></i> 
-                    </a>
-                  </form>                                                                                                                                                             <hr>
+                    <input type="submit" value="Restablecer Contraseña" class="btn btn-primary btn-user btn-block ">
+                  </form>
+                  <hr>
                   <div class="text-center">
-                    <a class="small"id="restablecer-correo" name="restablecer-correo" href="register.html">Solicitar Cuenta</a>
+                    <a class="small" id="restablecer-correo" name="restablecer-correo" href="contactame.php">Solicitar Cuenta</a>
                   </div>
                   <div class="text-center">
                     <a class="small" href="../index.php">Ya tienes una cuenta? Login!</a>
@@ -58,7 +56,6 @@
 
 </body>
 
-<?php include FOLDER_TEMPLATE. "scripts.php"; ?>
+<?php include FOLDER_TEMPLATE . "scripts.php"; ?>
 
 </html>
-
