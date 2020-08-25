@@ -8,13 +8,13 @@ if (isset($_SESSION["rol"])) {
         include "../template/sidebar.php";
       break;
       case 2:
-        header('location: ../index.php');
+        header('location: ../View/401.php');
         break;
       case 3:
-        header('location: ../index.php');
+        header('location: ../View/401.php');
       break;
       case 4:
-        header('location: ../index.php');
+        header('location: ../View/401.php');
       break;
     }
   }

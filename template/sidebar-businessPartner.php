@@ -1,4 +1,4 @@
- <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
  <link rel="icon" type="image/icon" href="../img/PsicologiaPNG.ico" />
  <html lang="es">
  <?php include FOLDER_TEMPLATE . "head.php"; ?>
@@ -7,7 +7,7 @@
    <div id="wrapper">
 
      <!-- Sidebar -->
-     <ul class="navbar-nav bg-gradient  sidebar sidebar-dark accordion" style="background-color: #FE65E4;" id="accordionSidebar">
+     <ul class="navbar-nav bg-gradient  sidebar sidebar-dark accordion" style="background-color: #FE6B43;" id="accordionSidebar">
 
        <!-- Sidebar - Brand -->
        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= URL_PROY ?>Model/logout.php">
@@ -28,7 +28,7 @@
            <i class="fas fa-fw fa-tachometer-alt"></i>
            <span>Principal</span></a>
        </li>
-
+       
        <!-- Divider -->
        <hr class="sidebar-divider">
 

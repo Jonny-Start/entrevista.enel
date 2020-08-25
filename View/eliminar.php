@@ -6,13 +6,13 @@
             include "../template/sidebar.php";
           break;
           case 2:
-            header('location: ../index.php');
+            header('location: ../View/401.php');
             break;
           case 3:
-            header('location: ../index.php');
+            header('location: ../View/401.php');
           break;
           case 4:
-            header('location: ../index.php');
+            header('location: ../View/401.php');
           break;
         }
       }
@@ -37,7 +37,7 @@
                                              <td colspan="2" align="center"><b>ELIMINAR USUARIO</b></td>
                                          </tr>
                                          <tr>
-                                             <td align="center"> <input type="submit" class="btn btn-success " name="Consultar" value="CONSULTAR">
+                                             <td align="center"> <input type="submit" class="btn btn-success" name="Consultar" value="CONSULTAR">
                                              </td>
                                              <td>
                                                  <?php

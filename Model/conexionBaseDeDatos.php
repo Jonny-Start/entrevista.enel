@@ -3,7 +3,6 @@ $host="localhost";
 $user="root";
 $pass="";
 $bd="eneljac";
-
 // esto es para hacer una conexion con la base de datos
 
 
