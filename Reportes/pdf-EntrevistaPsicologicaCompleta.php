@@ -58,13 +58,10 @@ $rta = $objCnx->query($query);
     <header>
         <table>
             <tr>
-                <th><img src="../img/PsicologiaPNG.png" alt="Entrevista_Enel.com" width="120" height="100"></th>
-                <th></th>
                 <th>
                     <h1>Entrevista Psicologica</h1>
                 </th>
-                <th></th>
-                <th class="esquina"><img src="../img/enel.png" alt="Entrevista_Enel.com" width="250" height="100"></th>
+                <th><img src="../img/enel.png" alt="Entrevista_Enel.com" width="250" height="100" style="margin-left: 35%;"></th>
             </tr>
         </table>
     </header>
@@ -328,6 +325,7 @@ $rta = $objCnx->query($query);
                 break;
         }
     ?>
+    <br>
         <h2>Datos Generales</h2>
         <table class="table table-bordered" width="100%" cellspacing="10">
             <tbody>
@@ -433,12 +431,16 @@ $rta = $objCnx->query($query);
             }
         </style>
         <?php
-        function validar($dato)
-        {
-            if ($dato == "SI") {
-                echo "<i>SI-></i>";
-            } else {
-                echo "<i>NO-></i>";
+        function imprimir($d){
+            if ($d[0] == "SI" || $d[0] == 'si' || $d[0] == 'on') {
+                echo "<li type='disc'><label>$d[1]</label><br>";
+            }
+        }
+        function otros($o){
+            if($o == "" || $o == " "){
+                echo  "<dd><li type='circle'><label>No se registro otro conocimiento</label></li></dd>";
+            }else{
+                echo "<dd><li type='circle'>$o</li></dd>";
             }
         }
         ?>
@@ -449,148 +451,92 @@ $rta = $objCnx->query($query);
                 <div>
                     <h5 class="titulo2"><b>Working Tools & Methodologies</b></h5>
                     <div>
-                        <input>
-                        <?php validar($datos['dswm1']) ?><label>MS Office basics (Word, Excel, Powerpoint)</label>
+                        <?php imprimir([$datos['dswm1'] , "MS Office basics (Word, Excel, Powerpoint)"]); ?>
                     </div>
-
                     <div>
-                        <input>
-                        <label>
-                            <?php validar($datos['dswm2']) ?>MS Office advanced (Access, Project)
-                        </label>
+                    <?php imprimir([$datos['dswm2'] ,"MS Office advanced (Access, Project)" ])?>
                     </div>
-
-                    <input>
-                    <?php validar($datos['dswo3']) ?><label> Outlook</label>
+                    <?php imprimir([$datos['dswo3'] , "Outlook"]) ?> 
                 </div>
                 <div>
-                    <input>
-                    <?php validar($datos['dswc4']) ?><label> Communication tools (Teams, Yammer)</label>
+                    <?php imprimir([$datos['dswc4'] , "Communication tools (Teams, Yammer)"]) ?> 
                 </div>
                 <div>
-                    <input>
-                    <?php validar($datos['dswp5']) ?><label> Project Management</label>
+                    <?php imprimir([$datos['dswp5'],"Project Management"]) ?> 
                 </div>
                 <div>
-                    <input>
-                    <?php validar($datos['dswa6']) ?><label> Agile</label>
+                    <?php imprimir([$datos['dswa6'],"Agile"]) ?>
                 </div>
                 <div>
-                    <input>
-                    <?php validar($datos['dswd7']) ?><label> Desing thinking</label>
+                    <?php imprimir([$datos['dswd7'],"Desing thinking"]) ?> 
                 </div>
 
-                <label class="otros"><b>Other</b></label><br>
-                <textarea><?php echo $datos['other1'] ?></textarea>
+                <label><b>Other</b><br>
+                <?php otros($datos['other1']) ?>
             </div><br>
 
             <h5 class="titulo3"><b>Soft Digital Skills</b></h5>
             <div>
-                <input>
-                <?php validar($datos['dssk1']) ?> <label>
-                    Knowledge Networking
-                </label>
+                <?php imprimir([$datos['dssk1'], "Knowledge Networking"]) ?> 
             </div>
             <div>
-                <input>
-                <?php validar($datos['dssp2']) ?><label>
-                    Problem Solving
-                </label>
+                <?php imprimir([$datos['dssp2'] , "Problem Solving"]) ?>
             </div>
             <div>
-                <input>
-                <?php validar($datos['dssv3']) ?><label>
-                    Virtual Communication
-                </label>
+                <?php imprimir([$datos['dssv3'],"Virtual Communication"]) ?>
             </div>
             <div>
-                <input>
-                <?php validar($datos['dssd4']) ?><label>
-                    Digital Awareness
-                </label>
+                <?php imprimir([$datos['dssd4'],"Digital Awareness"]) ?>
             </div>
             <div>
-                <input>
-                <?php validar($datos['dssd5']) ?><label>
-                    Data and device security
-                </label>
+                <?php imprimir([$datos['dssd5'], "Data and device security"]) ?>
             </div>
             <div>
-                <input>
-                <?php validar($datos['dssc6']) ?><label>
-                    Content creation
-                </label>
+                <?php imprimir([$datos['dssc6'],"Content creation"]) ?>
             </div>
             <div>
-                <label><b>Other</b></label><br>
-                <textarea><?php echo $datos['other2'] ?></textarea>
+                <b>Other</b><br>
+                <?php otros($datos['other2']) ?>
             </div>
-
-
             <h5 class="titulo4"><b>Digital Hard Skills</b></h5>
             <div>
-                <input>
-                <?php validar($datos['dsdp1']) ?><label>
-                    Programming languages
-                </label>
+                <?php imprimir([$datos['dsdp1'], "Programming languages"]) ?>
             </div>
             <div>
-                <input>
-                <?php validar($datos['dsdc2']) ?><label>
-                    Cloud Services
-                </label>
+                <?php imprimir([$datos['dsdc2'], "Cloud Services"]) ?>
             </div>
             <div>
-                <input>
-                <?php validar($datos['dsdi3']) ?><label>
-                    It System Management and
-                </label>
-                <label class="texto">Enterprise architecture</label>
+                <?php imprimir([$datos['dsdi3'] , "It System Management and Enterprise architecture" ]) ?>
             </div>
             <div>
-                <input>
-                <?php validar($datos['dsdc4']) ?><label>
-                    Cyber Security
-                </label>
+                <?php imprimir([$datos['dsdc4'],"Cyber Security"]) ?>
             </div>
             <div>
-                <input>
-                <?php validar($datos['dsdu5']) ?><label>
-                    UX/UI Desing
-                </label>
+                <?php imprimir([$datos['dsdu5'],"UX/UI Desing"]) ?>
             </div>
-            <div> <input>
-                <?php validar($datos['dsdm6']) ?> <label>
-                    Mobile
-                </label>
+            <div> 
+                <?php imprimir([$datos['dsdm6'],"Mobile"]) ?> 
             </div>
-            <div> <input>
-                <?php validar($datos['dsdd7']) ?><label>
-                    Data & Analytics
-                </label>
+            <div> 
+                <?php imprimir([$datos['dsdd7'],"Data & Analytics"]) ?>
             </div>
-            <div> <input>
-                <?php validar($datos['dsdi8']) ?><label>
-                    Internet of Things
-                </label>
+            <div> 
+                <?php imprimir([$datos['dsdi8'],"Internet of Things"]) ?>
             </div>
-            <div> <input>
-                <?php validar($datos['dsdi9']) ?><label>
-                    It Plataforms
-                </label>
+            <div> 
+                <?php imprimir([$datos['dsdi9'],"It Plataforms"]) ?>
             </div>
-            <div> <input>
-                <?php validar($datos['dsdr10']) ?><label>
-                    Robotic Process Automation
-                </label>
+            <div> 
+                <?php imprimir([$datos['dsdr10'],"Robotic Process Automation"]) ?>
             </div>
-            <div> <label><b>Other</b></label><br>
-                <textarea><?php echo $datos['other3'] ?></textarea>
+            <div> <b>Other</b><br>
+                <?php otros($datos['other3']) ?>
             </div>
+            <br><br>
             <hr>
         </div>
         </div>
-        <br><br><br><br>
+        <br><br>
         <style>
             table,
             th,
@@ -620,7 +566,7 @@ $rta = $objCnx->query($query);
         <h2>Concepto Psicóloga</h2>
         <p><?php echo $datos['concepto'] ?></p>
         <hr />
-        <br><br><br><br>
+        <br><br>
 
         <footer>
             <img src="../Firmas/<?php echo $datos['co'] ?>.png" alt="La Psicologa NO tiene agregada una firma digital" width="200px" height="50px">

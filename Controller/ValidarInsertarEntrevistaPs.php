@@ -17,7 +17,6 @@ $dsdp1 = $_REQUEST['dsdp1'];
 $dsdc2 = $_REQUEST['dsdc2'];
 $dsdi3 = $_REQUEST['dsdi3'];
 $dsdc4 = $_REQUEST['dsdc4'];
-$dsdc4 = $_REQUEST['dsdc4'];
 $dsdu5 = $_REQUEST['dsdu5'];
 $dsdm6 = $_REQUEST['dsdm6'];
 $dsdd7 = $_REQUEST['dsdd7'];

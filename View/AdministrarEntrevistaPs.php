@@ -33,7 +33,7 @@ if (isset($_SESSION["rol"])) {
                 <div class="card shadow mb-4">
                   <div class="card-header py-3">
                     <center>
-                      <h2 class="m-0 font-weight-bold text">Solicitud de eliminacion</h2>
+                      <h2 class="m-0 font-weight-bold text">Administrar Entrevista Profesional</h2>
                     </center>
                   </div>
                   <div class="card-body">
@@ -44,7 +44,7 @@ if (isset($_SESSION["rol"])) {
                             <th>Nombre </th>
                             <th>Cedula de Ciudadania</th>
                             <th>Telefono Celular</th>
-                            <th> Eliminar</th>
+                            <th>Acción</th>
                           </tr>
                         </thead>
                         <tfoot>
@@ -52,7 +52,7 @@ if (isset($_SESSION["rol"])) {
                             <th>Nombre </th>
                             <th>Cedula de Ciudadania</th>
                             <th>Telefono Celular</th>
-                            <th> Eliminar</th>
+                            <th>Acción</th>
                           </tr>
                         </tfoot>
                         <?php
@@ -61,6 +61,7 @@ if (isset($_SESSION["rol"])) {
                         $rta = $objCnx->query($sql);
                         while ($datos = $rta->fetch_array()) {
                           $info = $datos['nombre'] . "||" . $datos['cc'];
+                          $i = $datos['nombre'] . "||" . $datos['cc'];
                         ?>
                           <style>
                             i {
@@ -85,8 +86,15 @@ if (isset($_SESSION["rol"])) {
                               <td><?php echo $datos['nombre'] ?></td>
                               <td><?php echo $datos['cc'] ?></td>
                               <td><?php echo $datos['telefono'] ?></td>
-                              <td>
-                                <a href="" onclick="agregarModal('<?php echo $info ?>')" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-share-square" style="width: 50px; font-size: 2rem;"></i>Enviar</a>
+                              <td style="text-align: center;">
+                                <a href="" onclick="agregarModal('<?php echo $info ?>')" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-trash-alt" title="Solicitar eliminacion de entrevista" style="color: red; width: 50px; font-size: 2rem;"></i></a>
+                                <?php
+                                $cc = $datos['cc'];
+                                if ($datos['modificar'] == 'True') {
+                                  echo "<a href='editarEntrevistaPs.php?cc=$cc'><i class='fas fa-edit' title='Editar entrevista' style='color: green; width: 50px; font-size: 2rem;'></i></a>";
+                                } else {
+                                  echo "<a onclick='agregarModal2(".$i.")' data-toggle='modal' data-target='#exampleModal2'><i class='fas fa-envelope-open-text' style='color: blue; width: 50px; font-size: 2rem;'></i></a>";
+                                } ?>
                               </td>
                             </tr>
                           <?php
@@ -107,7 +115,7 @@ if (isset($_SESSION["rol"])) {
         <?php include FOLDER_TEMPLATE . "scripts.php"; ?>
         <script type="text/javascript" src="../vendor/funciones.js"></script>
 
-        <!-- Modal -->
+        <!-- Modal solicitud de edicion-->
         <div class='modal fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
           <div class='modal-dialog' role='document'>
             <div class='modal-content'>
@@ -118,7 +126,7 @@ if (isset($_SESSION["rol"])) {
                 </button>
               </div>
               <div class='modal-body'>
-                <center><img src='../img/!.png' alt='Alerta' width='50%' height='70%'></center>
+                <div style="text-align: center"><img src='../img/exclamacion.png' alt='Alerta' width='50%'></div>
                 <br>
                 <div class="container" style="color: black;">
                   Estas segur@ que deseas solicitar la eliminacion de la entrevista con <span id="nombre"></span> con numero de cedula <span id="cedula"></span>?, no se podra recuperar en un futuro.<br>
@@ -131,6 +139,53 @@ if (isset($_SESSION["rol"])) {
             </div>
           </div>
         </div>
-</body>
+        <!-- Modal 2 solicitud de edicion -->
+        <div class='modal fade' id='exampleModal2' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+          <div class='modal-dialog' role='document'>
+            <div class='modal-content'>
+              <div class='modal-header'>
+                <h5 class='modal-title' id='exampleModalLabel'>Solicitud de eliminacion</h5>
+                <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                  <span aria-hidden='true'>&times;</span>
+                </button>
+              </div>
+              <div class='modal-body'>
+                <div style="text-align: center"><img src='../img/exclamacion.png' alt='Alerta' width='50%'></div>
+                <br>
+                <div class="container" style="color: black;">
+                Deseas solicitar la edicion de la entrevista con <span id="nombre2"></span> con numero de cedula <span id="cedula2"></span>?<br>
+                </div>
+              </div>
+              <div class='modal-footer'>
+                <button type='button' class='btn btn-danger' data-dismiss='modal'>Cerrar</button>
+                <a><button id="btn" onclick="enviarDatos()" class='btn btn-success'>Enviar</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
 
+
+        <?php
+        if (isset($_GET["msj"])) {
+
+            if ($_GET["msj"] == "3") {
+                echo " <script type='text/javascript'>
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'COMPLETADO!',
+                        text: 'se actualizo correctamente la entrevista Psicologica',
+                    })
+                </script>";
+            } else if ($_GET["msj"] == "4") {
+               echo "<script type='text/javascript'>
+                    Swal.fire({
+                        icon: 'error',
+                        title: '¡ERROR!',
+                        text: 'No se pudo actualizar la entrevista, intentalo nuevamente',
+                    })
+                </script>";
+            }
+        }
+        ?>
+</body>
 </html>

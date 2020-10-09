@@ -1,8 +1,17 @@
 
 function agregarModal(info) {
     var d = info.split('||');
+    console.log (info);
     $('#nombre').text(d[0]);
     $('#cedula').text(d[1]);
+  }
+  
+function agregarModal2(inf) {
+  console.log (inf);
+    var d2 = inf.split('||');
+    console.log (inf);
+    $('#nombre2').text(d2[0]);
+    $('#cedula2').text(d2[1]);
   }
 
   function seEnvio(){

@@ -15,6 +15,22 @@ if (isset($_SESSION["rol"])) {
       include "../template/sidebar-BusinessPartner.php";
     break;
   }
+} 
+function cualPerfil($rol) {
+  switch ($rol) {
+     case 1:
+        echo "Administrador";
+        break;
+     case 2:
+        echo "Psicologa";
+        break;
+     case 3:
+        echo "Jefe";
+        break;
+     case 4:
+        echo "Business Partner";
+        break;
+  }
 }
 ?>
 <?php include FOLDER_TEMPLATE . "head.php"; ?>
@@ -70,7 +86,7 @@ if (isset($_SESSION["rol"])) {
           <div class="form-group row">
             <div class="col-sm-12">
               <label style="color: black">Perfil</label>
-              <input class="form-control form-control-user " value="<?php echo $Perfil; ?>" readonly />
+              <input class="form-control form-control-user " value="<?php cualPerfil($Perfil); ?>" readonly />
             </div>
           </div>
           <div class="form-group row">

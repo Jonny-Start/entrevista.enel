@@ -90,7 +90,7 @@
              <a class="collapse-item" href="../View/consultarEntrevistaPsAyP.php">PDF Aprendices</a>
              <a class="collapse-item" href="../View/consultarEntrevistaPsicologaNo.php">No Terminadas</a>
              <a class="collapse-item" href="../View/enviarEntrevistaJefe.php">Enviar a Jefe</a>
-             <a class="collapse-item" href="../View/consultarEntrevistaPsicologa.php">PDF Profecionales</a>
+             <a class="collapse-item" href="../View/consultarEntrevistaPsicologa.php">PDF Profesionales</a>
              <div class="collapse-divider"></div>
              <h6 class="collapse-header">Other Pages:</h6>
              <a class="collapse-item" href="../View/solicitudEliminar.php">Solicitud de eliminacion</a>

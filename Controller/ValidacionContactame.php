@@ -278,7 +278,7 @@ try {
 
     //Recipients
     $mail->setFrom('entrevistasenel2020@gmail.com', 'Entrevistas Enel'); //desde donde se va a enviar
-    $mail->addAddress('jonnyalejandro.ca0910@gmail.com','PETICION PAGINA ENTREVISTA');  //a quien se le va a enviar    // Add a recipient
+    $mail->addAddress('jonny.cano@enel.com','PETICION PAGINA ENTREVISTA');  //a quien se le va a enviar    // Add a recipient
     // $mail->addAddress('ellen@example.com');// para agregar a alguien mas                // Name is optional
     //$mail->addReplyTo('jonnyalejandro.ca0910@gmail.com', 'PETICION PAGINA ENTREVISTA');  // esto es para agregar una copia
     // $mail->addCC('cc@example.com');

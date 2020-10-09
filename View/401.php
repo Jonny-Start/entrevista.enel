@@ -16,7 +16,6 @@
             <br />
             <div class="error mx-auto" data-text="401">401</div>
             <p class="lead text-gray-800 mb-5" style="font-size: 50px;">Acceso denegado</p>
-            <p><img src="../img/triste.gif" alt=":("></p>
             <p class="text-gray-500 mb-0">Al parecer intentas entrar a una página que no tienes permitido</p> 
             <p class="text-gray-500 mb-0">Si crees que deberias tener acceso, porfavor comunicate con el administrador de la pagina</p>
             <!-- <a href="principal.php">&larr; Regresa a la página Principal</a> -->

@@ -16,7 +16,22 @@ if (isset($_SESSION["rol"])) {
     break;
   }
 }
-
+function cualPerfil($rol) {
+  switch ($rol) {
+     case 1:
+        echo "Administrador";
+        break;
+     case 2:
+        echo "Psicologa";
+        break;
+     case 3:
+        echo "Jefe";
+        break;
+     case 4:
+        echo "Business Partner";
+        break;
+  }
+}
 require_once "../Model/conexioon.php";
 
 //tarjeta#4
@@ -38,7 +53,7 @@ while ($datos = mysqli_fetch_array($resultado)) {
 <!-- <script type="text/javaScript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script> -->
 <div class="container">
   <div>
-    <h1 class="text-center" style="color: black">Bienvenido <?php echo $_SESSION['nombre'] ?> <b class="text-right" style="color: #ACC9E4; ">[<?php echo $_SESSION['rol'] ?>]</b></h1>
+    <h1 class="text-center" style="color: black">Bienvenido <?php echo $_SESSION['nombre'] ?> <b class="text-right" style="color: #ACC9E4; ">[<?php cualPerfil($_SESSION['rol']) ?>]</b></h1>
   </div>
   <hr />
 
