@@ -6,13 +6,13 @@ if (isset($_SESSION["rol"])) {
       include "../template/sidebar.php";
       break;
     case 2:
-      include "../template/sidebar-Psicologa.php";
+      header("location: 401.php");
       break;
     case 3:
-      header('location: ../index.php');
+      header('location: 401.php');
       break;
     case 4:
-      header('location: ../index.php');
+      header('location: 401.php');
       break;
   }
 }
@@ -20,6 +20,7 @@ if (isset($_SESSION["rol"])) {
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php include FOLDER_TEMPLATE . "head.php"; ?>
+
 
 <body id="page-top">
   <div class="container">
@@ -33,35 +34,28 @@ if (isset($_SESSION["rol"])) {
                 <div class="card shadow mb-4">
                   <div class="card-header py-3">
                     <center>
-                      <h2 class="m-0 font-weight-bold text">Administrar Entrevista Profesional</h2>
+                      <h2 class="m-0 font-weight-bold text">Administrar Entrevista Profesional (Eliminar)</h2>
                     </center>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
                       <table class="table table-bordered" width="100%" cellspacing="10">
-                        <thead>
+                        <thead style="background-color: gray; color: white; text-align: center;">
                           <tr>
                             <th>Nombre </th>
                             <th>Cedula de Ciudadania</th>
                             <th>Telefono Celular</th>
+                            <th>Fecha de entrevista</th>
+                            <th>Psicóloga</th>
                             <th>Acción</th>
                           </tr>
                         </thead>
-                        <tfoot>
-                          <tr>
-                            <th>Nombre </th>
-                            <th>Cedula de Ciudadania</th>
-                            <th>Telefono Celular</th>
-                            <th>Acción</th>
-                          </tr>
-                        </tfoot>
                         <?php
                         require_once "../Model/conexioon.php";
-                        $sql = "SELECT * FROM `entrevistapsicologica` where terminado = 'True'  ";
+                        $sql = "SELECT * FROM `entrevistapsicologica` where terminado = 'True' and  modificar = 'Eliminar'";
                         $rta = $objCnx->query($sql);
                         while ($datos = $rta->fetch_array()) {
-                          $info = $datos['nombre'] . "||" . $datos['cc'];
-                          $i = $datos['nombre'] . "||" . $datos['cc'];
+                        $info = $datos['nombre'] . "||" . $datos['cc'];
                         ?>
                           <style>
                             i {
@@ -87,15 +81,11 @@ if (isset($_SESSION["rol"])) {
                               <td><?php echo $datos['nombre'] ?></td>
                               <td><?php echo $datos['cc'] ?></td>
                               <td><?php echo $datos['telefono'] ?></td>
+                              <td><?php echo $datos['fechaEntrevista'] ?></td>
+                              <td><?php echo $datos['psicologa'] ?></td>
                               <td style="text-align: center;">
-                                <a href="" onclick="agregarModal('<?php echo $info ?>')" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-trash-alt" title="Solicitar eliminacion de entrevista" style="color: red; width: 50px; font-size: 2rem;"></i></a>
-                                <a href="" onclick="agregarModal2('<?php echo $i ?>')" id="correo" data-toggle='modal' data-target='#exampleModal2'><i class='fas fa-envelope-open-text correo' style='color: blue; width: 50px; font-size: 2rem;'></i></a>
-                                <?php
-                                $cc = $datos['cc'];
-                                if ($datos['modificar'] == 'True') {
-                                  echo "<a href='editarEntrevistaPs.php?cc=$cc'><i class='fas fa-edit' title='Editar entrevista' style='color: green; width: 50px; font-size: 2rem;'></i></a>";
-                                }
-                                ?>
+                                <a href="" onclick="agregarModal('<?php echo $info ?>')" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-trash-alt" title="Aprobar" style="color: red; width: 50px; font-size: 2rem;"></i></a>
+                                <a href="../Controller/ControllerNegarEliminacionEPS.php?cc=<?php echo $datos['cc'] ?>"><i class='fas fa-ban' title="Negar" style='color: green; width: 50px; font-size: 2rem;'></i></a>
                               </td>
                             </tr>
                           <?php
@@ -115,7 +105,7 @@ if (isset($_SESSION["rol"])) {
         </a>
         <?php include FOLDER_TEMPLATE . "scripts.php"; ?>
         <script type="text/javascript" src="../vendor/funciones.js"></script>
-
+        
         <!-- Modal solicitud de edicion-->
         <div class='modal fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
           <div class='modal-dialog' role='document'>
@@ -130,61 +120,38 @@ if (isset($_SESSION["rol"])) {
                 <div style="text-align: center"><img src='../img/exclamacion.png' alt='Alerta' width='50%'></div>
                 <br>
                 <div class="container" style="color: black;">
-                  Estas segur@ que deseas solicitar la eliminacion de la entrevista con <span id="nombre"></span> con numero de cedula <span id="cedula"></span>?, no se podra recuperar en un futuro.<br>
+                  Estas segur@ que deseas eliminar la entrevista con <span id="nombre"></span>, cedula <span id="cedula"></span>?, no se podra recuperar.<br>
                 </div>
               </div>
               <div class='modal-footer'>
                 <button type='button' class='btn btn-danger' data-dismiss='modal'>Cerrar</button>
-                <a><button id="btn" onclick="solicitarEliminacion()" class='btn btn-success'>Enviar</button></a>
+                <a><button id="btn" onclick="Eliminacion()" class='btn btn-success'>Enviar</button></a>
               </div>
             </div>
           </div>
         </div>
-        <!-- Modal 2 solicitud de edicion -->
-        <div class='modal fade' id='exampleModal2' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
-          <div class='modal-dialog' role='document'>
-            <div class='modal-content'>
-              <div class='modal-header'>
-                <h5 class='modal-title' id='exampleModalLabel'>Solicitud para editar</h5>
-                <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-                  <span aria-hidden='true'>&times;</span>
-                </button>
-              </div>
-              <div class='modal-body'>
-                <div style="text-align: center"><img src='../img/exclamacion.png' alt='Alerta' width='50%'></div>
-                <br>
-                <div class="container" style="color: black;">
-                  Deseas solicitar la edicion de la entrevista con <span id="name"></span> con numero de cedula <span id="cc"></span>?<br>
-                </div>
-              </div>
-              <div class='modal-footer'>
-                <button type='button' class='btn btn-danger' data-dismiss='modal'>Cerrar</button>
-                <a><button id="boton" onclick="solictarEdicion()" class='btn btn-success'>Enviar</button></a>
-              </div>
-            </div>
-          </div>
-        </div>
+
         <?php
         if (isset($_GET["msj"])) {
-
-          if ($_GET["msj"] == "3") {
+         if ($_GET["msj"] == "3") {
             echo " <script type='text/javascript'>
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'COMPLETADO!',
-                        text: 'se actualizo correctamente la entrevista Psicologica',
-                    })
-                </script>";
+          Swal.fire({
+              icon: 'success',
+              title: 'Negado!',
+              text: 'se negó la Eliminacion de la entrevista',
+          })
+      </script>";
           } else if ($_GET["msj"] == "4") {
             echo "<script type='text/javascript'>
-                    Swal.fire({
-                        icon: 'error',
-                        title: '¡ERROR!',
-                        text: 'No se pudo actualizar la entrevista, intentalo nuevamente',
-                    })
-                </script>";
+          Swal.fire({
+              icon: 'error',
+              title: '¡ERROR!',
+              text: 'No se pudo negar la Eliminacion, porfavor comunicate con el administrador del aplicativo',
+          })
+      </script>";
           }
         }
         ?>
 </body>
+
 </html>

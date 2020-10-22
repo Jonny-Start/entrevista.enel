@@ -12,6 +12,5 @@ if ($objCnx->connect_errno) {
 // echo "<h6 style='color:#0000'>
 // 	 conexion a la base de datos OK (BD=".$bd.")</h6>";
 }
- ?>
-
-<!-- esto es una vista de que si se esta conectando a la base de datos  -->
+// esto es una vista de que si se esta conectando a la base de datos
+?>

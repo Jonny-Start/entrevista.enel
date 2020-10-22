@@ -7,3 +7,10 @@ if (isset($_SESSION["rol"])) {
 } else {
   header("http://localhost/proyecto/index.php");
 }
+
+                                // if ($datos['modificar'] == 'Solicitado') {
+                                //   echo " <script type='text/javascript'> 
+                                //     var correo = document.querySelector('#correo');
+                                //    correo.style.display = 'none';
+                                //   </script>";
+                                // }

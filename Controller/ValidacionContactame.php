@@ -170,25 +170,24 @@ td.desktop-hide {
     }
   }
 </style>
-<body class='body' style='padding:0; margin:0; display:block; background:#ffffff; -webkit-text-size-adjust:none' bgcolor='#ffffff'>
+<body class='body' style='padding:0; margin:0; display:block; background: #ffffff; -webkit-text-size-adjust:none' bgcolor='#ffffff'>
 <table align='center' cellpadding='0' cellspacing='0' width='100%' height='100%'>
-  <tr>
-    <td align='center' valign='top' bgcolor='#ffffff'  width='100%'>
+<tr>
+  <td align='center' valign='top' bgcolor='#ffffff'  width='100%'>
+  <table cellspacing='0' cellpadding='0' width='100%'>
+    <tr>
+      <td style='background:#00BFFF' width='100%'>
 
-    <table cellspacing='0' cellpadding='0' width='100%'>
-      <tr>
-        <td style='background:#1f1f1f' width='100%'>
-
-          <center>
-            <table cellspacing='0' cellpadding='0' width='600' class='w320'>
-              <tr>
-                <td valign='top' class='mobile-block mobile-no-padding-bottom mobile-center' width='270' style='background:#1f1f1f;padding:10px 10px 10px 20px;'>
-                  <a href='#' style='text-decoration:none;'>
-                    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Enel_Group_logo.svg/800px-Enel_Group_logo.svg.png' width='142' height='50' alt='Your Logo'/>
-                  </a>
-                </td>
-                </tr></table>
-          </center>
+        <center>
+          <table cellspacing='0' cellpadding='0' width='600' class='w320'>
+            <tr>
+              <td valign='top' class='mobile-block mobile-no-padding-bottom mobile-center' width='270' style='background:#00BFFF;padding:10px 10px 10px 20px;'>
+                <a href='#' style='text-decoration:none;'>
+                  <img src='https://1.bp.blogspot.com/-UV966ww9iW0/X5EOxTnthZI/AAAAAAAAnbQ/h5g7MXOabgAEGCbFNM0lP8hVHSp4H4PPgCLcBGAsYHQ/s320/Enel_Logo_Blanco.png' width='142' height='50' alt='Enel'/>
+                </a>
+              </td>
+              </tr></table>
+        </center>
 
         </td>
       </tr>
@@ -234,12 +233,6 @@ td.desktop-hide {
                 </table>
               </td>
               <td class='mobile-hide' style='padding-top:20px;padding-bottom:0; vertical-align:bottom;' valign='bottom'>
-                <table cellspacing='0' cellpadding='0' width='100%'>
-                  <tr>
-                    <td align='right' valign='bottom' style='padding-bottom:0; vertical-align:bottom;'>
-                      <img  style='vertical-align:bottom;' src='https://www.filepicker.io/api/file/9f3sP1z8SeW1sMiDA48o'  width='174' height='294' />
-                    </td>
-                  </tr>
                 </table>
               </td>
             </tr>

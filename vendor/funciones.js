@@ -7,11 +7,10 @@ function agregarModal(info) {
   }
   
 function agregarModal2(inf) {
-  console.log (inf);
     var d2 = inf.split('||');
     console.log (inf);
-    $('#nombre2').text(d2[0]);
-    $('#cedula2').text(d2[1]);
+    $('#name').text(d2[0]);
+    $('#cc').text(d2[1]);
   }
 
   function seEnvio(){
@@ -22,7 +21,39 @@ function agregarModal2(inf) {
     });
   }
 
-  function enviarDatos() {
+  function solictarEdicion() {
+    var name2 = $('#name').text();
+    var cc2 = $('#cc').text();
+    var btn2 = $('#boton'); 
+    btn2.attr('disabled', 'disabled');
+    cadena = "&name=" + name2 + "&cc=" + cc2;
+    $.ajax({
+      type: "POST",
+      url: "../Controller/validarSolicitudEditar.php",
+      data: cadena,
+      success: function(r) {
+        console.log(r);
+        if (r == 1) {
+          btn2.removeAttr('disabled');
+          Swal.fire({
+            icon: 'success',
+            title: 'Se Envio Correctamente',
+            text: 'El correo ya se le envio al administrador de la pagina',
+          });
+        } else {
+          console.log(r);
+          btn2.removeAttr('disabled');
+          Swal.fire({
+            icon: 'error',
+            title: 'ERROR',
+            text: 'No se pudo enviar el correo, porfavor contactese con el administrador del programa',
+          });
+        }
+      }
+    })
+  }
+
+  function solicitarEliminacion() {
     var nombre = $('#nombre').text();
     var cc = $('#cedula').text();
     var btn = $('#btn'); 
@@ -33,6 +64,7 @@ function agregarModal2(inf) {
       url: "../Controller/validarSolicitudEliminar.php",
       data: cadena,
       success: function(r) {
+        console.log(r);
         if (r == 1) {
           btn.removeAttr('disabled');
           Swal.fire({
@@ -41,6 +73,7 @@ function agregarModal2(inf) {
             text: 'El correo ya se le envio al administrador de la pagina',
           });
         } else {
+          console.log(r);
           btn.removeAttr('disabled');
           Swal.fire({
             icon: 'error',
@@ -50,4 +83,38 @@ function agregarModal2(inf) {
         }
       }
     })
+  }
+
+  function Eliminacion() {
+    var nombre = $('#nombre').text();
+    var cc = $('#cedula').text();
+    var btn = $('#btn'); 
+    btn.attr('disabled', 'disabled');
+    cadena = "&nombre=" + nombre + "&cedula=" + cc;
+    $.ajax({
+      type: "POST",
+      url: "../Controller/ValidarEliminarEntrevistaPs.php",
+      data: cadena,
+      success: function(r) {
+        if (r == 1) {
+          console.log("esto es bien" + r );
+          btn.removeAttr('disabled');
+          Swal.fire({
+            icon: 'success',
+            title: 'Se Elimino Correctamente',
+            text: 'La entrevista de eliminó correctamente',
+          });
+        } else {
+          console.log("esto es mal"+ r);
+          console.log(r);
+          btn.removeAttr('disabled');
+          Swal.fire({
+            icon: 'error',
+            title: 'ERROR',
+            text: 'No se pudo eliminar la entrevista, porfavor contactese con el administrador del programa',
+          });
+        }
+      }
+    })
+    $(body).load('ValidarEliminarEntrevista.php');
   }

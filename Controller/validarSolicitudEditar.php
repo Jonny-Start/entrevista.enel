@@ -1,11 +1,11 @@
 <?php include "../config.php";
-$cc = $_POST['cedula'];
-$nombre = $_POST['nombre'];
+$cc = $_POST['cc'];
+$nombre = $_POST['name'];
 
 require "../Model/conexioon.php";
-$sql = "UPDATE entrevistapsicologica set modificar= 'Eliminar' where cc='$cc'";
+$sql = "UPDATE entrevistapsicologica set modificar= 'Solicitado' where cc='$cc'";
 $resul=mysqli_query($objCnx,$sql);
-    
+
 $body = " <style> img {
   max-width: 600px;
   outline: none;
@@ -215,14 +215,14 @@ h4 {
                 <br>
                 ¡Hola!
                 <br><br>
-                La Psicologa ... acaba de solicitar la eliminacion de la entrevista con $nombre y su cedula es $cc;
+                La Psicologa ... acaba de solicitar la edicion de la persona con nombre $nombre y su cedula es $cc;
                 <br>
                 <br><br>
                 <table cellspacing='0' cellpadding='0' width='100%' bgcolor='#ffffff'>
                   <tr>
                     <td style='width:130px;background:#D84A38;'>
                       <div>
-                            <a href='http://localhost/proyecto/View/eliminar.php?cc=$cc' target='_blank' style='background-color:#D84A38;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:13px;font-weight:bold;line-height:33px;text-align:center;text-decoration:none;width:130px;-webkit-text-size-adjust:none;'>Ir a eliminar</a>
+                            <a href='http://localhost/proyecto/View/gestionarEdicionEntrevistaPs.php' target='_blank' style='background-color:#D84A38;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:13px;font-weight:bold;line-height:33px;text-align:center;text-decoration:none;width:130px;-webkit-text-size-adjust:none;'>Ir a gestionar</a>
                       </div>
                     </td>
                     <td width='316' style='background-color:#ffffff; font-size:0; line-height:0;'>&nbsp;</td>
@@ -240,10 +240,10 @@ h4 {
             </tr>
           </table>
         </center>
+
       </td>
     </tr>
-    <tr>
-        ";
+    <tr>";
 
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -280,7 +280,7 @@ try {
 
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Solicitud de eliminacion, entrevistas Enel';
+    $mail->Subject = 'Solicitud de edicion, entrevistas Enel';
     $mail->Body    =  $body;
     $mail->CharSet = 'UTF-8';
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';

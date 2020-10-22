@@ -22,7 +22,7 @@ function cualPerfil($rol) {
         echo "Administrador";
         break;
      case 2:
-        echo "Psicologa";
+        echo "Psicóloga";
         break;
      case 3:
         echo "Jefe";

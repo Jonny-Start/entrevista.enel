@@ -73,7 +73,8 @@ if (isset($_SESSION["rol"])) {
                               <td><?php echo $cc ?></td>
                               <td><?php echo $datos['telefono'] ?></td>
                               <td><?php echo $datos['fechaEntrevista'] ?></td>
-                              <td><a href="entrevistaPsTerminada.php?cc=<?php echo $datos['cc'] ?>"><i class="fas fa-user-edit" style="color: green; padding: 5px"></i></a> <a href="../Controller/ValidarEliminarEntrevistaPs.php?cc=<?php echo $cc ?>"><i class="fas fa-user-minus" onclick="verificar()" style="color: red; padding: 5px"></i></a></td>
+                              <td><a href="entrevistaPsTerminada.php?cc=<?php echo $datos['cc'] ?>"><i class="fas fa-user-edit" style="color: green; padding: 5px"></i></a> 
+                              <a href="../Controller/ValidarEliminarEntrevistaPsNo.php?cc=<?php echo $cc ?>"><i class="fas fa-user-minus" onclick="verificar()" style="color: red; padding: 5px"></i></a></td>
                             </tr>
                           <?php
                         }

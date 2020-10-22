@@ -20,7 +20,6 @@ function conectarse()
         return $objCnx;
     }
 }
- ?>
+// esto es lo primero que se crea para hacer una conexion a la base de datos 
 
-
-<!-- esto es lo primero que se crea para hacer una conexion a la base de datos  -->
+?> 
