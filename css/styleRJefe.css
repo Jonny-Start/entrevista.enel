@@ -1,122 +1,7 @@
-
-#circulo {
-    width: 30rem; /* para el ancho */
-    height: 30rem; /* para lo alto del div */
-    border-radius: 50%; /* para el radio */
-
-    background: #43EAFE; 
-    display: flex; /* para el texto se ajuste a el circulo*/
-    text-align: center; /* para ajustar el texto */
-    justify-content: center; /* para el texto se ajuste a el circulo */
-    align-items: center; /* para centrar en contenido */
-    position: relative; /* para asignar el valor de pocition absolute y ser el punto de referencia*/
-    top: 8rem;
-}
-
-#circulo1 {
-    width: 15rem; /* para el ancho */
-    height: 15rem; /* para lo alto del div */
-    border-radius: 50%; /* para el radio */
-
-    background: #28B10B; 
-    display: flex; /* para el texto se ajuste a el circulo*/
-    text-align: center; /* para ajustar el texto */
-    justify-content: center; /* para el texto se ajuste a el circulo */
-    align-items: center; /* para centrar en contenido */
-    position: absolute; /* dejar de manera fija respecto  un elemento de referencia*/ 
-    top: -8rem;
-    left: -3rem;
-}   
-
-#circulo2 {
-    width: 15rem; /* para el ancho */
-    height: 15rem; /* para lo alto del div */
-    border-radius: 50%; /* para el radio */
-
-    background: #FF5D00; 
-    display: flex; /* para el texto se ajuste a el circulo*/
-    text-align: center; /* para ajustar el texto */
-    justify-content: center; /* para el texto se ajuste a el circulo */
-    align-items: center; /* para centrar en contenido */
-    position: absolute; /* dejar de manera fija respecto  un elemento de referencia*/ 
-    top: -9rem;
-    left: 23rem;
-} 
-
-#circulo3 {
-    width: 15rem; /* para el ancho */
-    height: 15rem; /* para lo alto del div */
-    border-radius: 50%; /* para el radio */
-
-    background: #FE43CB; 
-    display: flex; /* para el texto se ajuste a el circulo*/
-    text-align: center; /* para ajustar el texto */
-    justify-content: center; /* para el texto se ajuste a el circulo */
-    align-items: center; /* para centrar en contenido */
-    position: absolute; /* dejar de manera fija respecto  un elemento de referencia*/ 
-    top: 2.5rem;
-    left: 33rem;
-} 
-
-#circulo4 {
-    width: 15rem; /* para el ancho */
-    height: 15rem; /* para lo alto del div */
-    border-radius: 50%; /* para el radio */
-
-    background: #43EAFE; 
-    display: flex; /* para el texto se ajuste a el circulo*/
-    text-align: center; /* para ajustar el texto */
-    justify-content: center; /* para el texto se ajuste a el circulo */
-    align-items: center; /* para centrar en contenido */
-    position: absolute; /* dejar de manera fija respecto  un elemento de referencia*/ 
-    top: 17.6rem;
-    left: 32rem;
-    
-} 
-
-#circulo5 {
-    width: 15rem; /* para el ancho */
-    height: 15rem; /* para lo alto del div */
-    border-radius: 50%; /* para el radio */
-
-    background:#28B10B; 
-    display: flex; /* para el texto se ajuste a el circulo*/
-    text-align: center; /* para ajustar el texto */
-    justify-content: center; /* para el texto se ajuste a el circulo */
-    align-items: center; /* para centrar en contenido */
-    position: absolute; /* dejar de manera fija respecto  un elemento de referencia*/ 
-    top: 28rem;
-    left: 21rem;
-}
-
-#circulo6 {
-    width: 15rem; /* para el ancho */
-    height: 15rem; /* para lo alto del div */
-    border-radius: 50%; /* para el radio */
-
-    background: #FF5D00; 
-    display: flex; /* para el texto se ajuste a el circulo*/
-    text-align: center; /* para ajustar el texto */
-    justify-content: center; /* para el texto se ajuste a el circulo */
-    align-items: center; /* para centrar en contenido */
-    position: absolute; /* dejar de manera fija respecto  un elemento de referencia*/ 
-    top: 32rem;
-    left: 6.5rem;
-}
-
-#circulo7 {
-    width: 15rem; /* para el ancho */
-    height: 15rem; /* para lo alto del div */
-    border-radius: 50%; /* para el radio */
-
-    background: #FE43CB; 
-    display: flex; /* para el texto se ajuste a el circulo*/
-    text-align: center; /* para ajustar el texto */
-    justify-content: center; /* para el texto se ajuste a el circulo */
-    align-items: center; /* para centrar en contenido */
-    position: absolute; /* dejar de manera fija respecto  un elemento de referencia*/ 
-    top: 25rem;
-    left:-7rem;
+#titulo{
+    width: 100%;
+    height: auto;
+    position: relative;
 }
 
 p {
@@ -125,14 +10,87 @@ p {
     font-size: 0.75rem; /* tamaño de la letra */
     font-weight: bold; /* HAcer la letra negrilla */ 
     padding: 20px;
+}
+h4 {
+    font-family: Arial, Helvetica, sans-serif; /* tipo de letra del contenido */
+    color: black; /*color de la letra */
+    font-weight: bold; /* HAcer la letra negrilla */ 
+    padding: 20px;
 }   
+label,h5{
+    font-family: Arial, Helvetica, sans-serif; /* tipo de letra del contenido */
+    color: black; /*color de la letra */
+}
 
-#cajaTexto{
-    background-color: #DEDEDE;
-    border: black 2px solid;
-    width: 18.5rem;
-    height: 50rem;
+#info{
+    position: relative; /* para asignar el valor de pocition absolute y ser el punto de referencia */
+    top: 28rem;
+    left: 0;
+    background-color: #F0EEEE;
+    padding: 10px;
+    border-radius: 15px;
+    width: 100%;
+    height: auto;
+}
+
+#grafica{
+    top: 40%;
+    position: absolute;
+    left: 0;
+    padding-bottom: 2rem;
+}
+#responsabilidad{
     position: relative;
-    float: right;
-    top: 0%;
+    top: 28rem;
+    left: 10rem;
+}
+#productividad{
+    position: relative;
+    top: 26rem;
+    left: 20rem;
+}
+#gestionCambio{
+    position: relative;
+    top: 24.5rem;
+    left: 32rem;
+}
+#innovacion{
+    position: relative;
+    top: 22.5rem;
+    left: 43rem;
+}
+#resiliencia{
+    position: relative;
+    top: 20.5rem;
+    left: 54rem;
+}
+#confianza{
+    position: relative;
+    top: 18.5rem;
+    left: 65rem;
+}
+
+#DigitalS{
+    position: relative;
+    top: 30rem;
+    padding-bottom: 10%;
+}
+
+#concepto{
+    position: relative;
+    top: 30rem;
+    padding-bottom: 10%;
+    background-color: #F0EEEE;
+    padding: 10px;
+    border-radius: 15px;
+    width: 100%;
+    height: auto;
+}
+
+#botonesGrafica{
+    width: 15rem;
+    background-color: #F0EEEE;
+    height: auto;
+    border: #43EAFE 2px solid;
+    border-radius: 10px;
 }

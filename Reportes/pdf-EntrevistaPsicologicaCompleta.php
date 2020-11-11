@@ -325,7 +325,7 @@ $rta = $objCnx->query($query);
                 break;
         }
     ?>
-    <br>
+        <br>
         <h2>Datos Generales</h2>
         <table class="table table-bordered" width="100%" cellspacing="10">
             <tbody>
@@ -431,15 +431,17 @@ $rta = $objCnx->query($query);
             }
         </style>
         <?php
-        function imprimir($d){
+        function imprimir($d)
+        {
             if ($d[0] == "SI" || $d[0] == 'si' || $d[0] == 'on') {
                 echo "<li type='disc'><label>$d[1]</label><br>";
             }
         }
-        function otros($o){
-            if($o == "" || $o == " "){
+        function otros($o)
+        {
+            if ($o == "" || $o == " ") {
                 echo  "<dd><li type='circle'><label>No se registro otro conocimiento</label></li></dd>";
-            }else{
+            } else {
                 echo "<dd><li type='circle'>$o</li></dd>";
             }
         }
@@ -451,48 +453,48 @@ $rta = $objCnx->query($query);
                 <div>
                     <h5 class="titulo2"><b>Working Tools & Methodologies</b></h5>
                     <div>
-                        <?php imprimir([$datos['dswm1'] , "MS Office basics (Word, Excel, Powerpoint)"]); ?>
+                        <?php imprimir([$datos['dswm1'], "MS Office basics (Word, Excel, Powerpoint)"]); ?>
                     </div>
                     <div>
-                    <?php imprimir([$datos['dswm2'] ,"MS Office advanced (Access, Project)" ])?>
+                        <?php imprimir([$datos['dswm2'], "MS Office advanced (Access, Project)"]) ?>
                     </div>
-                    <?php imprimir([$datos['dswo3'] , "Outlook"]) ?> 
+                    <?php imprimir([$datos['dswo3'], "Outlook"]) ?>
                 </div>
                 <div>
-                    <?php imprimir([$datos['dswc4'] , "Communication tools (Teams, Yammer)"]) ?> 
+                    <?php imprimir([$datos['dswc4'], "Communication tools (Teams, Yammer)"]) ?>
                 </div>
                 <div>
-                    <?php imprimir([$datos['dswp5'],"Project Management"]) ?> 
+                    <?php imprimir([$datos['dswp5'], "Project Management"]) ?>
                 </div>
                 <div>
-                    <?php imprimir([$datos['dswa6'],"Agile"]) ?>
+                    <?php imprimir([$datos['dswa6'], "Agile"]) ?>
                 </div>
                 <div>
-                    <?php imprimir([$datos['dswd7'],"Desing thinking"]) ?> 
+                    <?php imprimir([$datos['dswd7'], "Desing thinking"]) ?>
                 </div>
 
                 <label><b>Other</b><br>
-                <?php otros($datos['other1']) ?>
+                    <?php otros($datos['other1']) ?>
             </div><br>
 
             <h5 class="titulo3"><b>Soft Digital Skills</b></h5>
             <div>
-                <?php imprimir([$datos['dssk1'], "Knowledge Networking"]) ?> 
+                <?php imprimir([$datos['dssk1'], "Knowledge Networking"]) ?>
             </div>
             <div>
-                <?php imprimir([$datos['dssp2'] , "Problem Solving"]) ?>
+                <?php imprimir([$datos['dssp2'], "Problem Solving"]) ?>
             </div>
             <div>
-                <?php imprimir([$datos['dssv3'],"Virtual Communication"]) ?>
+                <?php imprimir([$datos['dssv3'], "Virtual Communication"]) ?>
             </div>
             <div>
-                <?php imprimir([$datos['dssd4'],"Digital Awareness"]) ?>
+                <?php imprimir([$datos['dssd4'], "Digital Awareness"]) ?>
             </div>
             <div>
                 <?php imprimir([$datos['dssd5'], "Data and device security"]) ?>
             </div>
             <div>
-                <?php imprimir([$datos['dssc6'],"Content creation"]) ?>
+                <?php imprimir([$datos['dssc6'], "Content creation"]) ?>
             </div>
             <div>
                 <b>Other</b><br>
@@ -506,28 +508,28 @@ $rta = $objCnx->query($query);
                 <?php imprimir([$datos['dsdc2'], "Cloud Services"]) ?>
             </div>
             <div>
-                <?php imprimir([$datos['dsdi3'] , "It System Management and Enterprise architecture" ]) ?>
+                <?php imprimir([$datos['dsdi3'], "It System Management and Enterprise architecture"]) ?>
             </div>
             <div>
-                <?php imprimir([$datos['dsdc4'],"Cyber Security"]) ?>
+                <?php imprimir([$datos['dsdc4'], "Cyber Security"]) ?>
             </div>
             <div>
-                <?php imprimir([$datos['dsdu5'],"UX/UI Desing"]) ?>
+                <?php imprimir([$datos['dsdu5'], "UX/UI Desing"]) ?>
             </div>
-            <div> 
-                <?php imprimir([$datos['dsdm6'],"Mobile"]) ?> 
+            <div>
+                <?php imprimir([$datos['dsdm6'], "Mobile"]) ?>
             </div>
-            <div> 
-                <?php imprimir([$datos['dsdd7'],"Data & Analytics"]) ?>
+            <div>
+                <?php imprimir([$datos['dsdd7'], "Data & Analytics"]) ?>
             </div>
-            <div> 
-                <?php imprimir([$datos['dsdi8'],"Internet of Things"]) ?>
+            <div>
+                <?php imprimir([$datos['dsdi8'], "Internet of Things"]) ?>
             </div>
-            <div> 
-                <?php imprimir([$datos['dsdi9'],"It Plataforms"]) ?>
+            <div>
+                <?php imprimir([$datos['dsdi9'], "It Plataforms"]) ?>
             </div>
-            <div> 
-                <?php imprimir([$datos['dsdr10'],"Robotic Process Automation"]) ?>
+            <div>
+                <?php imprimir([$datos['dsdr10'], "Robotic Process Automation"]) ?>
             </div>
             <div> <b>Other</b><br>
                 <?php otros($datos['other3']) ?>
@@ -544,6 +546,7 @@ $rta = $objCnx->query($query);
 
                 border-collapse: collapse;
             }
+
             td {
                 padding: 7px;
                 text-align: justify
@@ -565,19 +568,38 @@ $rta = $objCnx->query($query);
         <hr />
         <h2>Concepto Psicóloga</h2>
         <p><?php echo $datos['concepto'] ?></p>
+        
+        <p style="text-align: left;"><b>Concepto (Resumen de la Valoración)</b></p>
+        <?php imprimir([$datos['adecuado'], "Adecuado(a)"]) ?>
+        </div>
+        <div>
+        <?php imprimir([$datos['adecuadoP'], "Adecuado(a) para otro cargo"]) ?>
+        </div>
+        <div>
+        <?php imprimir([$datos['parcialmente'], "Parcialmente adecuado(a)"]) ?>
+        </div>
+        <div>
+        <?php imprimir([$datos['primera'], "Primera Opción"]) ?>
+        </div>
+        <div>
+        <?php imprimir([$datos['segunda'], "Segunda Opción"]) ?>
+        </div>
+        <div>
+        <?php imprimir([$datos['noA'], "No Adecuado(a)"]) ?>
+        </div>
         <hr />
         <br><br>
 
         <footer>
             <img src="../Firmas/<?php echo $datos['co'] ?>.png" alt="La Psicologa NO tiene agregada una firma digital" width="200px" height="50px">
-            <p>--------------------------------------</p> 
-            <b><?php echo $datos['psicologa']?></b>
-            <p>Firma Psicologa<p>  
+            <p>--------------------------------------</p>
+            <b><?php echo $datos['psicologa'] ?></b>
+            <p>Firma Psicologa<p>
         </footer>
 
     <?php
-    $nombre = $datos['nombre'];
-    $cc = "Entrevista Psicologica de $nombre $cc";
+        $nombre = $datos['nombre'];
+        $cc = "Entrevista Psicologica de $nombre $cc";
     }
     ?>
 </body>

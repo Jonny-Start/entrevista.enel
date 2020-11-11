@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-06-2020 a las 21:40:53
+-- Tiempo de generación: 11-11-2020 a las 15:25:24
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.2
 
@@ -29,13 +29,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `entrevistaaprendices_practicantes` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(40) NOT NULL,
-  `dependencia` varchar(20) NOT NULL,
+  `cc` int(11) NOT NULL,
+  `nombre` varchar(40) DEFAULT NULL,
+  `dependencia` varchar(20) DEFAULT NULL,
   `areaPractica` varchar(20) DEFAULT NULL,
   `ingles` varchar(20) DEFAULT NULL,
-  `fechaEntrevista` varchar(10) DEFAULT NULL,
-  `psicologa` varchar(40) NOT NULL,
+  `fechaEntrevista` date DEFAULT current_timestamp(),
+  `psicologa` varchar(40) DEFAULT NULL,
   `cargo` varchar(20) DEFAULT 'Practicante',
   `conocimientoEmpresa` text DEFAULT NULL,
   `motivacionArea` text DEFAULT NULL,
@@ -44,11 +44,20 @@ CREATE TABLE `entrevistaaprendices_practicantes` (
   `adecuado` varchar(2) DEFAULT 'NO',
   `adecuadoP` varchar(2) DEFAULT 'NO',
   `parcialmente` varchar(2) DEFAULT 'NO',
+  `primera` varchar(2) DEFAULT 'NO',
   `segunda` varchar(2) DEFAULT 'NO',
   `noA` varchar(2) DEFAULT 'NO',
   `concepto` text DEFAULT NULL,
   `co` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `entrevistaaprendices_practicantes`
+--
+
+INSERT INTO `entrevistaaprendices_practicantes` (`cc`, `nombre`, `dependencia`, `areaPractica`, `ingles`, `fechaEntrevista`, `psicologa`, `cargo`, `conocimientoEmpresa`, `motivacionArea`, `ofimatica`, `conocimientoProgramacion`, `adecuado`, `adecuadoP`, `parcialmente`, `primera`, `segunda`, `noA`, `concepto`, `co`) VALUES
+(0, '', '', '', '', '2020-06-11', 'Jonny Alejandro Cano Acosta', 'Practicante', '', '', 1, '', '', '', '', '', '', '', '', 1006844604),
+(1006844604, 'Jonny Alejanndro cano acosta', 'P&O', 'Seleccion', 'a1', '2020-06-11', 'Jonny Alejandro Cano Acosta', 'Practicante', 'mucho ', 'INFORMATICA', 1, 'BAJO ', 'si', '', '', 'si', '', '', 'EL ES ', 1006844604);
 
 -- --------------------------------------------------------
 
@@ -114,23 +123,45 @@ CREATE TABLE `entrevistapsicologica` (
   `noA` varchar(5) NOT NULL DEFAULT 'NO',
   `concepto` text DEFAULT NULL,
   `co` int(11) DEFAULT NULL,
-  `terminado` varchar(5) NOT NULL DEFAULT 'False'
+  `terminado` varchar(5) NOT NULL DEFAULT 'False',
+  `modificar` varchar(10) NOT NULL DEFAULT 'False'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `entrevistapsicologica`
 --
 
-INSERT INTO `entrevistapsicologica` (`nombre`, `cc`, `dependencia`, `cargo`, `cargoAspira`, `telefono`, `aspiracionSal`, `fechaEntrevista`, `psicologa`, `responsabilidad`, `productividad`, `gestionCambio`, `innovacion`, `resiliencia`, `confianza`, `dswm1`, `dswm2`, `dswo3`, `dswc4`, `dswp5`, `dswa6`, `dswd7`, `other1`, `dssk1`, `dssp2`, `dssv3`, `dssd4`, `dssd5`, `dssc6`, `other2`, `dsdp1`, `dsdc2`, `dsdi3`, `dsdc4`, `dsdu5`, `dsdm6`, `dsdd7`, `dsdi8`, `dsdi9`, `dsdr10`, `other3`, `comportamientoEtico`, `fuenteR`, `resultadoI`, `inteligenciaE`, `candidatoU`, `explicacion`, `resolucionProblemas`, `observaciones`, `adecuado`, `adecuadoP`, `parcialmente`, `primera`, `segunda`, `noA`, `concepto`, `co`, `terminado`) VALUES
-('Carlos Santiago', 1986711, '', '', '', '523523453', '', '2020-05-20', '', 0, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'yap', 1006844604, 'True'),
-('Juan jose', 9657968, 'gggjghjg', 'hgjfkjfk', 'kjhfkjhfk', '765874864', '9765658', '2020-04-30', 'hgfhgfjfjhgfj', 5, 5, 3, 5, 4, 4, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'mjhkjhgkhj', 'facebook', 'a2', 'yfgjhgj', 'no', 'khfkhfjgfyugjh', 'jhghjghjgjhgj', 'jhgjhgjhgj', '', 'si', 'si', '', '', 'si', 'listo pero ', 1006844604, 'True'),
-('Jonny Bravo', 12345678, 'Enel X', 'Profesional Selección', 'Profesional Junior', '3015018468', '100000', '2020-05-28', 'Jonny AlejandroCano Acosta', 1, 2, 3, 4, 5, 1, 'SI', 'SI', 'SI', 'SI', '', '', '', '', '', '', 'SI', '', 'SI', '', '', 'SI', 'SI', '', 'SI', '', 'SI', 'SI', 'SI', '', 'SI', '', '80 / el candidato cumple con las dimensiones requeridas de la prueba de integridad  ', 'Linkedin', 'A1', '', 'NO', 'carlitos torres', '', 'El man es buena papa ', 'si', '', '', 'si', '', '', 'El candidato cuneta con experiencias en lenguajes de programación...  ', 1006844604, 'True'),
-('Jeison sanchez', 12654346, '', '', '', '745763214', NULL, '0000-00-00', '', 0, 0, 0, 0, 0, 0, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, '', '', NULL, '', '', NULL, '', NULL, 'si', 'si', 'si', 'si', 'si', 'si', 'hollaaaaaaaaaaaaaaaa', 1006844604, 'False'),
-('carlos ', 19283746, '', 'Profesional Selección', '', '312312312', '21093112', '2020-05-21', 'Jonny AlejandroCano Acosta', 1, 1, 1, 1, 1, 1, 'SI', 'SI', 'SI', 'SI', 'SI', 'SI', 'SI', '', 'SI', 'SI', 'SI', 'SI', 'SI', 'SI', '', 'SI', 'SI', 'SI', 'SI', '', 'SI', 'SI', 'SI', 'SI', 'SI', '', '', '', '', '', 'NO', '', '', '', 'si', '', '', '', '', '', 'hola', 1006844604, 'True'),
-('Miguel Rodriguez', 31862531, '', '', '', '42342252', NULL, '2020-04-28', '', 0, 0, 0, 0, 0, 0, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, '', '', NULL, '', '', NULL, '', NULL, 'si', '', '', 'si', '', '', '...', 1006844604, 'True'),
-('Rogelio ', 354676587, 'gggjghjg', 'hgjfkjfk', 'kjhfkjhfk', '54234864', '97654238', '2020-03-23', 'hgfhgfjfjhgfj', 5, 5, 3, 5, 4, 4, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'mjhkjhgkhj', 'facebook', 'a2', 'yfgjhgj', 'no', 'khfkhfjgfyugjh', 'jhghjghjgjhgj', 'jhgjhgjhgj', 'si', 'no', 'si', 'no', 'si', 'no', 'ljhgjkgjhg', 1006844604, 'False'),
-('Irene Acosta Villarreal', 1123321772, 'I&N', 'Profesional Selección', 'Bussines', '3107550085', '1002020392', '2020-05-21', 'Jonny Alejandro Cano Acosta', 1, 2, 3, 4, 5, 1, 'SI', 'SI', 'SI', 'SI', '', '', '', '', '', '', '', '', 'SI', '', '', 'SI', 'SI', '', 'SI', '', 'SI', 'SI', 'SI', '', 'SI', '', 'Bueno', 'Linkeding', 'B2', 'Buena', 'SI', 'NO pues que te digo es seleccion directa, pero lo mas importante es que es buena papa', 'bueno ', 'No ninguna Observacion', 'si', '', '', 'si', 'si', '', 'En la entrevista fue re chimbita', 1006844604, 'True'),
-('Natalia Tabarez lozano', 2147483647, '', '', '', '234502488', NULL, '2010-02-28', '', 0, 0, 0, 0, 0, 0, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, '', '', NULL, '', '', NULL, '', NULL, '', '', '', '', '', '', 'nada', 1006844604, 'True');
+INSERT INTO `entrevistapsicologica` (`nombre`, `cc`, `dependencia`, `cargo`, `cargoAspira`, `telefono`, `aspiracionSal`, `fechaEntrevista`, `psicologa`, `responsabilidad`, `productividad`, `gestionCambio`, `innovacion`, `resiliencia`, `confianza`, `dswm1`, `dswm2`, `dswo3`, `dswc4`, `dswp5`, `dswa6`, `dswd7`, `other1`, `dssk1`, `dssp2`, `dssv3`, `dssd4`, `dssd5`, `dssc6`, `other2`, `dsdp1`, `dsdc2`, `dsdi3`, `dsdc4`, `dsdu5`, `dsdm6`, `dsdd7`, `dsdi8`, `dsdi9`, `dsdr10`, `other3`, `comportamientoEtico`, `fuenteR`, `resultadoI`, `inteligenciaE`, `candidatoU`, `explicacion`, `resolucionProblemas`, `observaciones`, `adecuado`, `adecuadoP`, `parcialmente`, `primera`, `segunda`, `noA`, `concepto`, `co`, `terminado`, `modificar`) VALUES
+('', 0, '', 'Profesional de Selección', '', '', '', '2020-10-22', 'santi Cano Acosta ', 1, 1, 1, 1, 1, 1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'NO', '', '', '', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 12312312, 'False', 'False'),
+('Carlos Santiago', 1986711, '', '', '', '523523453', '', '2020-05-20', 'Jonny Alejandro Cano Acosta', 0, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'SI', '', 'SI', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'si', '', '', 'si', '', '', '', 1006844604, 'True', ''),
+('Juan jose', 9657968, 'gggjghjg', 'hgjfkjfk', 'kjhfkjhfk', '765874864', '9765658', '2020-04-30', 'hgfhgfjfjhgfj', 5, 5, 3, 5, 4, 4, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'mjhkjhgkhj', 'facebook', 'a2', 'yfgjhgj', 'no', 'khfkhfjgfyugjh', 'jhghjghjgjhgj', 'jhgjhgjhgj', '', 'si', 'si', '', '', 'si', 'listo pero ', 1006844604, 'True', ''),
+('Jeison sanchez', 12654346, '', '', '', '745763214', NULL, '0000-00-00', 'Jonny Alejandro Cano Acosta', 0, 0, 0, 0, 0, 0, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, '', '', NULL, '', '', NULL, '', NULL, 'si', '', '', '', '', '', 'khjhsdjfhagsdf', 1006844604, 'True', ''),
+('Miguel Rodriguez', 31862531, '', '', '', '42342252', NULL, '2020-04-28', 'Jonny Alejandro Cano Acosta', 0, 0, 0, 0, 0, 0, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, '', '', NULL, '', '', NULL, '', NULL, 'si', '', '', 'si', '', '', '...', 1006844604, 'True', ''),
+('Rogelio ', 354676587, 'gggjghjg', 'hgjfkjfk', 'kjhfkjhfk', '54234864', '97654238', '2020-03-23', 'hgfhgfjfjhgfj', 5, 5, 3, 5, 4, 4, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'mjhkjhgkhj', 'facebook', 'a2', 'yfgjhgj', 'no', 'khfkhfjgfyugjh', 'jhghjghjgjhgj', 'jhgjhgjhgj', 'si', '', '', '', '', '', 'hola ', 1006844604, 'True', ''),
+('Jonny Alejandro cano Acosta', 1006844604, 'Enel X', 'Profesional ', 'Profesional Experto B2B', '3015018468', '10.000.000', '2020-05-29', 'Jonny Alejandro Cano Acosta', 5, 4, 5, 2, 3, 5, '', '', 'on', 'on', '', '', 'on', '', 'on', '', 'on', '', '', 'on', 'este es el 2 ', '', 'on', '', 'on', 'on', '', '', '', '', 'on', 'ente es el 3', '90 / el candidato cumple con las dimensiones requeridas de la prueba de integridad  ', 'Facebook', 'B1', '', 'NO', 'Bien\r\n', 'resolucion', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, repudiandae accusantium dignissimos inventore sunt magnam debitis ratione error provident praesentium libero, iste sit quia ducimus eos quis! Inventore voluptatem vero error culpa excepturi. Error assumenda nulla incidunt facilis quidem libero quod iusto, ad nisi eum aliquam, qui quibusdam aliquid vel!\r\n\r\n\r\n', 'si', '', '', 'si', '', '', 'APTO PARA EL CARGO. Se orienta al logro de resultados, emprende con prontitud las actividades necesarias para alcanzar las metas\r\n\r\npropuestas. Atiende y resuelve ágilmente asuntos que contribuyen al logro de los resultados propios de su gestión.\r\n\r\nAsume altas cargas de trabajo en forma dinámica y ejecuta las actividades propias de su rol. Logra un alto nivel de\r\n\r\nrendimiento. En situaciones de presión por tiempo e incremento en el volumen de trabajo que forman parte de lo\r\n\r\ncotidiano y que esta habituado(a) a manejar, alcanza los niveles de productividad esperados. Así mismo, cuando se\r\n\r\nenfrenta a situaciones de presión con las que está familiarizado(a), mantiene el control y el foco en los asuntos que\r\n\r\nse relacionan con su trabajo habitual. Frente a estas mismas situaciones procura mantener la calma a pesar de la\r\n\r\ntensión que le generan y se toma un tiempo para recuperarse. Asume retos cuando debe tomar decisiones, le gusta\r\n\r\nponer a prueba sus recursos y emprende acciones con autonomía y determinación, lo cual le permite resolver y\r\n\r\nsuperar los problemas que se presentan.', 1006844604, 'True', 'False'),
+('Irene Acosta Villarreal', 1123321772, 'I&N', 'Profesional Selección', 'Bussines', '3107550085', '1002020392', '2020-05-21', 'Jonny Alejandro Cano Acosta', 1, 2, 3, 4, 5, 1, 'SI', 'SI', 'SI', 'SI', '', '', '', '', '', '', '', '', 'SI', '', '', 'SI', 'SI', '', 'SI', '', 'SI', 'SI', 'SI', '', 'SI', '', 'Bueno', 'Linkeding', 'B2', 'Buena', 'SI', 'NO pues que te digo es seleccion directa, pero lo mas importante es que es buena papa', 'bueno ', 'No ninguna Observacion', 'SI', '', '', 'si', 'si', '', 'En la entrevista fue re chimbita', 1006844604, 'True', ''),
+('Natalia Tabarez lozano', 2147483647, '', '', '', '234502488', NULL, '2010-02-28', 'Jonny Alejandro Cano Acosta', 0, 0, 0, 0, 0, 0, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, '', '', NULL, '', '', NULL, '', NULL, '', '', '', '', '', '', 'nada', 1006844604, 'True', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `rol`
+--
+
+CREATE TABLE `rol` (
+  `id` int(11) NOT NULL,
+  `rol` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `rol`
+--
+
+INSERT INTO `rol` (`id`, `rol`) VALUES
+(1, 'Administrador'),
+(2, 'Psicóloga'),
+(3, 'Jefe'),
+(4, 'Business Partner');
 
 -- --------------------------------------------------------
 
@@ -142,7 +173,7 @@ CREATE TABLE `usuario` (
   `nombre` varchar(20) NOT NULL,
   `apellidos` varchar(20) NOT NULL,
   `co` int(15) NOT NULL,
-  `Perfil` varchar(16) NOT NULL,
+  `Perfil` int(2) NOT NULL,
   `correo_electronico` varchar(40) NOT NULL,
   `contraseña` varchar(20) NOT NULL,
   `EGeneradas` bigint(30) DEFAULT 0
@@ -153,13 +184,15 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`nombre`, `apellidos`, `co`, `Perfil`, `correo_electronico`, `contraseña`, `EGeneradas`) VALUES
-('Joselito', 'Torres', 411123412, 'Business_Partner', 'jonnyalejandro.ca0910@gmail.com', '123', 0),
-('Daniel ', 'Suarez', 1000458752, 'Jefe', 'daniel.suarez@enel.com', 'daniel123456', 0),
-('carlos ', 'santiago', 1004423423, 'Jefe', 'jkldajs@enel.com', 'rewrwerqwe', 0),
-('Jonny Alejandro', 'Cano Acosta', 1006844604, 'Administrador', 'jonny.cano@enel.com', '1234', 0),
-('ANGELICA MARIA ', 'BARBOSA PERILLA', 1022407151, 'Business_partner', 'angelica.barbosa@enel.com', 'Codensa2020', 0),
-('Santiago ', 'Garcia', 1193200780, 'Jefe', 'santy1234789@outlook.com', 'holaquetal?', 0),
-('Jonny Alejandro ', 'e3rewrqew', 2147483647, 'Business_Partner', 'qwrqwerwqer@enel.com', 'fwesdfatrwetrqew', 0);
+('Tatiana ', 'Salazar', 123, 3, 'tatiana.salazar@enel.com', '123', 0),
+('Jonny', 'Cano Acosta ', 12312312, 3, 'jonnyalejandro.ca0910@gmail.com', '123', 0),
+('Joselito', 'Torres', 411123412, 1, 'alejandro.ca0910@gmail.com', '123', 0),
+('Daniel ', 'Suarez', 1000458752, 1, 'daniel.suarez@enel.com', 'daniel123456', 0),
+('carlos ', 'santiago', 1004423423, 3, 'jkldajs@enel.com', 'rewrwerqwe', 0),
+('Jonny Alejandro', 'Cano Acosta', 1006844604, 2, 'jonny.cano@enel.com', '123', 0),
+('ANGELICA MARIA ', 'BARBOSA PERILLA', 1022407151, 4, 'angelica.barbosa@enel.com', 'Codensa2020', 0),
+('Santiago ', 'Garcia', 1193200780, 1, 'santy1234789@outlook.com', 'holaquetal?', 0),
+('Jonny Alejandro ', 'e3rewrqew', 2147483647, 1, 'qwrqwerwqer@enel.com', 'fwesdfatrwetrqew', 0);
 
 --
 -- Índices para tablas volcadas
@@ -169,7 +202,8 @@ INSERT INTO `usuario` (`nombre`, `apellidos`, `co`, `Perfil`, `correo_electronic
 -- Indices de la tabla `entrevistaaprendices_practicantes`
 --
 ALTER TABLE `entrevistaaprendices_practicantes`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`cc`),
+  ADD KEY `entrevistaaprendices_practicantes_ibfk_1` (`co`);
 
 --
 -- Indices de la tabla `entrevistapsicologica`
@@ -179,34 +213,50 @@ ALTER TABLE `entrevistapsicologica`
   ADD KEY `co` (`co`);
 
 --
+-- Indices de la tabla `rol`
+--
+ALTER TABLE `rol`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`co`);
+  ADD PRIMARY KEY (`co`),
+  ADD UNIQUE KEY `correo_electronico` (`correo_electronico`),
+  ADD KEY `usuario_ibfk_1` (`Perfil`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `entrevistaaprendices_practicantes`
+-- AUTO_INCREMENT de la tabla `rol`
 --
-ALTER TABLE `entrevistaaprendices_practicantes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `rol`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
+-- Filtros para la tabla `entrevistaaprendices_practicantes`
+--
+ALTER TABLE `entrevistaaprendices_practicantes`
+  ADD CONSTRAINT `entrevistaaprendices_practicantes_ibfk_1` FOREIGN KEY (`co`) REFERENCES `usuario` (`co`);
+
+--
 -- Filtros para la tabla `entrevistapsicologica`
 --
 ALTER TABLE `entrevistapsicologica`
   ADD CONSTRAINT `entrevistapsicologica_ibfk_1` FOREIGN KEY (`co`) REFERENCES `usuario` (`co`);
-COMMIT;
 
-ALTER TABLE `entrevistaaprendices_practicantes`
-  ADD CONSTRAINT `entrevistaaprendices_practicantes_ibfk_1` FOREIGN KEY (`co`) REFERENCES `usuario` (`co`);
+--
+-- Filtros para la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`Perfil`) REFERENCES `rol` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
