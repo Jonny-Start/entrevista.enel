@@ -215,7 +215,7 @@ h4 {
                 <br>
                 ¡Hola!
                 <br><br>
-                La Psicologa ... acaba de enviarte el reporte grafico del@ señor/a $nombre con numero de cedula $cc y que participa en el proceso de $proceso. 
+                La Psicologa... acaba de enviarte el informe de selección del@ señor/a $nombre con numero de cedula $cc y que participa en el proceso de $proceso. 
                 <br><br>
                 Gracias por la atencion prestada.
                 <br><br>

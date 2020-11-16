@@ -110,7 +110,7 @@
        <li class="nav-item">
          <a class="nav-link" href="misDatos.php">
            <i class="fas fa-fw fa-table"></i>
-           <span><?php echo $_SESSION['nombre'] ?> Perfil</span></a>
+           <span><?php echo $_SESSION['nombre'] ?>  Perfil</span></a>
        </li>
 
        <!-- Divider -->

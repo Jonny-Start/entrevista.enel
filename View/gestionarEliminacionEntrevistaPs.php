@@ -52,10 +52,10 @@ if (isset($_SESSION["rol"])) {
                         </thead>
                         <?php
                         require_once "../Model/conexioon.php";
-                        $sql = "SELECT * FROM `entrevistapsicologica` where terminado = 'True' and  modificar = 'Eliminar'";
+                        $sql = "SELECT entrevistapsicologica.nombre, entrevistapsicologica.cc, entrevistapsicologica.telefono, entrevistapsicologica.fechaEntrevista, entrevistapsicologica.psicologa, usuario.correo_electronico FROM usuario , entrevistapsicologica where terminado = 'True' and modificar = 'Eliminar' and usuario.co = entrevistapsicologica.co ";
                         $rta = $objCnx->query($sql);
                         while ($datos = $rta->fetch_array()) {
-                        $info = $datos['nombre'] . "||" . $datos['cc'];
+                        $info = $datos['nombre'] . "||" . $datos['cc'] . "||" . $datos['correo_electronico'];
                         ?>
                           <style>
                             i {
@@ -85,7 +85,7 @@ if (isset($_SESSION["rol"])) {
                               <td><?php echo $datos['psicologa'] ?></td>
                               <td style="text-align: center;">
                                 <a href="" onclick="agregarModal('<?php echo $info ?>')" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-trash-alt" title="Aprobar" style="color: red; width: 50px; font-size: 2rem;"></i></a>
-                                <a href="../Controller/ControllerNegarEliminacionEPS.php?cc=<?php echo $datos['cc'] ?>"><i class='fas fa-ban' title="Negar" style='color: green; width: 50px; font-size: 2rem;'></i></a>
+                                <a href="../Controller/ControllerNegarEliminacionEPS.php?cc=<?php echo $datos['cc'] ?>&&ps=<?php echo $datos['correo_electronico']?>&&persona=<?php echo $datos['nombre']?>"><i class='fas fa-ban' title="Negar" style='color: green; width: 50px; font-size: 2rem;'></i></a>
                               </td>
                             </tr>
                           <?php
@@ -121,6 +121,7 @@ if (isset($_SESSION["rol"])) {
                 <br>
                 <div class="container" style="color: black;">
                   Estas segur@ que deseas eliminar la entrevista con <span id="nombre"></span>, cedula <span id="cedula"></span>?, no se podra recuperar.<br>
+                  <span style="display: none;" id="ps"></span>
                 </div>
               </div>
               <div class='modal-footer'>

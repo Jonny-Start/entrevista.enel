@@ -73,7 +73,7 @@ $rta = $objCnx->query($query);
     while ($datos = $rta->fetch_array()) {
         switch ($datos['responsabilidad']) {
             case '1':
-                $datos['responsabilidad'] = "<table style='width:100%'><tr>
+                $datos['responsabilidad'] = "<table style='width:100%'><tr style='text-align: left;'>
                 <th><h2>Responsabilidad</h2></th>
                 </tr><tr><td style=' background-color: rgb(226, 239, 218)'><h3>Fortalezas</h3><br><p>Asiste o cumple con sus responsabilidades con uno que otro error ocasional.</p></td>
                   <td style='background-color: rgb(252, 228, 214)'><h3>Debilidades</h3><br><p>  Emplea de manera deficiente los recursos a su disposición para alcanzar los resultados.
@@ -81,14 +81,14 @@ $rta = $objCnx->query($query);
               </table> ";
                 break;
             case '2':
-                $datos['responsabilidad'] = "<table style='width:100%'><tr>
+                $datos['responsabilidad'] = "<table style='width:100%'><tr style='text-align: left;'>
                 <th><h2>Responsabilidad</h2></th>
                 </tr><tr><td style=' background-color: rgb(226, 239, 218)><h3>Fortalezas</h3><br><p> Cumple la mayor parte de las tareas que se le solicitan, con calidad aceptable.  La calidad de sus trabajos es suficiente</p></td>
                   <td style='background-color: rgb(252, 228, 214)'><h3>Debilidades</h3><br><p> Puede que presente demoras frecuentes en la entregas de los resultados esperados.  Los recursos que emplea para entregar resultados no son usados de manera eficiente.  No prevee posibles retrasos.</p></td></tr>
               </table>";
                 break;
             case '3':
-                $datos['responsabilidad'] = "<table style='width:100%'><tr>
+                $datos['responsabilidad'] = "<table style='width:100%'><tr style='text-align: left;'>
                 <th><h2>Responsabilidad</h2></th>
                 </tr><tr><td style=' background-color: rgb(226, 239, 218)><h3>Fortalezas</h3><br><p> Emplea la totalidad de las directrices corporativas en sus entregables.  Alcanza los resultados mínimos exigidos por la compañía.  Desde su rol, protege los intereses de la compañía.  Obtiene y mantiene los resultados mes a mes.</p></td>
                   <td style='background-color: rgb(252, 228, 214)'><h3>Debilidades</h3><br><p> No se interesa demasiado en conocer los recursos con los que cuenta y que le pueden ayudar a obtener resultados.  En ocasiones se le dificulta entregar la totalidada de los productos en los plazos acordados, lo cual puede generar inconvenientes. 
@@ -96,7 +96,7 @@ $rta = $objCnx->query($query);
               </table>";
                 break;
             case '4':
-                $datos['responsabilidad'] = "<table style='width:100%'><tr>
+                $datos['responsabilidad'] = "<table style='width:100%'><tr style='text-align: left;'>
                 <th><h2>Responsabilidad</h2></th>
                 </tr><tr><td style=' background-color: rgb(226, 239, 218)><h3>Fortalezas</h3><br><p>
                 - Cumple lo que promete, sólo con excepción de incidentes fuera de su control
@@ -105,9 +105,9 @@ $rta = $objCnx->query($query);
               </table>";
                 break;
             case '5':
-                $datos['responsabilidad'] = "<table style='width:100%'><tr>
+                $datos['responsabilidad'] = "<table style='width:100%'><tr style='text-align: left;'>
                 <th><h2>Responsabilidad</h2></th>
-                </tr><tr><td style=' background-color: rgb(226, 239, 218)'><h3>Fortalezas</h3><br><p>' Cumple sus obligaciones con atención en lo que hace o decide.  Se esmera por refinar sus entregables y optimizar la calidad de sus productos.   Su trabajo promueve activos importante para los intereses de la compañía.   Prioriza adecuadamente sus tareas y el cronograma de actividades dispuesto para su cumplimiento.   Altamente orentado a los resultados. Preve los posibles retrasos de los plazos de entrega y toma acciones para solucionarlo.  Entiende las dinámicas de trabajo y detecta oportunidades de mejora tanto a nivel de las personas como a nivel de los procesos.  Es una persona que facilita el cumplimieto de los objetivos del equipo de trabajo, mediante tranferencias de conocimiento a partir de sus experiencias exitosas.</p></td>
+                </tr><tr><td style=' background-color: rgb(226, 239, 218)'><h3>Fortalezas</h3><br><p>Cumple sus obligaciones con atención en lo que hace o decide.  Se esmera por refinar sus entregables y optimizar la calidad de sus productos.   Su trabajo promueve activos importante para los intereses de la compañía.   Prioriza adecuadamente sus tareas y el cronograma de actividades dispuesto para su cumplimiento.   Altamente orentado a los resultados. Preve los posibles retrasos de los plazos de entrega y toma acciones para solucionarlo.  Entiende las dinámicas de trabajo y detecta oportunidades de mejora tanto a nivel de las personas como a nivel de los procesos.  Es una persona que facilita el cumplimieto de los objetivos del equipo de trabajo, mediante tranferencias de conocimiento a partir de sus experiencias exitosas.</p></td>
                   <td style='background-color: rgb(252, 228, 214)'><h3>Debilidades</h3><br><p>Tiene potencial para incorporar nuevos métodos de mejora que faciliten la entrega de resultados a nivel laboral. </p></td></tr>
               </table>";
                 break;
@@ -370,7 +370,7 @@ $rta = $objCnx->query($query);
                     <td><?php echo $datos['resultadoI'] ?> </td>
                 </tr>
                 <tr>
-                    <td>Fuente de Reclutamiento: </td>
+                    <td style="text-align: left;">Fuente de Reclutamiento: </td>
                     <td> <?php echo $datos['fuenteR'] ?> </td>
                 </tr>
                 <tr>
@@ -378,7 +378,7 @@ $rta = $objCnx->query($query);
                     <td> <?php echo $datos['candidatoU'] ?> </td>
                 </tr>
                 <tr>
-                    <td>Explicacion de candidato unico: </td>
+                    <td style="text-align: left;">Explicacion de candidato unico: </td>
                     <td> <?php echo $datos['explicacion'] ?> </td>
                 </tr>
                 <tr>
@@ -386,7 +386,7 @@ $rta = $objCnx->query($query);
                     <td> <?php echo $datos['comportamientoEtico'] ?> </td>
                 </tr>
                 <tr>
-                    <td>Resulucion de problemas complejos: </td>
+                    <td style="text-align: left;">Resulucion de problemas complejos: </td>
                     <td> <?php echo $datos['resolucionProblemas'] ?> </td>
                 </tr>
                 <tr>
@@ -394,8 +394,7 @@ $rta = $objCnx->query($query);
                     <td> <?php echo $datos['observaciones'] ?> </td>
                 </tr>
             </tbody>
-        </table><br><br><br>
-
+        </table>
         <style>
             .titulo {
                 color: black;
@@ -538,7 +537,6 @@ $rta = $objCnx->query($query);
             <hr>
         </div>
         </div>
-        <br><br>
         <style>
             table,
             th,
@@ -557,6 +555,7 @@ $rta = $objCnx->query($query);
             }   */
         </style>
         <h1 style="text-align: center">Competencias</h1>
+        <br><br><br>
         <?php echo $datos['responsabilidad'] ?>
         <?php echo $datos['productividad'] ?>
         <?php echo $datos['gestionCambio'] ?>
@@ -587,14 +586,14 @@ $rta = $objCnx->query($query);
         <div>
         <?php imprimir([$datos['noA'], "No Adecuado(a)"]) ?>
         </div>
-        <hr />
-        <br><br>
+        <br>
 
         <footer>
-            <img src="../Firmas/<?php echo $datos['co'] ?>.png" alt="La Psicologa NO tiene agregada una firma digital" width="200px" height="50px">
-            <p>--------------------------------------</p>
-            <b><?php echo $datos['psicologa'] ?></b>
-            <p>Firma Psicologa<p>
+            <img src="../Firmas/<?php echo $datos['co'] ?>.png" alt="La Psicologa NO tiene agregada una firma digital" width="200px" height="60px">
+            <br>
+            <span>------------------------------------------------------</span>
+            <br>
+            <span>Firma Psicolog@:  <span><b><?php echo $datos['psicologa'] ?></b>
         </footer>
 
     <?php

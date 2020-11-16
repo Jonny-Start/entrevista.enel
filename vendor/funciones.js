@@ -1,9 +1,9 @@
 
-function agregarModal(info) {
+function agregarModal(info ) {
     var d = info.split('||');
-    console.log (info);
     $('#nombre').text(d[0]);
     $('#cedula').text(d[1]);
+    $('#ps').text(d[2]);
   }
   
 function agregarModal2(inf) {
@@ -88,16 +88,17 @@ function agregarModal2(inf) {
   function Eliminacion() {
     var nombre = $('#nombre').text();
     var cc = $('#cedula').text();
+    var ps = $('#ps').text();
     var btn = $('#btn'); 
     btn.attr('disabled', 'disabled');
-    cadena = "&nombre=" + nombre + "&cedula=" + cc;
+    cadena = "&nombre=" + nombre + "&cedula=" + cc + "&ps=" + ps;
     $.ajax({
       type: "POST",
-      url: "../Controller/ValidarEliminarEntrevistaPs.php",
+      url: "../Controller/ValidarEliminarEntrevistaPs.php?",
       data: cadena,
       success: function(r) {
         if (r == 1) {
-          console.log("esto es bien" + r );
+          console.log("esto es bien" + r + cadena );
           btn.removeAttr('disabled');
           Swal.fire({
             icon: 'success',
@@ -105,7 +106,7 @@ function agregarModal2(inf) {
             text: 'La entrevista de eliminó correctamente',
           });
         } else {
-          console.log("esto es mal"+ r);
+          console.log("esto es mal"+ r + cadena);
           console.log(r);
           btn.removeAttr('disabled');
           Swal.fire({
@@ -116,5 +117,5 @@ function agregarModal2(inf) {
         }
       }
     })
-    $(body).load('ValidarEliminarEntrevista.php');
+    // $(body).load('ValidarEliminarEntrevista.php');
   }

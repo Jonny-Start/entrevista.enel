@@ -307,33 +307,32 @@ $rta = $objCnx->query($query);
                                 <label class="form-check-label minimal">Adecuado(a)</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input " type="checkbox" value="si" id="adecuadoP" name="adecuadoP" required>
-                                <label class="form-check-label minimal">
-                                    Adecuado(a) para otro cargo
+                                <input class="form-check-input derecha" type="checkbox" value="si" id="noA" name="noA" required>
+                                <label class="form-check-label">
+                                    No Adecuado(a)
                                 </label>
                             </div>
-
                             <div class="form-check form-check-inline">
-                                <input type="checkbox" class="form-check-input derecha" id="parcialmente" value="si" name="parcialmente" required>
-                                <label class="form-check-label minimal"> Parcialmente
-                                    adecuado(a)</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" value="si" id="primera" name="primera" required>
+                                <input class="form-check-input" type="checkbox" value="si" id="primera" name="primera" disabled required>
                                 <label class="form-check-label">
                                     Primera Opción
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" value="si" id="segunda" name="segunda" required>
+                                <input type="checkbox" class="form-check-input derecha" id="parcialmente" value="si" name="parcialmente" disabled required>
+                                <label class="form-check-label minimal"> Parcialmente
+                                    adecuado(a)</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" value="si" id="segunda" name="segunda" disabled required>
                                 <label class="form-check-label">
                                     Segunda Opción
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input derecha" type="checkbox" value="si" id="noA" name="noA" required>
-                                <label class="form-check-label">
-                                    No Adecuado(a)
+                                <input class="form-check-input " type="checkbox" value="si" id="adecuadoP" name="adecuadoP" disabled required>
+                                <label class="form-check-label minimal">
+                                    Adecuado(a) para otro cargo
                                 </label>
                             </div>
                         </div>
@@ -362,7 +361,7 @@ $rta = $objCnx->query($query);
                     })
                 </script>";
             } else if ($_GET["msj"] == "2") {
-               echo "<script type='text/javascript'>
+                echo "<script type='text/javascript'>
                     Swal.fire({
                         icon: 'error',
                         title: '¡ERROR!',
@@ -375,6 +374,6 @@ $rta = $objCnx->query($query);
     </form>
 </div>
 </div>
-<?php include FOLDER_TEMPLATE . "scripts.php"; ?>
 
+<?php include FOLDER_TEMPLATE . "scripts.php"; ?>
 <script type="text/javaScript" src="../vendor/.js"></script>

@@ -52,7 +52,7 @@ if (isset($_SESSION["rol"])) {
                         </thead>
                         <?php
                         require_once "../Model/conexioon.php";
-                        $sql = "SELECT * FROM `entrevistapsicologica` where terminado = 'True' and  modificar = 'Solicitado'";
+                        $sql = "SELECT entrevistapsicologica.nombre, entrevistapsicologica.cc, entrevistapsicologica.telefono, entrevistapsicologica.fechaEntrevista, entrevistapsicologica.psicologa, usuario.correo_electronico FROM usuario , entrevistapsicologica where terminado = 'True' and modificar = 'Solicitado' and usuario.co = entrevistapsicologica.co ";
                         $rta = $objCnx->query($sql);
                         while ($datos = $rta->fetch_array()) {
                         ?>
@@ -83,8 +83,8 @@ if (isset($_SESSION["rol"])) {
                               <td><?php echo $datos['fechaEntrevista'] ?></td>
                               <td><?php echo $datos['psicologa'] ?></td>
                               <td style="text-align: center;">
-                                <a href="../Controller/ControllerAprobarEdicionEPs.php?cc=<?php echo $datos['cc'] ?>&ps=<?php echo $datos['cc'] ?>"><i class="fas fa-check" title="Aprobar" style="color: green; width: 50px; font-size: 2rem;"></i></a>
-                                <a href="../Controller/ControllerNegarEdicionEPS.php?cc=<?php echo $datos['cc'] ?>"><i class='fas fa-times' title="Negar" style='color: red; width: 50px; font-size: 2rem;'></i></a>
+                                <a href="../Controller/ControllerAprobarEdicionEPs.php?cc=<?php echo $datos['cc'] ?>&&ps=<?php echo $datos['correo_electronico']?>&&persona=<?php echo $datos['nombre']?>"><i class="fas fa-check" title="Aprobar" style="color: green; width: 50px; font-size: 2rem;"></i></a>
+                                <a href="../Controller/ControllerNegarEdicionEPS.php?cc=<?php echo $datos['cc'] ?>&&ps=<?php echo $datos['correo_electronico']?>&&persona=<?php echo $datos['nombre']?>"><i class='fas fa-times' title="Negar" style='color: red; width: 50px; font-size: 2rem;'></i></a>
                               </td>
                             </tr>
                           <?php

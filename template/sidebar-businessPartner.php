@@ -47,7 +47,7 @@
            <div class="bg-white py-2 collapse-inner rounded">
              <h6 class="collapse-header">Generar Entrevistas:</h6>
              <a class="collapse-item" data-toggle="modal" data-target="#logoutModal">Psicologicas</a>
-             <a class="collapse-item" href="entrevistaBP.php">Business Partner</a>
+             <a class="collapse-item" href="../View/conceptoBP.php">Business Partner</a>
              <a class="collapse-item" href="entrevistaTecnica.php">Tecnicas</a>
            </div>
          </div>

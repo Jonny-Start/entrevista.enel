@@ -1,18 +1,13 @@
 <?php
-require_once "../Model/conexioon.php";
-
-$cc = $_POST['cedula'];
-$persona = $_POST['nombre'];
-$pscologa = $_POST['ps'];
-$solicitud = 'eliminar';
-$respuesta = 'Aprovada y eliminada correctamente';
-
-$sql = "DELETE FROM entrevistapsicologica where cc= ?";
-$rta = $objCnx->prepare($sql);
-$rta->bind_param("i", $cc);
-$resul = $rta->execute();
-
 include "../config.php";
+include FOLDER_TEMPLATE . "head.php"; 
+include FOLDER_TEMPLATE . "scripts.php";
+
+$cc = $_GET['cc'];
+$persona = $_GET['p'];
+$pscologa = $_GET['ps'];
+$solicitud = $_GET['solicitud'];
+$respuesta = $_GET['respuesta'];
 
 $body = " <style> img {
     max-width: 600px;
@@ -300,11 +295,10 @@ try {
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    echo("1");
+    echo("<script type='text/javascript'> 
+    alert('Se guardo la respuesta y se le notifico a la Psicologa.');
+    window.history.go(-1);
+    </script>");
 } catch (Exception $e) {
-	echo "Hubo un error al enviar el mensaje: {$mail->ErrorInfo}";
-	mysqli_close($objCnx);
-	echo "cc =$cc, persona = $persona, ps= $pscologa ,sol= $solicitud,rta= $respuesta ";
+    echo "Hubo un error al enviar el mensaje: {$mail->ErrorInfo}";
 }
-
-?>
