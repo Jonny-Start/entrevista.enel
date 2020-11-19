@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-11-2020 a las 15:25:24
+-- Tiempo de generación: 19-11-2020 a las 22:57:57
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.2
 
@@ -58,6 +58,60 @@ CREATE TABLE `entrevistaaprendices_practicantes` (
 INSERT INTO `entrevistaaprendices_practicantes` (`cc`, `nombre`, `dependencia`, `areaPractica`, `ingles`, `fechaEntrevista`, `psicologa`, `cargo`, `conocimientoEmpresa`, `motivacionArea`, `ofimatica`, `conocimientoProgramacion`, `adecuado`, `adecuadoP`, `parcialmente`, `primera`, `segunda`, `noA`, `concepto`, `co`) VALUES
 (0, '', '', '', '', '2020-06-11', 'Jonny Alejandro Cano Acosta', 'Practicante', '', '', 1, '', '', '', '', '', '', '', '', 1006844604),
 (1006844604, 'Jonny Alejanndro cano acosta', 'P&O', 'Seleccion', 'a1', '2020-06-11', 'Jonny Alejandro Cano Acosta', 'Practicante', 'mucho ', 'INFORMATICA', 1, 'BAJO ', 'si', '', '', 'si', '', '', 'EL ES ', 1006844604);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `entrevistabp`
+--
+
+CREATE TABLE `entrevistabp` (
+  `idBP` int(11) NOT NULL,
+  `proceso` varchar(15) DEFAULT NULL,
+  `entrevistador` varchar(30) DEFAULT NULL,
+  `fechaEntrevista` date DEFAULT NULL,
+  `cargoEntrevistador` varchar(30) DEFAULT NULL,
+  `dependencia` varchar(30) DEFAULT NULL,
+  `nombreCandidato` varchar(50) DEFAULT NULL,
+  `cargoAspira` varchar(50) DEFAULT NULL,
+  `salBasicMen` int(11) DEFAULT NULL,
+  `salBasicObs` varchar(200) DEFAULT NULL,
+  `modalidadPagoMen` varchar(100) DEFAULT NULL,
+  `modalidadPagoObs` varchar(200) DEFAULT NULL,
+  `salVariMen` varchar(50) DEFAULT NULL,
+  `salVariObs` varchar(200) DEFAULT NULL,
+  `otrosBenMen` varchar(100) DEFAULT NULL,
+  `otrosBenObs` varchar(200) DEFAULT NULL,
+  `aspiracionSalMen` int(11) DEFAULT NULL,
+  `aspiracionSalObs` varchar(200) DEFAULT NULL,
+  `ajusteAlto` varchar(2) DEFAULT NULL,
+  `ajusteMedioAlto` varchar(2) DEFAULT NULL,
+  `ajusteMedioBajo` varchar(2) DEFAULT NULL,
+  `parcialAjusteBajo` varchar(2) DEFAULT NULL,
+  `perfilAjustaSN` varchar(2) DEFAULT NULL,
+  `perfilAjusta` text DEFAULT NULL,
+  `adaptarCargo` text DEFAULT NULL,
+  `elementosRetro` text DEFAULT NULL,
+  `comentarios` text DEFAULT NULL,
+  `adecuado` varchar(2) DEFAULT NULL,
+  `primera` varchar(2) DEFAULT NULL,
+  `segunda` varchar(2) DEFAULT NULL,
+  `noA` varchar(2) DEFAULT NULL,
+  `parcialmente` varchar(2) DEFAULT NULL,
+  `adecuadoP` varchar(2) DEFAULT NULL,
+  `co` int(11) DEFAULT NULL,
+  `terminada` varchar(5) NOT NULL DEFAULT 'False',
+  `modificar` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `entrevistabp`
+--
+
+INSERT INTO `entrevistabp` (`idBP`, `proceso`, `entrevistador`, `fechaEntrevista`, `cargoEntrevistador`, `dependencia`, `nombreCandidato`, `cargoAspira`, `salBasicMen`, `salBasicObs`, `modalidadPagoMen`, `modalidadPagoObs`, `salVariMen`, `salVariObs`, `otrosBenMen`, `otrosBenObs`, `aspiracionSalMen`, `aspiracionSalObs`, `ajusteAlto`, `ajusteMedioAlto`, `ajusteMedioBajo`, `parcialAjusteBajo`, `perfilAjustaSN`, `perfilAjusta`, `adaptarCargo`, `elementosRetro`, `comentarios`, `adecuado`, `primera`, `segunda`, `noA`, `parcialmente`, `adecuadoP`, `co`, `terminada`, `modificar`) VALUES
+(123123123, 'Interno', 'Joselito  ', '2020-11-18', 'Business Partner', 'Enel X', 'Joselito Rodriguez', 'Tecnologo', 1000000000, 'Obs', 'dos', 'Ob2', 'tres', 'Ob3', 'cuatro', 'Ob4', 5, 'Ob5', 'si', '', '', '', 'NO', 'Nocas', 'NO SE UNA BUENA ADAPTACION 2', '    RETROALIMENTACION 2', ' COMENTARIOS 2', 'si', '', '', '', '', '', 12312312, 'True', 'Eliminar'),
+(1006844604, 'Interno', 'Jonny Alejandro Cano Acosta   ', '2020-11-18', 'Business Partner', 'Enel X', 'Jonny Alejandro cano Acosta', 'Tecnologo', 1000000000, 'Obs', 'dos', 'Ob2', 'tres', 'Ob3', 'cuatro', 'Ob4', 5, 'Ob5', 'si', '', '', '', 'NO', 'Nocas', 'NO SE UNA BUENA ADAPTACION 2', '    RETROALIMENTACION 2', ' COMENTARIOS 2', 'si', '', '', '', '', '', 12312312, 'True', 'Solicitado'),
+(1123321772, 'Externo', 'Jonny Alejandro Cano Acosta', '2020-11-17', 'Business Partner', 'dependencia', 'Jonny Alejandro Cano Acosta ', 'Profesional Experto', 123456789, 'Ob1', 'dos', 'Ob2', 'tres', 'Ob3', 'cuatro', 'Ob4', 0, 'Ob5', 'si', 'si', 'si', '', 'NO', 'Por que no ', 'Adaptacion', '', ' Comentarios', '', '', '', 'si', 'si', 'si', 12312312, 'True', 'True');
 
 -- --------------------------------------------------------
 
@@ -132,15 +186,60 @@ CREATE TABLE `entrevistapsicologica` (
 --
 
 INSERT INTO `entrevistapsicologica` (`nombre`, `cc`, `dependencia`, `cargo`, `cargoAspira`, `telefono`, `aspiracionSal`, `fechaEntrevista`, `psicologa`, `responsabilidad`, `productividad`, `gestionCambio`, `innovacion`, `resiliencia`, `confianza`, `dswm1`, `dswm2`, `dswo3`, `dswc4`, `dswp5`, `dswa6`, `dswd7`, `other1`, `dssk1`, `dssp2`, `dssv3`, `dssd4`, `dssd5`, `dssc6`, `other2`, `dsdp1`, `dsdc2`, `dsdi3`, `dsdc4`, `dsdu5`, `dsdm6`, `dsdd7`, `dsdi8`, `dsdi9`, `dsdr10`, `other3`, `comportamientoEtico`, `fuenteR`, `resultadoI`, `inteligenciaE`, `candidatoU`, `explicacion`, `resolucionProblemas`, `observaciones`, `adecuado`, `adecuadoP`, `parcialmente`, `primera`, `segunda`, `noA`, `concepto`, `co`, `terminado`, `modificar`) VALUES
-('', 0, '', 'Profesional de Selección', '', '', '', '2020-10-22', 'santi Cano Acosta ', 1, 1, 1, 1, 1, 1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'NO', '', '', '', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 12312312, 'False', 'False'),
-('Carlos Santiago', 1986711, '', '', '', '523523453', '', '2020-05-20', 'Jonny Alejandro Cano Acosta', 0, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'SI', '', 'SI', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'si', '', '', 'si', '', '', '', 1006844604, 'True', ''),
-('Juan jose', 9657968, 'gggjghjg', 'hgjfkjfk', 'kjhfkjhfk', '765874864', '9765658', '2020-04-30', 'hgfhgfjfjhgfj', 5, 5, 3, 5, 4, 4, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'mjhkjhgkhj', 'facebook', 'a2', 'yfgjhgj', 'no', 'khfkhfjgfyugjh', 'jhghjghjgjhgj', 'jhgjhgjhgj', '', 'si', 'si', '', '', 'si', 'listo pero ', 1006844604, 'True', ''),
-('Jeison sanchez', 12654346, '', '', '', '745763214', NULL, '0000-00-00', 'Jonny Alejandro Cano Acosta', 0, 0, 0, 0, 0, 0, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, '', '', NULL, '', '', NULL, '', NULL, 'si', '', '', '', '', '', 'khjhsdjfhagsdf', 1006844604, 'True', ''),
+('', 0, '', 'Profesional de Selección', '', '', '', '2020-11-17', 'Jonny Alejandro Cano Acosta', 1, 1, 1, 1, 1, 1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'NO', '', '', '', 'si', '', '', 'si', '', '', 'hola', 12312312, 'True', 'Solicitado'),
+('Carlos Santiago', 1986711, '', '', '', '523523453', '', '2020-05-20', 'Jonny Alejandro Cano Acosta', 0, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'SI', '', 'SI', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'si', '', '', 'si', '', '', '', 12312312, 'True', 'Eliminar'),
+('Juan jose', 9657968, 'gggjghjg', 'hgjfkjfk', 'kjhfkjhfk', '765874864', '9765658', '2020-04-30', 'hgfhgfjfjhgfj', 5, 5, 3, 5, 4, 4, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'mjhkjhgkhj', 'facebook', 'a2', 'yfgjhgj', 'no', 'khfkhfjgfyugjh', 'jhghjghjgjhgj', 'jhgjhgjhgj', 'si', '', '', 'si', '', '', 'HOla', 12312312, 'False', ''),
+('Jeison sanchez', 12654346, '', '', '', '745763214', NULL, '0000-00-00', 'Jonny Alejandro Cano Acosta', 0, 0, 0, 0, 0, 0, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, '', '', NULL, '', '', NULL, '', NULL, 'si', '', '', '', '', '', 'khjhsdjfhagsdf', 12312312, 'True', 'True'),
 ('Miguel Rodriguez', 31862531, '', '', '', '42342252', NULL, '2020-04-28', 'Jonny Alejandro Cano Acosta', 0, 0, 0, 0, 0, 0, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, '', '', NULL, '', '', NULL, '', NULL, 'si', '', '', 'si', '', '', '...', 1006844604, 'True', ''),
 ('Rogelio ', 354676587, 'gggjghjg', 'hgjfkjfk', 'kjhfkjhfk', '54234864', '97654238', '2020-03-23', 'hgfhgfjfjhgfj', 5, 5, 3, 5, 4, 4, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'mjhkjhgkhj', 'facebook', 'a2', 'yfgjhgj', 'no', 'khfkhfjgfyugjh', 'jhghjghjgjhgj', 'jhgjhgjhgj', 'si', '', '', '', '', '', 'hola ', 1006844604, 'True', ''),
-('Jonny Alejandro cano Acosta', 1006844604, 'Enel X', 'Profesional ', 'Profesional Experto B2B', '3015018468', '10.000.000', '2020-05-29', 'Jonny Alejandro Cano Acosta', 5, 4, 5, 2, 3, 5, '', '', 'on', 'on', '', '', 'on', '', 'on', '', 'on', '', '', 'on', 'este es el 2 ', '', 'on', '', 'on', 'on', '', '', '', '', 'on', 'ente es el 3', '90 / el candidato cumple con las dimensiones requeridas de la prueba de integridad  ', 'Facebook', 'B1', '', 'NO', 'Bien\r\n', 'resolucion', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, repudiandae accusantium dignissimos inventore sunt magnam debitis ratione error provident praesentium libero, iste sit quia ducimus eos quis! Inventore voluptatem vero error culpa excepturi. Error assumenda nulla incidunt facilis quidem libero quod iusto, ad nisi eum aliquam, qui quibusdam aliquid vel!\r\n\r\n\r\n', 'si', '', '', 'si', '', '', 'APTO PARA EL CARGO. Se orienta al logro de resultados, emprende con prontitud las actividades necesarias para alcanzar las metas\r\n\r\npropuestas. Atiende y resuelve ágilmente asuntos que contribuyen al logro de los resultados propios de su gestión.\r\n\r\nAsume altas cargas de trabajo en forma dinámica y ejecuta las actividades propias de su rol. Logra un alto nivel de\r\n\r\nrendimiento. En situaciones de presión por tiempo e incremento en el volumen de trabajo que forman parte de lo\r\n\r\ncotidiano y que esta habituado(a) a manejar, alcanza los niveles de productividad esperados. Así mismo, cuando se\r\n\r\nenfrenta a situaciones de presión con las que está familiarizado(a), mantiene el control y el foco en los asuntos que\r\n\r\nse relacionan con su trabajo habitual. Frente a estas mismas situaciones procura mantener la calma a pesar de la\r\n\r\ntensión que le generan y se toma un tiempo para recuperarse. Asume retos cuando debe tomar decisiones, le gusta\r\n\r\nponer a prueba sus recursos y emprende acciones con autonomía y determinación, lo cual le permite resolver y\r\n\r\nsuperar los problemas que se presentan.', 1006844604, 'True', 'False'),
-('Irene Acosta Villarreal', 1123321772, 'I&N', 'Profesional Selección', 'Bussines', '3107550085', '1002020392', '2020-05-21', 'Jonny Alejandro Cano Acosta', 1, 2, 3, 4, 5, 1, 'SI', 'SI', 'SI', 'SI', '', '', '', '', '', '', '', '', 'SI', '', '', 'SI', 'SI', '', 'SI', '', 'SI', 'SI', 'SI', '', 'SI', '', 'Bueno', 'Linkeding', 'B2', 'Buena', 'SI', 'NO pues que te digo es seleccion directa, pero lo mas importante es que es buena papa', 'bueno ', 'No ninguna Observacion', 'SI', '', '', 'si', 'si', '', 'En la entrevista fue re chimbita', 1006844604, 'True', ''),
+('Jonny Alejandro cano Acosta', 1006844604, 'Enel X', 'Profesional ', 'Profesional Experto B2B', '3015018468', '10.000.000', '2020-05-29', 'Jonny Alejandro Cano Acosta', 5, 4, 5, 2, 3, 5, '', '', 'on', 'on', '', '', 'on', '', 'on', '', 'on', '', '', 'on', 'este es el 2 ', '', 'on', '', 'on', 'on', '', '', '', '', 'on', 'ente es el 3', '90 / el candidato cumple con las dimensiones requeridas de la prueba de integridad  ', 'Facebook', 'B1', '', 'NO', 'Bien\r\n', 'resolucion', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, repudiandae accusantium dignissimos inventore sunt magnam debitis ratione error provident praesentium libero, iste sit quia ducimus eos quis! Inventore voluptatem vero error culpa excepturi. Error assumenda nulla incidunt facilis quidem libero quod iusto, ad nisi eum aliquam, qui quibusdam aliquid vel!\r\n\r\n\r\n', 'si', '', '', 'si', '', '', 'APTO PARA EL CARGO. Se orienta al logro de resultados, emprende con prontitud las actividades necesarias para alcanzar las metas\r\n\r\npropuestas. Atiende y resuelve ágilmente asuntos que contribuyen al logro de los resultados propios de su gestión.\r\n\r\nAsume altas cargas de trabajo en forma dinámica y ejecuta las actividades propias de su rol. Logra un alto nivel de\r\n\r\nrendimiento. En situaciones de presión por tiempo e incremento en el volumen de trabajo que forman parte de lo\r\n\r\ncotidiano y que esta habituado(a) a manejar, alcanza los niveles de productividad esperados. Así mismo, cuando se\r\n\r\nenfrenta a situaciones de presión con las que está familiarizado(a), mantiene el control y el foco en los asuntos que\r\n\r\nse relacionan con su trabajo habitual. Frente a estas mismas situaciones procura mantener la calma a pesar de la\r\n\r\ntensión que le generan y se toma un tiempo para recuperarse. Asume retos cuando debe tomar decisiones, le gusta\r\n\r\nponer a prueba sus recursos y emprende acciones con autonomía y determinación, lo cual le permite resolver y\r\n\r\nsuperar los problemas que se presentan.', 12312312, 'True', 'False'),
+('Irene Acosta Villarreal', 1123321772, 'I&N', 'Profesional Selección', 'Bussines', '3107550085', '1002020392', '2020-05-21', 'Jonny Alejandro Cano Acosta', 1, 2, 3, 4, 5, 1, 'on', 'on', 'on', 'on', '', '', '', '', '', '', '', '', 'on', '', '', 'on', 'on', '', 'on', '', 'on', 'on', 'on', '', 'on', '', 'Bueno', 'Linkeding', 'B2', 'Buena', 'SI', 'NO pues que te digo es seleccion directa, pero lo mas importante es que es buena papa', 'bueno ', 'No ninguna Observacion', 'si', '', '', 'si', '', '', 'jafdgadfgsajhdfgajlsdhgfsdalkjfgslkjdj', 1006844604, 'True', 'False'),
 ('Natalia Tabarez lozano', 2147483647, '', '', '', '234502488', NULL, '2010-02-28', 'Jonny Alejandro Cano Acosta', 0, 0, 0, 0, 0, 0, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', NULL, '', '', NULL, '', '', NULL, '', NULL, '', '', '', '', '', '', 'nada', 1006844604, 'True', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `entrevistatecnica`
+--
+
+CREATE TABLE `entrevistatecnica` (
+  `idTec` int(11) NOT NULL,
+  `proceso` varchar(15) DEFAULT NULL,
+  `entrevistador` varchar(30) DEFAULT NULL,
+  `fechaEntrevista` date DEFAULT NULL,
+  `cargoEntrevistador` varchar(30) DEFAULT NULL,
+  `dependencia` varchar(30) DEFAULT NULL,
+  `nombreCandidato` varchar(50) DEFAULT NULL,
+  `cargoAspira` varchar(50) DEFAULT NULL,
+  `cuentaCompetenciaSN` varchar(2) DEFAULT NULL,
+  `cuentaCompetencia` text DEFAULT NULL,
+  `experienciaPrevia` text DEFAULT NULL,
+  `cuentaCono` text DEFAULT NULL,
+  `calidadSN` varchar(2) DEFAULT NULL,
+  `calidad` text DEFAULT NULL,
+  `retroalimentacion` text DEFAULT NULL,
+  `conceptoSegundo` text DEFAULT NULL,
+  `adecuado` varchar(2) DEFAULT NULL,
+  `primera` varchar(2) DEFAULT NULL,
+  `segunda` varchar(2) DEFAULT NULL,
+  `noA` varchar(2) DEFAULT NULL,
+  `parcialmente` varchar(2) DEFAULT NULL,
+  `adecuadoP` varchar(2) DEFAULT NULL,
+  `co` int(11) DEFAULT NULL,
+  `terminada` varchar(5) NOT NULL DEFAULT 'False',
+  `apruebaEntrevista` int(11) NOT NULL DEFAULT 0,
+  `modificar` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `entrevistatecnica`
+--
+
+INSERT INTO `entrevistatecnica` (`idTec`, `proceso`, `entrevistador`, `fechaEntrevista`, `cargoEntrevistador`, `dependencia`, `nombreCandidato`, `cargoAspira`, `cuentaCompetenciaSN`, `cuentaCompetencia`, `experienciaPrevia`, `cuentaCono`, `calidadSN`, `calidad`, `retroalimentacion`, `conceptoSegundo`, `adecuado`, `primera`, `segunda`, `noA`, `parcialmente`, `adecuadoP`, `co`, `terminada`, `apruebaEntrevista`, `modificar`) VALUES
+(1234, 'Externo', 'Jonny Alejandro Cano Acosta ', '2020-11-17', 'Jefe', 'dependencia', 'Jonny Alejandro Cano Acosta ', 'Profesional Experto', 'SI', 'ok', 'ok', 'ok', 'NO', 'no otravez', '', 'ok', 'si', 'si', '', '', '', '', 12312312, 'False', 12312312, 'False'),
+(123123, 'Interno', 'Jonny Alejandro Cano', '2020-11-18', 'Jefe', 'dependencia', 'Carlitos', 'Profesional Experto', 'SI', 'Competencias Tecnicas 2', 'Responsabilidades para el cargo 2', 'Cuneta con conocimientos digitales? ', 'SI', 'Cuanta con el conocimiento y la experiencia?', 'Retroalimentacion', 'Este es mi concepto ', 'si', 'si', '', '', '', '', 12312312, 'True', 1006844604, 'Eliminar'),
+(123456789, 'Externo', 'Jonny Alejandro cano acosta', '2020-11-18', NULL, NULL, 'Rodrigo', 'Profesional Junior ', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 12312312, 'True', 0, 'Solicitado'),
+(1006844604, 'Interno', 'Jonny Alejandro Cano', '2020-11-18', 'Jefe', 'dependencia', ' Cano Acosta Jonny Alejandro', 'Profesional Experto', 'SI', 'Competencias Tecnicas 2', 'Responsabilidades para el cargo 2', 'Cuneta con conocimientos digitales? ', 'SI', 'Cuanta con el conocimiento y la experiencia?', 'Retroalimentacion', 'Este es mi concepto ', 'si', 'si', '', '', '', '', 12312312, 'True', 1006844604, 'True');
 
 -- --------------------------------------------------------
 
@@ -185,11 +284,12 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`nombre`, `apellidos`, `co`, `Perfil`, `correo_electronico`, `contraseña`, `EGeneradas`) VALUES
 ('Tatiana ', 'Salazar', 123, 3, 'tatiana.salazar@enel.com', '123', 0),
-('Jonny', 'Cano Acosta ', 12312312, 3, 'jonnyalejandro.ca0910@gmail.com', '123', 0),
+('Jonny Alejandro', 'Cano Acosta ', 12312312, 2, 'jonnyalejandro.ca0910@gmail.com', '123', 0),
+('Milady ', 'Manrique', 53031332, 3, 'milady.manrique@enel.com', '123', 0),
 ('Joselito', 'Torres', 411123412, 1, 'alejandro.ca0910@gmail.com', '123', 0),
 ('Daniel ', 'Suarez', 1000458752, 1, 'daniel.suarez@enel.com', 'daniel123456', 0),
 ('carlos ', 'santiago', 1004423423, 3, 'jkldajs@enel.com', 'rewrwerqwe', 0),
-('Jonny Alejandro', 'Cano Acosta', 1006844604, 2, 'jonny.cano@enel.com', '123', 0),
+('Jonny Alejandro', 'Cano Acosta', 1006844604, 1, 'jonny.cano@enel.com', '123', 0),
 ('ANGELICA MARIA ', 'BARBOSA PERILLA', 1022407151, 4, 'angelica.barbosa@enel.com', 'Codensa2020', 0),
 ('Santiago ', 'Garcia', 1193200780, 1, 'santy1234789@outlook.com', 'holaquetal?', 0),
 ('Jonny Alejandro ', 'e3rewrqew', 2147483647, 1, 'qwrqwerwqer@enel.com', 'fwesdfatrwetrqew', 0);
@@ -206,10 +306,24 @@ ALTER TABLE `entrevistaaprendices_practicantes`
   ADD KEY `entrevistaaprendices_practicantes_ibfk_1` (`co`);
 
 --
+-- Indices de la tabla `entrevistabp`
+--
+ALTER TABLE `entrevistabp`
+  ADD PRIMARY KEY (`idBP`),
+  ADD KEY `co` (`co`);
+
+--
 -- Indices de la tabla `entrevistapsicologica`
 --
 ALTER TABLE `entrevistapsicologica`
   ADD PRIMARY KEY (`cc`),
+  ADD KEY `co` (`co`);
+
+--
+-- Indices de la tabla `entrevistatecnica`
+--
+ALTER TABLE `entrevistatecnica`
+  ADD PRIMARY KEY (`idTec`),
   ADD KEY `co` (`co`);
 
 --
@@ -247,10 +361,22 @@ ALTER TABLE `entrevistaaprendices_practicantes`
   ADD CONSTRAINT `entrevistaaprendices_practicantes_ibfk_1` FOREIGN KEY (`co`) REFERENCES `usuario` (`co`);
 
 --
+-- Filtros para la tabla `entrevistabp`
+--
+ALTER TABLE `entrevistabp`
+  ADD CONSTRAINT `entrevistabp_ibfk_1` FOREIGN KEY (`co`) REFERENCES `usuario` (`co`);
+
+--
 -- Filtros para la tabla `entrevistapsicologica`
 --
 ALTER TABLE `entrevistapsicologica`
   ADD CONSTRAINT `entrevistapsicologica_ibfk_1` FOREIGN KEY (`co`) REFERENCES `usuario` (`co`);
+
+--
+-- Filtros para la tabla `entrevistatecnica`
+--
+ALTER TABLE `entrevistatecnica`
+  ADD CONSTRAINT `entrevistatecnica_ibfk_1` FOREIGN KEY (`co`) REFERENCES `usuario` (`co`);
 
 --
 -- Filtros para la tabla `usuario`
