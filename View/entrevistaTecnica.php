@@ -3,9 +3,6 @@ sessionValidate();
 
 if (isset($_SESSION["rol"])) {
     switch ($_SESSION['rol']) {
-        case 1:
-            header('401.php');
-            break;
         case 2:
             header('401.php');
             break;
@@ -46,22 +43,18 @@ $fecha_now = date("d/M/Y");
     </div>
     <div class="form-group row">
         <div class="col-sm-12">
-            <a href="consultarEntrevistaPsAyP.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50" style="padding: 3px;"></i>Reporte De Entrevista</a>
-            <span class="button-checkbox" style="text-align: center;">
-                <button type="button" onclick="colorearI()" class="btn" id="interno" data-color="success">Interno</button>
-            </span>
-            <span class="button-checkbox" style="text-align: center;">
-                <button type="button" class="btn" onclick="colorearE()" id="externo" data-color="success">Externo</button>
-            </span>
+            <a href="entrevistasTecTerminadas.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50" style="padding: 3px;"></i>Reporte De Entrevista</a>
+            <button type="button" onclick="colorearI()" id="I" style="background-color: #12C812;" class="btn" data-color="success">Interno</button>
+            <button type="button" class="btn" onclick="colorearE()" id="E" data-color="success">Externo</button>
         </div>
     </div>
 
     <br><br>
-    <form id="regiration_form" novalidate action="../Controller/ValidarinsertarEntrevistaAyP.php" method="post">
+    <form id="regiration_form" class="user" action="../Controller/controllerConceptoTecnico.php" method="post">
         <div class="form-group row">
             <div class="col-sm-6">
                 <label for="psicologa">Entrevistador(a)</label>
-                <input type="text" class="form-control form-control-user" id="psicologa" name="psicologa" value="<?php echo $_SESSION['nombre'] ?> <?php echo $_SESSION['apellidos'] ?>" readonly="readonly" required>
+                <input type="text" class="form-control form-control-user" id="entrevistador" name="entrevistador" value="<?php echo $_SESSION['nombre'] ?> <?php echo $_SESSION['apellidos'] ?>" readonly="readonly" required>
             </div>
             <div class="col-sm-6">
                 <label for="fechaEntrevista">Fecha de la Entrevista</label>
@@ -71,7 +64,7 @@ $fecha_now = date("d/M/Y");
         <div class="form-group row">
             <div class="col-sm-6">
                 <label for="cargo">Cargo</label>
-                <input type="text" class="form-control form-control-user" id="cargo" name="cargo" placeholder="CARGO" value="<?php cualPerfil($_SESSION['rol']) ?>" readonly required>
+                <input type="text" class="form-control form-control-user" id="cargoEntrevistador" name="cargoEntrevistador" placeholder="CARGO" value="<?php cualPerfil($_SESSION['rol']) ?>" readonly required>
             </div>
             <div class="col-sm-6">
                 <label for="dependencia">Dependencia</label>
@@ -79,49 +72,54 @@ $fecha_now = date("d/M/Y");
             </div>
         </div>
         <div class="form-group row">
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 <label for="nombre">Nombre Completo</label>
-                <input type="Text" class="form-control form-control-user" id="nombre" name="nombre" placeholder="NOMBRE COMPLETO" required>
+                <input type="Text" class="form-control form-control-user" id="nombreCandidato" name="nombreCandidato" placeholder="NOMBRE COMPLETO" required>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-4">
+                <label for="nombre">Cedula del Candidato</label>
+                <input type="number" class="form-control form-control-user" id="idTec" name="idTec" placeholder="Cedula" required>
+            </div>
+            <div class="col-sm-4">
                 <label for="nombre">Cargo Vacante</label>
-                <input type="Text" class="form-control form-control-user" id="nombre" name="nombre" placeholder="NOMBRE COMPLETO" required>
+                <input type="Text" class="form-control form-control-user" id="cargoAspira" name="cargoAspira" placeholder="Cargo al que Aspira" required>
             </div>
         </div>
         <br>
         <br>
-        <h3><b>¿El candidato/ta cuenta con las competencias técnicas para desempeñar las responsabilidades del cargo?  SI/NO Explique la respuesta elegida: </b></h3>
+        <h3><b>¿El candidato/ta cuenta con las competencias técnicas para desempeñar las responsabilidades del cargo? SI/NO Explique la respuesta elegida: </b></h3>
         <div class="form-group row">
             <div class="col-sm-12">
-                <select class="form-control" id="ofimatica" name="ofimatica" required>
+                <select class="form-control" id="cuentaCompetenciaSN" name="cuentaCompetenciaSN" required>
                     <option value="SI">SI</option>
                     <option value="NO">NO</option>
                 </select>
-                <textarea class="form-control" name="" id="" placeholder="Explique"></textarea>
+                <textarea class="form-control" name="cuentaCompetencia" id="cuentaCompetencia" placeholder="Explique"></textarea>
             </div>
         </div>
 
         <h3><b>De las responsabilidades definidas para el cargo, en cuales de ellas identifica durante la entrevista que el candidato/ta tiene experiencia previa.</b></h3>
-        <textarea class="form-control" name="" id="" placeholder="Para lograr una buena adaptación..."></textarea>
+        <textarea class="form-control" name="experienciaPrevia" id="experienciaPrevia" placeholder="Para lograr una buena adaptación..."></textarea>
         <br><br>
         <h3><b>Cuenta con conociemientos digitales o de metodologias agile que se requieren para el cargo</b></h3>
-        <textarea class="form-control" name="" id="" placeholder="Para lograr una buena adaptación..."></textarea>
+        <textarea class="form-control" name="cuentaCono" id="cuentaCono" placeholder="Para lograr una buena adaptación..."></textarea>
         <br><br>
-        <h3><b>¿El candidato/ta cuenta con el conocimiento y la experiencia para desempeñar responsabilidades asociadas a los Sistemas de Gestión Integral (calidad, ambiental y SISO) en el cargo?  SI/NO Explique la respuesta elegida: </b></h3>
+        <h3><b>¿El candidato/ta cuenta con el conocimiento y la experiencia para desempeñar responsabilidades asociadas a los Sistemas de Gestión Integral (calidad, ambiental y SISO) en el cargo? SI/NO Explique la respuesta elegida: </b></h3>
         <div class="form-group row">
             <div class="col-sm-12">
-                <select class="form-control" id="ofimatica" name="ofimatica" required>
+                <select class="form-control" id="calidadSN" name="calidadSN" required>
                     <option value="SI">SI</option>
                     <option value="NO">NO</option>
                 </select>
-                <textarea class="form-control" name="" id="" placeholder="Explique"></textarea>
+                <textarea class="form-control" name="calidad" id="calidad" placeholder="Explique"></textarea>
             </div>
         </div>
-        <h3><b>Elementos relevantes para aportar en la Retroalimentación </b></h3>
-        <textarea class="form-control" name="" id="" placeholder="Para lograr una buena adaptación..."></textarea>
-        <br><br>
-        <h3 style="color: red;"><b>Concepto Segundo Evaluador</b></h3>
-        <textarea class="form-control" readonly name="" id="" placeholder="Para lograr una buena adaptación..."></textarea>
+        <br>
+        <div id="retroAlimentacion">
+            <h3><b>Elementos relevantes para aportar en la Retroalimentación </b></h3>
+            <textarea class="form-control" name="retroalimentacion" id="retroalimentacion" placeholder="Para lograr una buena adaptación..."></textarea>
+            <br><br>
+        </div>
         <br><br><br>
         <div class="container">
             <div class="contenedor1">
@@ -138,24 +136,24 @@ $fecha_now = date("d/M/Y");
                             </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" value="si" id="primera" disabled name="primera" required>
+                            <input class="form-check-input" type="checkbox" value="si" id="primera" disabled name="primera">
                             <label class="form-check-label">
                                 Primera Opción
                             </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" class="form-check-input derecha" id="parcialmente" disabled value="si" name="parcialmente" required>
+                            <input type="checkbox" class="form-check-input derecha" id="parcialmente" disabled value="si" name="parcialmente">
                             <label class="form-check-label minimal"> Parcialmente
                                 adecuado(a)</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" value="si" id="segunda" disabled name="segunda" required>
+                            <input class="form-check-input" type="checkbox" value="si" id="segunda" disabled name="segunda">
                             <label class="form-check-label">
                                 Segunda Opción
                             </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input " type="checkbox" value="si" id="adecuadoP" disabled name="adecuadoP" required>
+                            <input class="form-check-input " type="checkbox" value="si" id="adecuadoP" disabled name="adecuadoP">
                             <label class="form-check-label minimal">
                                 Adecuado(a) para otro cargo
                             </label>
@@ -164,28 +162,61 @@ $fecha_now = date("d/M/Y");
                 </div>
             </div>
         </div><br><br>
-
         <div style="text-align: right">
-            <input type="submit" name="btn" class="submit btn btn-success" value="Registrar" id="btn" />
+            <input type="hidden" id="co" name="co" value="<?php echo $_SESSION['co'] ?>">
+            <input type="hidden" id="proceso" name="proceso" value="Externo">
+            <input type="submit" id="registrar" name="btn" class="submit btn btn-success" value="Registrar" />
             <a href="principal.php" class="btn btn-danger btn-sm" onclick="seguro()">Salir</a>
         </div>
     </form>
-    <?php include FOLDER_TEMPLATE . "scripts.php"; ?>
-    <script type="text/javaScript" src="../vendor/.js"></script>
-    <script type="text/javascript" src="../js/funcionesAyP.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <?php
-    extract($_REQUEST);
-    if (isset($_REQUEST["msj"])) {
-        if ($_REQUEST["msj"] == "1") {
-            echo "<script type='text/javascript'>
+</div>
+<?php include FOLDER_TEMPLATE . "scripts.php"; ?>
+<script type="text/javaScript" src="../vendor/.js"></script>
+<script type="text/javascript" src="../js/funcionesAyP.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script type="text/javascript">
+    function colorearI() {
+        var I = $('#I');
+        var E = $('#E');
+        var campo = $('#retroAlimentacion');
+        I.css('background-color', '#12C812');
+        E.removeAttr('Style');
+        campo.show("fast");
+        $('#proceso').val('Interno');
+
+    }
+
+    function colorearE() {
+        var I = $('#I');
+        var E = $('#E');
+        var campo = $('#retroAlimentacion');
+        E.css('background-color', '#12C812');
+        I.removeAttr('Style');
+        campo.hide("fast");
+        $('#proceso').val('Externo');
+    }
+</script>
+<?php
+extract($_REQUEST);
+if (isset($_REQUEST["msj"])) {
+    if ($_REQUEST["msj"] == "1") {
+        echo "<script type='text/javascript'>
                 swal('Registrado', 'Se registraron los datos correctamente', 'success');
                 </script>";
-        } else {
-            echo "<script type='text/javascript'>
+    } else {
+        echo "<script type='text/javascript'>
                 swal('Error', 'No se guardo la informacion, un dato reguistrado esta mal', 'error');
                 </script>";
+    }
+}
+?>
+<script type='text/javascript'>
+    function desabilitar() {
+        if (<?php echo $_SESSION['rol'] ?> == 1) {
+            var boton = document.querySelector('#registrar');
+            boton.setAttribute('disabled', 'disabled');
         }
     }
-    ?>
-    
+    window.onload = desabilitar();
+</script>

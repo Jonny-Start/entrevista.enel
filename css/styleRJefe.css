@@ -70,6 +70,12 @@ label,h5{
     left: 65rem;
 }
 
+#recuerda{
+    position: relative;
+    top: 28rem;
+    padding-bottom: 10%;
+}
+
 #DigitalS{
     position: relative;
     top: 30rem;

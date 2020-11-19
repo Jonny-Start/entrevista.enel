@@ -47,8 +47,8 @@
            <div class="bg-white py-2 collapse-inner rounded">
              <h6 class="collapse-header">Generar Entrevistas:</h6>
              <a class="collapse-item" data-toggle="modal" data-target="#logoutModal">Psicologicas</a>
-             <a class="collapse-item" href="entrevistaBP.php">Business Partner</a>
-             <a class="collapse-item" href="entrevistaTecnica.php">Tecnicas</a>
+             <a class="collapse-item" href="consultarEntrevistaBP.php">Business Partner</a>
+             <a class="collapse-item" href="consultarEntrevistaTecnica.php">Tecnicas</a>
            </div>
          </div>
        </li>
@@ -86,15 +86,15 @@
          </a>
          <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
            <div class="bg-white py-2 collapse-inner rounded">
-             <h6 class="collapse-header">Reportes</h6>
+             <h6 class="collapse-header">Administrar:</h6>
              <a class="collapse-item" href="../View/consultarEntrevistaPsAyP.php">PDF Aprendices</a>
              <a class="collapse-item" href="../View/consultarEntrevistaPsicologaNo.php">No Terminadas</a>
              <a class="collapse-item" href="../View/enviarEntrevistaJefe.php">Enviar a Jefe</a>
              <a class="collapse-item" href="../View/consultarEntrevistaPsicologa.php">PDF Profesionales</a>
              <div class="collapse-divider"></div>
-             <h6 class="collapse-header">Other Pages:</h6>
+             <h6 class="collapse-header">Gestionar:</h6>
              <a class="collapse-item" href="../View/AdministrarEntrevistaPs.php">Administrar Entrevista</a>
-             <a class="collapse-item" href="blank.html">aun no naa</a>
+             <a class="collapse-item" href="#">...</a>
            </div>
          </div>
        </li>

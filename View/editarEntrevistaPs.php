@@ -8,10 +8,10 @@ if (isset($_SESSION["rol"])) {
         case 2:
             break;
         case 3:
-            header('location: ../View/401.php');
+            header('location: 401.php');
             break;
         case 4:
-            header('location: ../View/401.php');
+            header('location: 401.php');
             break;
     }
 }

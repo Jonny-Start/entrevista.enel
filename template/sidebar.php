@@ -47,7 +47,7 @@
            <div class="bg-white py-2 collapse-inner rounded">
              <h6 class="collapse-header">Generar Entrevistas:</h6>
              <a class="collapse-item" data-toggle="modal" data-target="#logoutModal">Psicologicas</a>
-             <a class="collapse-item" href="entrevistaBP.php">Business Partner</a>
+             <a class="collapse-item" href="conceptoBP.php">Business Partner</a>
              <a class="collapse-item" href="entrevistaTecnica.php">Tecnicas</a>
            </div>
          </div>
@@ -86,14 +86,17 @@
          </a>
          <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
            <div class="bg-white py-2 collapse-inner rounded">
-             <h6 class="collapse-header">Administrar</h6>
-             <a class="collapse-item" href="gestionarEdicionEntrevistaPs.php">Gestion edición entrevista</a> 
-             <a class="collapse-item" href="gestionarEliminacionEntrevistaPs.php">Gestion eliminar entrevista</a>
-             <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+             <h6 class="collapse-header">Gestionar</h6>
+             <a class="collapse-item" title="Gestionar edicion de entrevista Psicologica" href="gestionarEdicionEntrevistaPs.php">Edición entrevista (Ps)</a> 
+             <a class="collapse-item" title="Gestionar eliminacion de entrevista Psicologica" href="gestionarEliminacionEntrevistaPs.php">Eliminar entrevista (Ps)</a>
+             <a class="collapse-item" title="Gestionar edicion de entrevista Técnica" href="gestionarEdicionEntrevistaTecnica.php">Edición entrevista (Tec)</a> 
+             <a class="collapse-item" title="Gestionar eliminacion de entrevista Técnica" href="gestionarEliminacionEntrevistaTecnica.php">Eliminar entrevista (Tec)</a>
+             <a class="collapse-item" title="Gestionar edicion de entrevista Business Partner" href="gestionarEdicionEntrevistaBP.php">Edición entrevista (Bp)</a> 
+             <a class="collapse-item" title="Gestionar eliminacion de entrevista Business Partner" href="gestionarEliminacionEntrevistaBP.php">Eliminar entrevista (Bp)</a>
              <div class="collapse-divider"></div>
-             <h6 class="collapse-header">Other Pages:</h6>
-             <a class="collapse-item" href="404.html">404 Page</a>
-             <a class="collapse-item" href="blank.html">Blank Page</a>
+             <h6 class="collapse-header">Administrar</h6>
+             <a class="collapse-item" href="#">...</a>
+             <a class="collapse-item" href="#">...</a>
            </div>
          </div>
        </li>

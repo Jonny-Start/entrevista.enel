@@ -45,10 +45,9 @@
          </a>
          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
            <div class="bg-white py-2 collapse-inner rounded">
-             <h6 class="collapse-header">Generar Entrevistas:</h6>
-             <a class="collapse-item" data-toggle="modal" data-target="#logoutModal">Psicologicas</a>
+             <h6 class="collapse-header">Generar Entrevista:</h6>
              <a class="collapse-item" href="../View/conceptoBP.php">Business Partner</a>
-             <a class="collapse-item" href="entrevistaTecnica.php">Tecnicas</a>
+             <a class="collapse-item" href="consultarEntrevistaTecnica.php">Tecnicas</a>
            </div>
          </div>
        </li>
@@ -82,19 +81,19 @@
        <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
            <i class="fas fa-fw fa-folder"></i>
-           <span>Reportes</span>
+           <span>Administrar</span>
          </a>
          <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
            <div class="bg-white py-2 collapse-inner rounded">
-             <h6 class="collapse-header">Reportes</h6>
-             <a class="collapse-item" href="../View/consultarEntrevistaPsAyP.php">PDF Aprendices</a>
-             <a class="collapse-item" href="../View/consultarEntrevistaPsicologaNo.php">No Terminadas</a>
-             <a class="collapse-item" href="../View/enviarEntrevistaJefe.php">Enviar a Jefe</a>
-             <a class="collapse-item" href="../View/consultarEntrevistaPsicologa.php">PDF Profesionales</a>
+             <h6 class="collapse-header">Administrar:</h6>
+             <a class="collapse-item" href="../View/entrevistasBPTerminadas.php">Descargar Concepto</a>
+             <!-- <a class="collapse-item" href="#">...</a>
+             <a class="collapse-item" href="#">...</a>
+             <a class="collapse-item" href="#">...</a> -->
              <div class="collapse-divider"></div>
-             <h6 class="collapse-header">Other Pages:</h6>
-             <a class="collapse-item" href="../View/solicitudEliminar.php">Solicitud de eliminacion</a>
-             <a class="collapse-item" href="blank.html">aun no naa</a>
+             <h6 class="collapse-header">Gestionar:</h6>
+             <a class="collapse-item" href="../View/administrarEntrevistaBP.php">Solicitud eliminar o editar</a>
+             <!-- <a class="collapse-item" href="#">...</a> -->
            </div>
          </div>
        </li>

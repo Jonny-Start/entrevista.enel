@@ -56,8 +56,9 @@ if (isset($_SESSION["rol"])) {
                           </tr>
                         </tfoot>
                         <?php
+                        $co = $_SESSION['co'];
                         require_once "../Model/conexioon.php";
-                        $sql = "SELECT * FROM `entrevistapsicologica` where terminado = 'True'  ";
+                        $sql = "SELECT * FROM `entrevistapsicologica` where terminado = 'True' and co = $co ";
                         $rta = $objCnx->query($sql);
                         while ($datos = $rta->fetch_array()) {
                           $info = $datos['nombre'] . "||" . $datos['cc'];

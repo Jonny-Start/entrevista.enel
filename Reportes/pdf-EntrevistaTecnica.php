@@ -1,8 +1,12 @@
-<?php ob_start();
+<?php
+
+use FontLib\Table\Type\name;
+
+ob_start();
 $objCnx = new mysqli("localhost", "root", "", "eneljac");
 $cc = $_GET['cc'];
 
-$query = "SELECT * FROM entrevistaaprendices_practicantes where cc = $cc";
+$query = "SELECT * FROM entrevistaTecnica where idTec = $cc";
 $rta = $objCnx->query($query);
 ?>
 <!DOCTYPE html>
@@ -58,65 +62,58 @@ $rta = $objCnx->query($query);
     <header>
         <table>
             <tr>
-                <th><img src="../img/PsicologiaPNG.png" alt="Entrevista_Enel.com" width="120" height="100"></th>
                 <th></th>
                 <th>
-                    <h1>Entrevista Psicologica</h1>
+                    <h1>Entrevista Tecnica</h1>
                 </th>
-                <th></th>
-                <th class="esquina"><img src="../img/enel.png" alt="Entrevista_Enel.com" width="250" height="100"></th>
+                <th class="esquina" style="text-align: right;"><img src="../img/enel.png" alt="Entrevista_Enel.com" width="250" height="100"></th>
             </tr>
         </table>
     </header>
     <hr />
     <?php
     require_once "../Model/conexioon.php";
-    $sql = "SELECT * FROM entrevistaaprendices_practicantes where cc = $cc";
+    $sql = "SELECT * FROM entrevistaTecnica where idTec = $cc";
     $rta = $objCnx->query($sql);
     while ($datos = $rta->fetch_array()) {
-
     ?>
         <h2>Datos Generales</h2>
         <table class="table table-bordered" width="100%" cellspacing="10">
             <tbody>
                 <tr>
-                    <td>Nombre:</td>
-                    <td><?php echo $datos['nombre'] ?></td>
+                    <td>Proceso:</td>
+                    <td><?php echo $datos['proceso'] ?></td>
                 </tr>
                 <tr>
-                    <td>Cedula:</td>
-                    <td><?php echo $datos['cc'] ?> </td>
+                    <td>Entrevistador:</td>
+                    <td><?php echo $datos['entrevistador'] ?></td>
+                </tr>
+                <tr>
+                    <td>Fecha de la Entrevista:</td>
+                    <td><?php echo $datos['fechaEntrevista'] ?> </td>
+                </tr>
+                <tr>
+                    <td>Cargo del entrevistador: </td>
+                    <td> <?php echo $datos['cargoEntrevistador'] ?> </td>
                 </tr>
                 <tr>
                     <td>Dependencia: </td>
-                    <td> <?php echo $datos['dependencia'] ?> </td>
+                    <td> <?php echo $datos['dependencia'] ?></td>
                 </tr>
                 <tr>
-                    <td>Area de practica: </td>
-                    <td> <?php echo $datos['areaPractica'] ?></td>
+                    <td>Nombre Candidato: </td>
+                    <td> <?php echo $datos['nombreCandidato'] ?></td>
                 </tr>
                 <tr>
-                    <td>Ingles: </td>
-                    <td> <?php echo $datos['ingles'] ?></td>
+                    <td>Cedula del candidato: </td>
+                    <td> <?php echo $datos['idTec'] ?> </td>
                 </tr>
                 <tr>
-                    <td>Ofimatica: </td>
-                    <td> <?php echo $datos['ofimatica'] ?> </td>
-                </tr>
-                <tr>
-                    <td>Fecha Entrevista: </td>
-                    <td> <?php echo $datos['fechaEntrevista'] ?> </td>
-                </tr>
-                <tr>
-                    <td>Entrevistador(a): </td>
-                    <td> <?php echo $datos['psicologa'] ?> </td>
-                </tr>
-                <tr>
-                    <td>cargo: </td>
-                    <td><?php echo $datos['cargo'] ?> </td>
+                    <td>Vacante: </td>
+                    <td> <?php echo $datos['cargoAspira'] ?> </td>
                 </tr>
             </tbody>
-        </table><br><br><br>
+        </table><br><br>
 
         <style>
             .titulo {
@@ -166,25 +163,39 @@ $rta = $objCnx->query($query);
             }
         }
         ?>
-        <br>
         <hr />
         <h4>
-            <p><i style="color: #68CCFE;"> 1)</i><b> ¿Qué sabes acerca de nuestra empresa?, Qué te atrae de ella? </b></p>
+            <p><i style="color: #68CCFE;"> 1)</i><b> ¿Qué sabes acerca de nuestra empresa?, Qué te atrae de ella?¿El candidato/ta cuenta con las competencias técnicas para desempeñar las responsabilidades del cargo? SI/NO Explique la respuesta elegida: </b></p>
         </h4>
-        <p> -<?php echo $datos['conocimientoEmpresa'] ?> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, alias. Numquam dolor fugit quia debitis commodi? Reprehenderit ut debitis excepturi.</p><br><br>
+        <p> -<?php echo $datos['cuentaCompetenciaSN'] ?>, <?php echo $datos['cuentaCompetencia'] ?></p><br><br>
         <h4>
-            <p><i style="color: #68CCFE;"> 2)</i><b> En las responsabilidades definidas para el cargo en cuales de ellas el candidato/ta tiene motivación para desempeñarse en esta área.</b></p>
+            <p><i style="color: #68CCFE;"> 2)</i><b> De las responsabilidades definidas para el cargo, en cuales de ellas identifica durante la entrevista que el candidato/ta tiene experiencia previa.</b></p>
         </h4>
-        <p> -<?php echo $datos['motivacionArea'] ?> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus odit cupiditate sit exercitationem nostrum ratione molestias, dolorem expedita fugit corporis!</p><br><br>
+        <p> -<?php echo $datos['experienciaPrevia'] ?></p><br><br>
+
         <h4>
-            <p><i style="color: #68CCFE;"> 3)</i><b> Conocimientos que tiene el candidato/ta en programacion</b></p>
+            <p><i style="color: #68CCFE;"> 3)</i><b> Cuenta con conociemientos digitales o de metodologias agile que se requieren para el cargo</b></p>
         </h4>
-        <p> -<?php echo $datos['conocimientoProgramacion'] ?> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ad a quasi quae magnam iure molestiae. Aperiam neque natus non eius dolor error rerum, vel, quaerat, officiis consectetur voluptates laudantium!</p><br><br>
+        <p> -<?php echo $datos['cuentaCono'] ?> </p>
+
+        <h4>
+            <p><i style="color: #68CCFE;"> 4)</i><b> ¿El candidato/ta cuenta con el conocimiento y la experiencia para desempeñar responsabilidades asociadas a los Sistemas de Gestión Integral (calidad, ambiental y SISO) en el cargo? SI/NO Explique la respuesta elegida: </b></p>
+        </h4>
+        <p> -<?php echo $datos['calidadSN'] ?>, <?php echo $datos['calidad'] ?></p><br>
+
+        <?php if ($datos['proceso'] == 'Interno') {
+            $retroalimen = $datos['retroalimentacion'];
+            echo "<h4>
+            <p><i style='color: #68CCFE;'> 5)</i><b> Elementos relevantes para aportar en la Retroalimentación </b></p>
+        </h4>
+        <p> -$retroalimen</p><br><br>";
+        } ?>
+
         <hr />
         <br><br>
-        <h3 class="titulo"><b>Concepto Psicologa</b></h3>
+        <h3 class="titulo"><b>Concepto segundo Jefe</b></h3>
         <br>
-        <p><?php echo $datos['concepto'] ?> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas delectus voluptatem tempore ipsum est veniam et ad quaerat deleniti magnam esse iste molestiae, hic beatae similique? Itaque fugiat doloremque fuga voluptatem, facere repellendus. Quia, architecto? Qui, recusandae doloribus eius laudantium dolore quidem eum quas quaerat temporibus repellat aliquid quam voluptates dignissimos est, voluptas quasi excepturi distinctio dolores ducimus! Voluptatem ducimus quia ipsum deleniti ex dignissimos pariatur vitae blanditiis corrupti accusamus quis neque quod, error tempore delectus hic quibusdam praesentium sit?</p>
+        <p><?php echo $datos['conceptoSegundo'] ?> </p>
         <br>
         <?php
         function imprimir($d)
@@ -223,15 +234,28 @@ $rta = $objCnx->query($query);
         <br>
         <br><br>
         <footer>
-            <img src="../Firmas/<?php echo $datos['co'] ?>.png" alt="La Psicologa NO tiene agregada una firma digital" width="200px" height="50px">
-            <p>--------------------------------------</p>
-            <h5><?php echo $datos['psicologa'] ?></h5>
-            <p>Firma Psicologa<p>
+            <table>
+                <tr>
+                    <td style="text-align: center;">
+                        <img src="../Firmas/<?php echo $datos['co'] ?>.png" alt="La/el Jefe NO tiene agregada una firma digital" width="250px" height="50px">
+                        <br>
+                        <span>--------------------------------------</span>
+                        <br>
+                        <span>Firma Entrevistador/a: <span><br><b style="font-size: 1rem;"><?php echo $datos['entrevistador'] ?></b>
+                    </td>
+                    <td style="text-align: center;"><img src="../Firmas/<?php echo $datos['apruebaEntrevista'] ?>.png" alt="La/el Jefe NO tiene agregada una firma digital" width="250px" height="50px">
+                        <br>
+                        <span>--------------------------------------</span>
+                        <br>
+                        <span>Firma segundo jefe <span><br><b style="font-size: 1rem;"></b>
+                    </td>
+                </tr>
+            </table>
         </footer>
 
     <?php
-        $nombre = $datos['nombre'];
-        $cc = "Entrevista Psicologica de $nombre $cc";
+        $nombre = $datos['nombreCandidato'];
+        $cc = "Entrevista Tecnica de $nombre $cc";
     }
     ?>
 </body>

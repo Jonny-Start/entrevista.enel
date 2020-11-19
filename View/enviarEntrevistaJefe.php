@@ -51,12 +51,12 @@ if (isset($_SESSION["rol"])) {
                                         <tr align="center" bgcolor="#CFE0EE">
                                 </form>
 
-                                    <td colspan="2" align="center"> Identificación
-                                        <input type="number" name="cc" id="cc" readonly="readonly" size="40" value="<?php echo $cc; ?>" class="form-control form-control-user " required />
-                                        <div class="form-group row">
-                                    </td>
-                                    </tr>
-                                    </table>
+                                <td colspan="2" align="center"> Identificación
+                                    <input type="number" name="cc" id="cc" readonly="readonly" size="40" value="<?php echo $cc; ?>" class="form-control form-control-user " required />
+                                    <div class="form-group row">
+                                </td>
+                                </tr>
+                                </table>
                             </div>
                         </div>
                         <table class="table table-striped table-bordered table-hover" width="42%" border="0" align="center">
@@ -88,21 +88,10 @@ if (isset($_SESSION["rol"])) {
                                         <td><?php echo $datos['cc']; ?></td>
                                         <td><?php echo $datos['telefono']; ?></td>
                                         <td><?php echo $datos['cargoAspira']; ?></td>
-                                        <td><form id="form1" name="form1" method="POST" action="../Controller/validarEnviarJefe.php?cc=<?php echo $datos['cc']; ?>&nombre=<?php echo $datos['nombre']; ?>&proceso=<?php echo $datos['cargoAspira']; ?>">
-                                            <select id="jefe" name="jefe" class="form-control" required>
-                                                <option selected>¿A cual Jefe?</option>
-                                                <?php
-                                                if (isset($_POST["Consultar"])) {
-                                                    $mysql = "SELECT * FROM usuario where Perfil = 3";
-                                                    $resultado = $objCnx->query($mysql);
-                                                    while ($dt = $resultado->fetch_array()) {
-                                                ?>
-                                                        <option id="jefe" name="jefe" value="<?php echo $dt['correo_electronico']; ?>"><?php echo $dt['nombre']; echo $dt['apellidos']; ?></option>
-                                                <?php
-                                                    }
-                                                }
-                                                ?>
-                                            </select></td>
+                                        <td>
+                                            <form id="form1" name="form1" method="POST" action="../Controller/validarEnviarJefe.php?cc=<?php echo $datos['cc']; ?>&nombre=<?php echo $datos['nombre']; ?>&proceso=<?php echo $datos['cargoAspira']; ?>">
+                                                <input type="email" class="form-control" name="jefe" title="¿A cual Jefe?" id="jefe" placeholder="¿A cual Jefe?" required>
+                                        </td>
                                         <td style="text-align: center;"><input class="btn btn-info" type="submit" value="Enviar Entrevista"></a></td>
                                     </tr>
                             <?php
@@ -119,6 +108,27 @@ if (isset($_SESSION["rol"])) {
     <?php include FOLDER_TEMPLATE . "footer.php"; ?>
     <?php include FOLDER_TEMPLATE . "scripts.php"; ?>
     <script type="text/javascript" src="../vendor/funciones.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <?php
+    require_once "../Model/conexioon.php";
+    $sql = "SELECT * FROM usuario where Perfil = '3' ";
+    $rta = $objCnx->query($sql);
+    $array = array();
+    while ($datos = $rta->fetch_array()) {
+        $mail = utf8_decode($datos['correo_electronico']);
+        array_push($array, $mail); // le mando los datos al array 
+    }
+    ?>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var item = <?= json_encode($array) ?>;
+            $('#jefe').autocomplete({
+                source: item
+            });
+        });
+    </script>
+
 </body>
 
 </html>

@@ -39,15 +39,15 @@
 
        <!-- Nav Item - Pages Collapse Menu -->
        <li class="nav-item">
-         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+         <a class="nav-link collapsed" href="#" data-toggle="collapse"  data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
            <i class="fas fa-fw fa-cog"></i>
-           <span>Entrevistas</span>
+           <span>Entrevista</span>
          </a>
          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
            <div class="bg-white py-2 collapse-inner rounded">
-             <h6 class="collapse-header">Generar Entrevistas:</h6>
-             <a class="collapse-item" data-toggle="modal" data-target="#logoutModal">Psicologicas</a>
-             <a class="collapse-item" href="entrevistaBP.php">Business Partner</a>
+             <h6 class="collapse-header">Generar Entrevista:</h6>
+             <!-- <a class="collapse-item" data-toggle="modal" data-target="#logoutModal">Psicologicas</a>
+             <a class="collapse-item" href="entrevistaBP.php">Business Partner</a> -->
              <a class="collapse-item" href="entrevistaTecnica.php">Tecnicas</a>
            </div>
          </div>
@@ -82,19 +82,19 @@
        <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
            <i class="fas fa-fw fa-folder"></i>
-           <span>Reportes</span>
+           <span>Administrar</span>
          </a>
          <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
            <div class="bg-white py-2 collapse-inner rounded">
-             <h6 class="collapse-header">Reportes</h6>
-             <a class="collapse-item" href="../View/consultarEntrevistaPsAyP.php">PDF Aprendices</a>
-             <a class="collapse-item" href="../View/consultarEntrevistaPsicologaNo.php">No Terminadas</a>
-             <a class="collapse-item" href="../View/enviarEntrevistaJefe.php">Enviar a Jefe</a>
-             <a class="collapse-item" href="../View/consultarEntrevistaPsicologa.php">PDF Profesionales</a>
+             <h6 class="collapse-header">Administrar</h6>
+             <a class="collapse-item" href="../View/completarEntrevistaTecnica.php">Solicitudes para aprobar</a>
+             <a class="collapse-item" href="../View/noTerminadasTecnica.php">Asignar para aprobar</a>
+             <a class="collapse-item" href="entrevistasTecTerminadas.php">Descargar concepto</a>
+             <a class="collapse-item" href="">...</a>
              <div class="collapse-divider"></div>
-             <h6 class="collapse-header">Other Pages:</h6>
-             <a class="collapse-item" href="../View/solicitudEliminar.php">Solicitud de eliminacion</a>
-             <a class="collapse-item" href="blank.html">aun no naa</a>
+             <h6 class="collapse-header">Gestionar:</h6>
+             <a class="collapse-item" href="../View/administrarEntrevistaTec.php">Solicitud eliminar o editar</a>
+             <a class="collapse-item" href="blank.html">...</a>
            </div>
          </div>
        </li>

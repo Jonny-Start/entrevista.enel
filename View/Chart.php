@@ -1,30 +1,65 @@
 <?php include "../config.php";
 sessionValidate();
 if (isset($_SESSION["rol"])) {
-  switch($_SESSION['rol']){
+  switch ($_SESSION['rol']) {
     case 1:
       include "../template/sidebar.php";
-    break;
+      require_once "../Model/conexioon.php";
+      $co = $_SESSION['co'];
+      //tarjeta#1
+      $sql = "SELECT count(*) as conteo FROM entrevistapsicologica WHERE co = '$co'";
+      $resultado = mysqli_query($objCnx, $sql);
+      while ($datos = mysqli_fetch_array($resultado)) {
+        $tarjeta1 = $datos["conteo"];
+      }
+
+      $grafica = "include '../Graficas_AOM/line.php'";
+
+      break;
     case 2:
       include "../template/sidebar-Psicologa.php";
+      require_once "../Model/conexioon.php";
+      $co = $_SESSION['co'];
+      //tarjeta#1
+      $sql = "SELECT count(*) as conteo FROM entrevistapsicologica WHERE co = '$co'";
+      $resultado = mysqli_query($objCnx, $sql);
+      while ($datos = mysqli_fetch_array($resultado)) {
+        $tarjeta1 = $datos["conteo"];
+      }
+
+      $grafica = "include '../Graficas_AOM/line.php'";
+
       break;
     case 3:
       include "../template/sidebar-Jefe.php";
-    break;
+      require_once "../Model/conexioon.php";
+      $co = $_SESSION['co'];
+      //tarjeta#1
+      $sql = "SELECT count(*) as conteo FROM entrevistatecnica WHERE co = '$co'";
+      $resultado = mysqli_query($objCnx, $sql);
+      while ($datos = mysqli_fetch_array($resultado)) {
+        $tarjeta1 = $datos["conteo"];
+      }
+      $grafica = "../Graficas_AOM/lineJefe.php'";
+      break;
     case 4:
       include "../template/sidebar-BusinessPartner.php";
-    break;
+      require_once "../Model/conexioon.php";
+      $co = $_SESSION['co'];
+      //tarjeta#1
+      $sql = "SELECT count(*) as conteo FROM entrevistabp WHERE co = '$co'";
+      $resultado = mysqli_query($objCnx, $sql);
+      while ($datos = mysqli_fetch_array($resultado)) {
+        $tarjeta1 = $datos["conteo"];
+      }
+
+      $grafica = "include '../Graficas_AOM/lineBP.php'";
+
+      break;
   }
 }
 
-require_once "../Model/conexioon.php";
-$co = $_SESSION['co'];
-//tarjeta#1
-$sql = "SELECT count(*) as conteo FROM entrevistapsicologica WHERE co = '$co'";
-$resultado = mysqli_query($objCnx, $sql);
-while ($datos = mysqli_fetch_array($resultado)) {
-  $tarjeta1 = $datos["conteo"];
-}
+
 
 ?>
 
@@ -43,7 +78,7 @@ while ($datos = mysqli_fetch_array($resultado)) {
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center">Entrevistas Totales <?php echo $_SESSION['nombre'] ?></div>
+              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center">Entrevistas Totales de <?php echo $_SESSION['nombre'] ?></div>
               <div class="h5 mb-0 font-weight-bold text-gray-800 text-center"><?php echo $tarjeta1 ?></div>
             </div>
             <div class="col-auto">
@@ -80,33 +115,24 @@ while ($datos = mysqli_fetch_array($resultado)) {
         <!-- Card Body -->
         <div class="card-body">
           <div class="chart-bar">
-            <canvas id="Lineal" height="200" width="580"><?php include "../Graficas_AOM/line.php" ?></canvas>
+            <canvas id="Lineal" height="200" width="580"><?php if (isset($_SESSION["rol"])) {
+                                                            switch ($_SESSION['rol']) {
+                                                              case 1:
+                                                                include '../Graficas_AOM/line.php';
+                                                                break;
+                                                              case 2:
+                                                                include '../Graficas_AOM/line.php';
+                                                                break;
+                                                              case 3:
+                                                                include '../Graficas_AOM/lineJefe.php';
+                                                                break;
+                                                              case 4:
+                                                                include '../Graficas_AOM/lineBP.php';
+                                                                break;
+                                                            }
+                                                          } ?></canvas>
           </div>
         </div>
       </div>
     </div><br><br>
-
-
-    <h1 class="text-center">.....PROXIMAMENTE.....</h1><br><br><br><br>
-
-    <!-- Donut Chart -->
-    <div class="col-xl-4 col-lg-12">
-      <div class="card shadow mb-4">
-        <!-- Card Header - Dropdown -->
-        <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">Datos Numericos</h6>
-        </div>
-        <!-- Card Body -->
-        <div class="card-body">
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-
-  <?php include FOLDER_TEMPLATE . "scripts.php"; ?>
+    <?php include FOLDER_TEMPLATE . "scripts.php"; ?>

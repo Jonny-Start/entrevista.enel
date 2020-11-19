@@ -1,15 +1,13 @@
 <?php include "../config.php";
 sessionValidate();
+
 if (isset($_SESSION["rol"])) {
     switch ($_SESSION['rol']) {
-        case 1:
-            header('401.php');
-            break;
         case 2:
-            header('401.php');
+            header('location: 401.php');
             break;
         case 3:
-            header('401.php');
+            header('location: 401.php');
             break;
     }
 }
@@ -45,18 +43,14 @@ $fecha_now = date("d/M/Y");
     </div>
     <div class="form-group row">
         <div class="col-sm-12">
-            <a href="consultarEntrevistaPsAyP.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50" style="padding: 3px;"></i>Reporte De Entrevista</a>
-            <span class="button-checkbox" style="text-align: center;">
-                <button type="button" onclick="colorearI()" class="btn" id="proceso" value="Interno" data-color="success">Interno</button>
-            </span>
-            <span class="button-checkbox" style="text-align: center;">
-                <button type="button" class="btn" onclick="colorearE()" id="proceso" value="Externo" data-color="success">Externo</button>
-            </span>
+            <a href="entrevistasBPTerminadas.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50" style="padding: 3px;"></i>Reporte De Entrevista</a>
+            <button type="button" onclick="colorearI()" id="I" class="btn">Interno</button>
+            <button type="button" class="btn" onclick="colorearE()" style="background-color: #12C812 ;" id="E">Externo</button>
         </div>
     </div>
 
     <br><br>
-    <form id="regiration_form" novalidate action="../Controller/ValidarinsertarEntrevistaAyP.php" method="post">
+    <form class="user" id="regiration_form" action="../Controller/ControllerConceptoBP.php" method="post">
         <div class="form-group row">
             <div class="col-sm-6">
                 <label for="psicologa">Entrevistador(a)</label>
@@ -78,13 +72,17 @@ $fecha_now = date("d/M/Y");
             </div>
         </div>
         <div class="form-group row">
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 <label for="nombre">Nombre Completo</label>
                 <input type="Text" class="form-control form-control-user" id="nombreCandidato" name="nombreCandidato" placeholder="NOMBRE COMPLETO" required>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-4">
+                <label for="nombre">Cedula del candidato</label>
+                <input type="number" class="form-control form-control-user" id="idBP" name="idBP" placeholder="Cedula del candidato" required>
+            </div>
+            <div class="col-sm-4">
                 <label for="nombre">Cargo Vacante</label>
-                <input type="Text" class="form-control form-control-user" id="CargoAspira" name="CargoAspira" placeholder="Cargo al que Aspira" required>
+                <input type="Text" class="form-control form-control-user" id="cargoAspira" name="cargoAspira" placeholder="Cargo al que Aspira" required>
             </div>
         </div>
         <br>
@@ -125,7 +123,7 @@ $fecha_now = date("d/M/Y");
                 </tr>
                 <tr>
                     <td scope="row">Aspiración Salarial</td>
-                    <td style="text-align: center;"><input type="Text" class="form-control form-control-user" id="aspiracionSalMen" name="aspiracionSalMen" placeholder="Mensual" required></td>
+                    <td style="text-align: center;"><input type="number" class="form-control form-control-user" id="aspiracionSalMen" name="aspiracionSalMen" placeholder="Mensual" required></td>
                     <td style="text-align: center;"><input type="Text" class="form-control form-control-user" id="aspiracionSalObs" name="aspiracionSalObs" placeholder="Observacion" required></td>
                 </tr>
             </tbody>
@@ -138,23 +136,23 @@ $fecha_now = date("d/M/Y");
                 <div class="casilla">
                     <div class="form-group row">
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" class="form-check-input" id="ajusteAlto" value="si" name="ajusteAlto" required>
+                            <input type="checkbox" class="form-check-input" id="ajusteAlto" value="si" name="ajusteAlto" >
                             <label class="form-check-label minimal">Ajuste Alto</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input derecha" type="checkbox" value="si" id="ajusteMedioAlto" name="ajusteMedioAlto" required>
+                            <input class="form-check-input derecha" type="checkbox" value="si" id="ajusteMedioAlto" name="ajusteMedioAlto" >
                             <label class="form-check-label">
                                 Ajuste Medio Alto
                             </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" value="si" id="ajusteMedioBajo" name="ajusteMedioBajo" required>
+                            <input class="form-check-input" type="checkbox" value="si" id="ajusteMedioBajo" name="ajusteMedioBajo" >
                             <label class="form-check-label">
                                 Ajuste Medio Bajo
                             </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" class="form-check-input derecha" id="parcialAjusteBajo" value="si" name="parcialAjusteBajo" required>
+                            <input type="checkbox" class="form-check-input derecha" id="parcialAjusteBajo" value="si" name="parcialAjusteBajo" >
                             <label class="form-check-label minimal"> Parcialmente Ajuste Bajo</label>
                         </div>
                     </div>
@@ -176,13 +174,13 @@ $fecha_now = date("d/M/Y");
         <br>
         <h3><b>Para lograr una buena adaptación al cargo se identifican necesidades de formación en:</b></h3>
         <textarea class="form-control" name="adaptarCargo" id="adaptarCargo" placeholder="Para lograr una buena adaptación..."></textarea>
-        <div id="retroAlimentacion">
-        <br><br>
-        <h3><b>Elementos que apoyen la retroalimentación </b></h3>
-        <textarea class="form-control" name="elementosRetro" id="elementosRetro" placeholder="Elementos que apoyen la retroalimentación "></textarea>
+        <div id="retroAlimentacion" hidden>
+            <br><br>
+            <h3><b>Elementos que apoyen la retroalimentación </b></h3>
+            <textarea class="form-control" name="elementosRetro" id="elementosRetro" placeholder="Elementos que apoyen la retroalimentación "></textarea>
         </div>
         <br><br>
-        <h3><b>Comentarios adicionales:  </b></h3>
+        <h3><b>Comentarios adicionales: </b></h3>
         <textarea class="form-control" name="comentarios" id="comentarios" placeholder="Comentarios "></textarea>
         <br><br><br>
         <div class="container">
@@ -228,33 +226,58 @@ $fecha_now = date("d/M/Y");
         </div><br><br>
 
         <div style="text-align: right">
-            <input type="hidden" id="co" name="co" value="<?php echo $_SESSION['co']?>">
-            <input type="submit" name="btn" class="submit btn btn-success" value="Registrar" id="btn" />
+            <input type="hidden" id="co" name="co" value="<?php echo $_SESSION['co'] ?>">
+            <input type="hidden" id="proceso" name="proceso" value="Externo">
+            <input type="submit" name="btn" class="submit btn btn-success" value="Registrar" id="registrar" />
             <a href="principal.php" class="btn btn-danger btn-sm" onclick="seguro()">Salir</a>
         </div>
     </form>
-    <?php include FOLDER_TEMPLATE . "scripts.php"; ?>
-    <script type="text/javaScript" src="../vendor/.js"></script>
-    <script type="text/javascript">
-        function colorearI (){
-            $('#')
-        }
-        function colorearE (){
+</div>
+<?php include FOLDER_TEMPLATE . "scripts.php"; ?>
+<script type="text/javaScript" src="../vendor/.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript">
+    function colorearI() {
+        var I = $('#I');
+        var E = $('#E');
+        var campo = $('#retroAlimentacion');
+        I.css('background-color', '#12C812');
+        E.removeAttr('Style');
+        campo.show("fast");
+        $('#proceso').val('Interno');
 
-        }
-    </script>
-    <?php
-    extract($_REQUEST);
-    if (isset($_REQUEST["msj"])) {
-        if ($_REQUEST["msj"] == "1") {
-            echo "<script type='text/javascript'>
+    }
+
+    function colorearE() {
+        var I = $('#I');
+        var E = $('#E');
+        var campo = $('#retroAlimentacion');
+        E.css('background-color', '#12C812');
+        I.removeAttr('Style');
+        campo.hide("fast");
+        $('#proceso').val('Externo');
+    }
+</script>
+<?php
+extract($_REQUEST);
+if (isset($_REQUEST["msj"])) {
+    if ($_REQUEST["msj"] == "1") {
+        echo "<script type='text/javascript'>
                 swal('Registrado', 'Se registraron los datos correctamente', 'success');
                 </script>";
-        } else {
-            echo "<script type='text/javascript'>
+    } else {
+        echo "<script type='text/javascript'>
                 swal('Error', 'No se guardo la informacion, un dato reguistrado esta mal', 'error');
                 </script>";
+    }
+}
+?>
+<script type='text/javascript'>
+    function desabilitar() {
+        if (<?php echo $_SESSION['rol'] ?> == 1) {
+            var boton = document.querySelector('#registrar');
+            boton.setAttribute('disabled', 'disabled');
         }
     }
-    ?>
-    
+    window.onload = desabilitar();
+</script>

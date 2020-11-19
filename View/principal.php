@@ -34,18 +34,34 @@ function cualPerfil($rol) {
 }
 require_once "../Model/conexioon.php";
 
-//tarjeta#4
-$sql = "SELECT count(*) as conteo FROM usuario";
-$resultado = mysqli_query($objCnx, $sql);
-while ($datos = mysqli_fetch_array($resultado)) {
-  $tarjeta4 = $datos["conteo"];
-}
 //tarjeta#1
 $sql = "SELECT count(*) as conteo FROM entrevistapsicologica";
 $resultado = mysqli_query($objCnx, $sql);
 while ($datos = mysqli_fetch_array($resultado)) {
   $tarjeta1 = $datos["conteo"];
 }
+
+//tarjeta#2
+$sql = "SELECT count(*) as conteo FROM entrevistatecnica";
+$resultado = mysqli_query($objCnx, $sql);
+while ($datos = mysqli_fetch_array($resultado)) {
+  $tarjeta2 = $datos["conteo"];
+}
+
+//tarjeta#3
+$sql = "SELECT count(*) as conteo FROM entrevistabp";
+$resultado = mysqli_query($objCnx, $sql);
+while ($datos = mysqli_fetch_array($resultado)) {
+  $tarjeta3 = $datos["conteo"];
+}
+
+//tarjeta#4
+$sql = "SELECT count(*) as conteo FROM usuario";
+$resultado = mysqli_query($objCnx, $sql);
+while ($datos = mysqli_fetch_array($resultado)) {
+  $tarjeta4 = $datos["conteo"];
+}
+
 
 ?>
 <?php include FOLDER_TEMPLATE . "head.php"; ?>
@@ -90,7 +106,7 @@ while ($datos = mysqli_fetch_array($resultado)) {
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Entrevistas Totales Jefes</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $_SESSION['co'] ?></div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $tarjeta2 ?></div>
             </div>
             <div class="col-auto">
               <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -111,7 +127,7 @@ while ($datos = mysqli_fetch_array($resultado)) {
                 <div class="col-auto">
                 </div>
                 <div class="col">
-                  <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $_SESSION['co'] ?></div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $tarjeta3 ?></div>
                 </div>
               </div>
             </div>

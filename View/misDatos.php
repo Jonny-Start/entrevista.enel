@@ -67,8 +67,8 @@ function cualPerfil($rol) {
 
         </style>
         <!-- fin de la consulta -->
-        <div>
-          <center><img src="../img/misDatos.png" alt="Img_Modificar_Usuario"></center>
+        <div style="text-align: center;">
+          <img src="../img/misDatos.png" alt="Img_Modificar_Usuario">
         </div>
         <form id="form1" name="form1" method="post" action="../Controller/controllermisDatos.php">
           <div class="form-group row">

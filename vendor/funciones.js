@@ -13,6 +13,33 @@ function agregarModal2(inf) {
     $('#cc').text(d2[1]);
   }
 
+  function agregarModal3(info ) {
+    var d = info.split('||');
+    $('#nombre').text(d[0]);
+    $('#cedula').text(d[1]);
+    $('#ps').text(d[2]);
+  }
+  
+function agregarModal4(inf) {
+    var d2 = inf.split('||');
+    console.log (inf);
+    $('#name').text(d2[0]);
+    $('#cc').text(d2[1]);
+  }
+  function agregarModal5(info ) {
+    var d = info.split('||');
+    $('#nombre').text(d[0]);
+    $('#cedula').text(d[1]);
+    $('#ps').text(d[2]);
+  }
+  
+function agregarModal6(inf) {
+    var d2 = inf.split('||');
+    console.log (inf);
+    $('#name').text(d2[0]);
+    $('#cc').text(d2[1]);
+  }
+
   function seEnvio(){
     Swal.fire({
       icon: 'success',
@@ -52,6 +79,135 @@ function agregarModal2(inf) {
       }
     })
   }
+
+  function solictarEdicionBP() {
+    var name2 = $('#name').text();
+    var cc2 = $('#cc').text();
+    var btn2 = $('#boton'); 
+    btn2.attr('disabled', 'disabled');
+    cadena = "&name=" + name2 + "&cc=" + cc2;
+    $.ajax({
+      type: "POST",
+      url: "../Controller/validarSolicitudEditarBP.php",
+      data: cadena,
+      success: function(r) {
+        console.log(r);
+        if (r == 1) {
+          btn2.removeAttr('disabled');
+          Swal.fire({
+            icon: 'success',
+            title: 'Se Envio Correctamente',
+            text: 'El correo ya se le envio al administrador de la pagina',
+          });
+        } else {
+          console.log(r);
+          btn2.removeAttr('disabled');
+          Swal.fire({
+            icon: 'error',
+            title: 'ERROR',
+            text: 'No se pudo enviar el correo, porfavor contactese con el administrador del programa',
+          });
+        }
+      }
+    })
+  }
+
+  function solictarEdicionTecnica() {
+    var name2 = $('#name').text();
+    var cc2 = $('#cc').text();
+    var btn2 = $('#boton'); 
+    btn2.attr('disabled', 'disabled');
+    cadena = "&name=" + name2 + "&cc=" + cc2;
+    $.ajax({
+      type: "POST",
+      url: "../Controller/validarSolicitudEditarTecnica.php",
+      data: cadena,
+      success: function(r) {
+        console.log(r);
+        if (r == 1) {
+          btn2.removeAttr('disabled');
+          Swal.fire({
+            icon: 'success',
+            title: 'Se Envio Correctamente',
+            text: 'El correo ya se le envio al administrador de la pagina',
+          });
+        } else {
+          console.log(r);
+          btn2.removeAttr('disabled');
+          Swal.fire({
+            icon: 'error',
+            title: 'ERROR',
+            text: 'No se pudo enviar el correo, porfavor contactese con el administrador del programa',
+          });
+        }
+      }
+    })
+  }
+
+  function solicitarEliminacionTecnica() {
+    var nombre = $('#nombre').text();
+    var cc = $('#cedula').text();
+    var btn = $('#btn'); 
+    btn.attr('disabled', 'disabled');
+    cadena = "&nombre=" + nombre + "&cedula=" + cc;
+    $.ajax({
+      type: "POST",
+      url: "../Controller/validarSolicitudEliminarTecnica.php",
+      data: cadena,
+      success: function(r) {
+        console.log(r);
+        if (r == 1) {
+          btn.removeAttr('disabled');
+          Swal.fire({
+            icon: 'success',
+            title: 'Se Envio Correctamente',
+            text: 'El correo ya se le envio al administrador de la pagina',
+          });
+        } else {
+          console.log(r);
+          btn.removeAttr('disabled');
+          Swal.fire({
+            icon: 'error',
+            title: 'ERROR',
+            text: 'No se pudo enviar el correo, porfavor contactese con el administrador del programa',
+          });
+        }
+      }
+    })
+  }
+
+  function solicitarEliminacionBP() {
+    var nombre = $('#nombre').text();
+    var cc = $('#cedula').text();
+    var btn = $('#btn'); 
+    btn.attr('disabled', 'disabled');
+    cadena = "&nombre=" + nombre + "&cedula=" + cc;
+    $.ajax({
+      type: "POST",
+      url: "../Controller/validarSolicitudEliminarBP.php",
+      data: cadena,
+      success: function(r) {
+        console.log(r);
+        if (r == 1) {
+          btn.removeAttr('disabled');
+          Swal.fire({
+            icon: 'success',
+            title: 'Se Envio Correctamente',
+            text: 'El correo ya se le envio al administrador de la pagina',
+          });
+        } else {
+          console.log(r);
+          btn.removeAttr('disabled');
+          Swal.fire({
+            icon: 'error',
+            title: 'ERROR',
+            text: 'No se pudo enviar el correo, porfavor contactese con el administrador del programa',
+          });
+        }
+      }
+    })
+  }
+
 
   function solicitarEliminacion() {
     var nombre = $('#nombre').text();
